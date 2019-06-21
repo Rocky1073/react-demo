@@ -1,0 +1,1861 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>人民调解-纠纷申请</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://momentjs.com/downloads/moment-with-locales.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/3.19.0/antd.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/antd/3.19.0/antd.css"
+    />
+  </head>
+  <body>
+    <div id="root" style="width: 50%; margin: 0 auto;">
+      <form class="ant-form ant-form-vertical">
+        <div class="ant-card">
+          <div class="ant-card-head">
+            <div class="ant-card-head-wrapper">
+              <div class="ant-card-head-title">当事人基本信息</div>
+            </div>
+          </div>
+          <div class="ant-card-body" style="padding-bottom: 0px;">
+            <div class="ant-row" style="margin-left: -8px; margin-right: -8px;">
+              <div
+                class="ant-col ant-col-sm-24 ant-col-md-12 ant-col-lg-12"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label
+                      for="litigantType"
+                      class="ant-form-item-required"
+                      title="证件类型"
+                      >证件类型</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control has-success">
+                      <span class="ant-form-item-children"
+                        ><div
+                          id="litigantType"
+                          class="ant-select ant-select-enabled"
+                        >
+                          <div
+                            class="ant-select-selection
+            ant-select-selection--single"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-haspopup="true"
+                            aria-controls="354cc247-cb1d-47ad-d6e5-1324901378fe"
+                            aria-expanded="false"
+                            data-__meta="[object Object]"
+                            data-__field="[object Object]"
+                            tabindex="0"
+                          >
+                            <div class="ant-select-selection__rendered">
+                              <div
+                                unselectable="on"
+                                class="ant-select-selection__placeholder"
+                                style="display: none; user-select: none;"
+                              >
+                                请选择证件类型
+                              </div>
+                              <div
+                                class="ant-select-selection-selected-value"
+                                title="个人"
+                                style="display: block; opacity: 1;"
+                              >
+                                个人
+                              </div>
+                            </div>
+                            <span
+                              class="ant-select-arrow"
+                              unselectable="on"
+                              style="user-select: none;"
+                              ><i
+                                aria-label="icon: down"
+                                class="anticon anticon-down ant-select-arrow-icon"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  class=""
+                                  data-icon="down"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  ></path></svg></i
+                            ></span>
+                          </div></div
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-sm-24 ant-col-md-24 ant-col-lg-12"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label
+                      for="litigantCardType"
+                      class="ant-form-item-required"
+                      title="证件类型"
+                      >证件类型</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control has-success">
+                      <span class="ant-form-item-children"
+                        ><div
+                          id="litigantCardType"
+                          class="ant-select ant-select-enabled"
+                        >
+                          <div
+                            class="ant-select-selection
+            ant-select-selection--single"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-haspopup="true"
+                            aria-controls="88ec40d3-3f12-4e72-dad7-90c2d1d72f3f"
+                            aria-expanded="false"
+                            data-__meta="[object Object]"
+                            data-__field="[object Object]"
+                            tabindex="0"
+                          >
+                            <div class="ant-select-selection__rendered">
+                              <div
+                                unselectable="on"
+                                class="ant-select-selection__placeholder"
+                                style="display: none; user-select: none;"
+                              >
+                                请选择证件类型
+                              </div>
+                              <div
+                                class="ant-select-selection-selected-value"
+                                title="居民身份证"
+                                style="display: block; opacity: 1;"
+                              >
+                                居民身份证
+                              </div>
+                            </div>
+                            <span
+                              class="ant-select-arrow"
+                              unselectable="on"
+                              style="user-select: none;"
+                              ><i
+                                aria-label="icon: down"
+                                class="anticon anticon-down ant-select-arrow-icon"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  class=""
+                                  data-icon="down"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  ></path></svg></i
+                            ></span>
+                          </div></div
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ant-row" style="margin-left: -8px; margin-right: -8px;">
+              <div
+                class="ant-col ant-col-sm-24 ant-col-md-12 ant-col-lg-12"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label
+                      for="litigantNumber"
+                      class="ant-form-item-required"
+                      title="证件号码"
+                      >证件号码</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><input
+                          placeholder="请输入证件号码"
+                          type="text"
+                          id="litigantNumber"
+                          data-__meta="[object Object]"
+                          data-__field="[object Object]"
+                          class="ant-input"
+                          value=""
+                      /></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-sm-24 ant-col-md-24 ant-col-lg-12"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label
+                      for="litigantName"
+                      class="ant-form-item-required"
+                      title="姓名"
+                      >姓名</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><input
+                          placeholder="请输入姓名"
+                          type="text"
+                          id="litigantName"
+                          data-__meta="[object Object]"
+                          data-__field="[object Object]"
+                          class="ant-input"
+                          value=""
+                      /></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ant-row" style="margin-left: -8px; margin-right: -8px;">
+              <div
+                class="ant-col ant-col-sm-24 ant-col-md-24 ant-col-lg-12"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label
+                      for="litigantSex"
+                      class="ant-form-item-required"
+                      title="性别"
+                      >性别</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><div
+                          id="litigantSex"
+                          class="ant-select ant-select-enabled"
+                        >
+                          <div
+                            class="ant-select-selection
+            ant-select-selection--single"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-haspopup="true"
+                            aria-controls="2bd49e93-de2b-4131-bfb8-a6821bda7e49"
+                            aria-expanded="false"
+                            data-__meta="[object Object]"
+                            data-__field="[object Object]"
+                            tabindex="0"
+                          >
+                            <div class="ant-select-selection__rendered">
+                              <div
+                                unselectable="on"
+                                class="ant-select-selection__placeholder"
+                                style="display: block; user-select: none;"
+                              >
+                                请选择性别
+                              </div>
+                            </div>
+                            <span
+                              class="ant-select-arrow"
+                              unselectable="on"
+                              style="user-select: none;"
+                              ><i
+                                aria-label="icon: down"
+                                class="anticon anticon-down ant-select-arrow-icon"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  class=""
+                                  data-icon="down"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  ></path></svg></i
+                            ></span>
+                          </div></div
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-sm-24 ant-col-md-12 ant-col-lg-12"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label
+                      for="litigantMobile"
+                      class="ant-form-item-required"
+                      title="联系电话"
+                      >联系电话</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><input
+                          placeholder="请输入联系电话"
+                          type="text"
+                          id="litigantMobile"
+                          data-__meta="[object Object]"
+                          data-__field="[object Object]"
+                          class="ant-input"
+                          value=""
+                      /></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ant-row" style="margin-left: -8px; margin-right: -8px;">
+              <div
+                class="ant-col ant-col-sm-24 ant-col-md-12 ant-col-lg-12"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label
+                      for="litigantAddress"
+                      class="ant-form-item-required"
+                      title="联系地址"
+                      >联系地址</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><input
+                          placeholder="请输入联系地址"
+                          type="text"
+                          id="litigantAddress"
+                          data-__meta="[object Object]"
+                          data-__field="[object Object]"
+                          class="ant-input"
+                          value=""
+                      /></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ant-card">
+          <div class="ant-card-head">
+            <div class="ant-card-head-wrapper">
+              <div class="ant-card-head-title">对方基本信息</div>
+            </div>
+          </div>
+          <div class="ant-card-body" style="padding-bottom: 0px;">
+            <div class="ant-row ant-form-item">
+              <div class="ant-col ant-form-item-control-wrapper">
+                <div class="ant-form-item-control has-success">
+                  <span class="ant-form-item-children"
+                    ><div class="ant-table-wrapper">
+                      <div class="ant-spin-nested-loading">
+                        <div class="ant-spin-container">
+                          <div
+                            class="ant-table ant-table-default ant-table-empty ant-table-scroll-position-left"
+                          >
+                            <div class="ant-table-content">
+                              <div class="ant-table-body">
+                                <table class="">
+                                  <colgroup>
+                                    <col style="width: 20%; min-width: 20%;" />
+                                    <col style="width: 20%; min-width: 20%;" />
+                                    <col style="width: 25%; min-width: 25%;" />
+                                    <col style="width: 25%; min-width: 25%;" />
+                                    <col style="width: 10%; min-width: 10%;" />
+                                  </colgroup>
+                                  <thead class="ant-table-thead">
+                                    <tr>
+                                      <th class="">
+                                        <span class="ant-table-header-column"
+                                          ><div>
+                                            <span class="ant-table-column-title"
+                                              >姓名</span
+                                            ><span
+                                              class="ant-table-column-sorter"
+                                            ></span></div
+                                        ></span>
+                                      </th>
+                                      <th class="">
+                                        <span class="ant-table-header-column"
+                                          ><div>
+                                            <span class="ant-table-column-title"
+                                              >性别</span
+                                            ><span
+                                              class="ant-table-column-sorter"
+                                            ></span></div
+                                        ></span>
+                                      </th>
+                                      <th class="">
+                                        <span class="ant-table-header-column"
+                                          ><div>
+                                            <span class="ant-table-column-title"
+                                              >联系电话</span
+                                            ><span
+                                              class="ant-table-column-sorter"
+                                            ></span></div
+                                        ></span>
+                                      </th>
+                                      <th class="">
+                                        <span class="ant-table-header-column"
+                                          ><div>
+                                            <span class="ant-table-column-title"
+                                              >联系地址</span
+                                            ><span
+                                              class="ant-table-column-sorter"
+                                            ></span></div
+                                        ></span>
+                                      </th>
+                                      <th class="">
+                                        <span class="ant-table-header-column"
+                                          ><div>
+                                            <span class="ant-table-column-title"
+                                              >操作</span
+                                            ><span
+                                              class="ant-table-column-sorter"
+                                            ></span></div
+                                        ></span>
+                                      </th>
+                                    </tr>
+                                  </thead>
+                                  <tbody class="ant-table-tbody"></tbody>
+                                </table>
+                              </div>
+                              <div class="ant-table-placeholder">
+                                <div class="ant-empty ant-empty-normal">
+                                  <div class="ant-empty-image">
+                                    <img
+                                      alt="No Data"
+                                      src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNDEiIHZpZXdCb3g9IjAgMCA2NCA0MSIgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxKSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj4KICAgIDxlbGxpcHNlIGZpbGw9IiNGNUY1RjUiIGN4PSIzMiIgY3k9IjMzIiByeD0iMzIiIHJ5PSI3Ii8+CiAgICA8ZyBmaWxsLXJ1bGU9Im5vbnplcm8iIHN0cm9rZT0iI0Q5RDlEOSI+CiAgICAgIDxwYXRoIGQ9Ik01NSAxMi43Nkw0NC44NTQgMS4yNThDNDQuMzY3LjQ3NCA0My42NTYgMCA0Mi45MDcgMEgyMS4wOTNjLS43NDkgMC0xLjQ2LjQ3NC0xLjk0NyAxLjI1N0w5IDEyLjc2MVYyMmg0NnYtOS4yNHoiLz4KICAgICAgPHBhdGggZD0iTTQxLjYxMyAxNS45MzFjMC0xLjYwNS45OTQtMi45MyAyLjIyNy0yLjkzMUg1NXYxOC4xMzdDNTUgMzMuMjYgNTMuNjggMzUgNTIuMDUgMzVoLTQwLjFDMTAuMzIgMzUgOSAzMy4yNTkgOSAzMS4xMzdWMTNoMTEuMTZjMS4yMzMgMCAyLjIyNyAxLjMyMyAyLjIyNyAyLjkyOHYuMDIyYzAgMS42MDUgMS4wMDUgMi45MDEgMi4yMzcgMi45MDFoMTQuNzUyYzEuMjMyIDAgMi4yMzctMS4zMDggMi4yMzctMi45MTN2LS4wMDd6IiBmaWxsPSIjRkFGQUZBIi8+CiAgICA8L2c+CiAgPC9nPgo8L3N2Zz4K"
+                                    />
+                                  </div>
+                                  <p class="ant-empty-description">No Data</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      class="ant-btn ant-btn-dashed"
+                      style="width: 100%; margin-top: 16px; margin-bottom: 8px;"
+                    >
+                      <i aria-label="icon: plus" class="anticon anticon-plus"
+                        ><svg
+                          viewBox="64 64 896 896"
+                          class=""
+                          data-icon="plus"
+                          width="1em"
+                          height="1em"
+                          fill="currentColor"
+                          aria-hidden="true"
+                          focusable="false"
+                        >
+                          <path
+                            d="M482 152h60q8 0 8 8v704q0 8-8 8h-60q-8 0-8-8V160q0-8 8-8z"
+                          ></path>
+                          <path
+                            d="M176 474h672q8 0 8 8v60q0 8-8 8H176q-8 0-8-8v-60q0-8 8-8z"
+                          ></path></svg></i
+                      ><span>新增成员</span>
+                    </button></span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ant-card">
+          <div class="ant-card-head">
+            <div class="ant-card-head-wrapper">
+              <div class="ant-card-head-title">纠纷基本信息</div>
+            </div>
+          </div>
+          <div class="ant-card-body" style="padding-bottom: 0px;">
+            <div class="ant-row" style="margin-left: -8px; margin-right: -8px;">
+              <div
+                class="ant-col ant-col-sm-24 ant-col-md-12 ant-col-lg-12"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label
+                      for="disputeIsDeath"
+                      class="ant-form-item-required"
+                      title="是否有死亡"
+                      >是否有死亡</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control has-success">
+                      <span class="ant-form-item-children"
+                        ><div
+                          id="disputeIsDeath"
+                          class="ant-select ant-select-enabled"
+                        >
+                          <div
+                            class="ant-select-selection
+            ant-select-selection--single"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-haspopup="true"
+                            aria-controls="e6cd639e-a9a2-45a7-9798-c891f69ac3e1"
+                            aria-expanded="false"
+                            data-__meta="[object Object]"
+                            data-__field="[object Object]"
+                            tabindex="0"
+                          >
+                            <div class="ant-select-selection__rendered">
+                              <div
+                                unselectable="on"
+                                class="ant-select-selection__placeholder"
+                                style="display: none; user-select: none;"
+                              >
+                                请选择
+                              </div>
+                              <div
+                                class="ant-select-selection-selected-value"
+                                title="否"
+                                style="display: block; opacity: 1;"
+                              >
+                                否
+                              </div>
+                            </div>
+                            <span
+                              class="ant-select-arrow"
+                              unselectable="on"
+                              style="user-select: none;"
+                              ><i
+                                aria-label="icon: down"
+                                class="anticon anticon-down ant-select-arrow-icon"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  class=""
+                                  data-icon="down"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  ></path></svg></i
+                            ></span>
+                          </div></div
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ant-row" style="margin-left: -8px; margin-right: -8px;">
+              <div
+                class="ant-col ant-col-sm-24 ant-col-md-12 ant-col-lg-12"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label for="disputeTime" class="" title="纠纷时间"
+                      >纠纷时间</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><span
+                          id="disputeTime"
+                          class="ant-calendar-picker"
+                          style="width: 100%;"
+                          ><div>
+                            <input
+                              readonly=""
+                              placeholder="请选择时间"
+                              class="ant-calendar-picker-input ant-input"
+                              value=""
+                            /><i
+                              aria-label="icon: calendar"
+                              class="anticon anticon-calendar ant-calendar-picker-icon"
+                              ><svg
+                                viewBox="64 64 896 896"
+                                class=""
+                                data-icon="calendar"
+                                width="1em"
+                                height="1em"
+                                fill="currentColor"
+                                aria-hidden="true"
+                                focusable="false"
+                              >
+                                <path
+                                  d="M880 184H712v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H384v-64c0-4.4-3.6-8-8-8h-56c-4.4 0-8 3.6-8 8v64H144c-17.7 0-32 14.3-32 32v664c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V216c0-17.7-14.3-32-32-32zm-40 656H184V460h656v380zM184 392V256h128v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h256v48c0 4.4 3.6 8 8 8h56c4.4 0 8-3.6 8-8v-48h128v136H184z"
+                                ></path></svg
+                            ></i></div></span
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-sm-24 ant-col-md-24 ant-col-lg-12"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label for="disputeLocation" class="" title="纠纷地点"
+                      >纠纷地点</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><input
+                          placeholder="请输入纠纷地点"
+                          type="text"
+                          id="disputeLocation"
+                          data-__meta="[object Object]"
+                          data-__field="[object Object]"
+                          class="ant-input"
+                          value=""
+                      /></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ant-row" style="margin-left: -8px; margin-right: -8px;">
+              <div
+                class="ant-col ant-col-24"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label for="disputeDescription" class="" title="纠纷描述"
+                      >纠纷描述</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><textarea
+                          rows="4"
+                          placeholder="请输入纠纷描述"
+                          id="disputeDescription"
+                          data-__meta="[object Object]"
+                          data-__field="[object Object]"
+                          class="ant-input"
+                        ></textarea
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="ant-row" style="margin-left: -8px; margin-right: -8px;">
+              <div
+                class="ant-col ant-col-sm-24 ant-col-lg-8"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label class="" title="市">市</label>
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><div class="ant-select ant-select-enabled">
+                          <div
+                            class="ant-select-selection
+            ant-select-selection--single"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-haspopup="true"
+                            aria-controls="3411e6e5-9ca2-41e9-faa6-3b073230a0ce"
+                            aria-expanded="false"
+                            tabindex="0"
+                          >
+                            <div class="ant-select-selection__rendered">
+                              <div
+                                unselectable="on"
+                                class="ant-select-selection__placeholder"
+                                style="display: block; user-select: none;"
+                              >
+                                请选择市
+                              </div>
+                            </div>
+                            <span
+                              class="ant-select-arrow"
+                              unselectable="on"
+                              style="user-select: none;"
+                              ><i
+                                aria-label="icon: down"
+                                class="anticon anticon-down ant-select-arrow-icon"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  class=""
+                                  data-icon="down"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  ></path></svg></i
+                            ></span>
+                          </div></div
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-sm-24 ant-col-lg-8"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label class="" title="区">区</label>
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><div class="ant-select ant-select-enabled">
+                          <div
+                            class="ant-select-selection
+            ant-select-selection--single"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-haspopup="true"
+                            aria-controls="a88dc5ce-1259-49c7-92af-3338959bc9db"
+                            aria-expanded="false"
+                            tabindex="0"
+                          >
+                            <div class="ant-select-selection__rendered">
+                              <div
+                                unselectable="on"
+                                class="ant-select-selection__placeholder"
+                                style="display: block; user-select: none;"
+                              >
+                                请选择区
+                              </div>
+                            </div>
+                            <span
+                              class="ant-select-arrow"
+                              unselectable="on"
+                              style="user-select: none;"
+                              ><i
+                                aria-label="icon: down"
+                                class="anticon anticon-down ant-select-arrow-icon"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  class=""
+                                  data-icon="down"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  ></path></svg></i
+                            ></span>
+                          </div></div
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="ant-col ant-col-sm-24 ant-col-lg-8"
+                style="padding-left: 8px; padding-right: 8px;"
+              >
+                <div class="ant-row ant-form-item">
+                  <div class="ant-col ant-form-item-label">
+                    <label
+                      for="disputeCommittee"
+                      class="ant-form-item-required"
+                      title="申请调委会"
+                      >申请调委会</label
+                    >
+                  </div>
+                  <div class="ant-col ant-form-item-control-wrapper">
+                    <div class="ant-form-item-control">
+                      <span class="ant-form-item-children"
+                        ><div
+                          id="disputeCommittee"
+                          class="ant-select ant-select-enabled"
+                        >
+                          <div
+                            class="ant-select-selection
+            ant-select-selection--single"
+                            role="combobox"
+                            aria-autocomplete="list"
+                            aria-haspopup="true"
+                            aria-controls="08d605af-5689-48c9-ae7b-dd1ba3d53ad7"
+                            aria-expanded="false"
+                            data-__meta="[object Object]"
+                            data-__field="[object Object]"
+                            tabindex="0"
+                          >
+                            <div class="ant-select-selection__rendered">
+                              <div
+                                unselectable="on"
+                                class="ant-select-selection__placeholder"
+                                style="display: block; user-select: none;"
+                              >
+                                请选择申请调委会
+                              </div>
+                            </div>
+                            <span
+                              class="ant-select-arrow"
+                              unselectable="on"
+                              style="user-select: none;"
+                              ><i
+                                aria-label="icon: down"
+                                class="anticon anticon-down ant-select-arrow-icon"
+                                ><svg
+                                  viewBox="64 64 896 896"
+                                  class=""
+                                  data-icon="down"
+                                  width="1em"
+                                  height="1em"
+                                  fill="currentColor"
+                                  aria-hidden="true"
+                                  focusable="false"
+                                >
+                                  <path
+                                    d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+                                  ></path></svg></i
+                            ></span>
+                          </div></div
+                      ></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="text-align: center;">
+          <button type="submit" class="ant-btn ant-btn-primary ant-btn-lg">
+            <span>提交申请</span>
+          </button>
+        </div>
+      </form>
+    </div>
+    <script>
+        "use strict";
+
+        var _extends =
+            Object.assign ||
+            function(target) {
+                for (var i = 1; i < arguments.length; i++) {
+                    var source = arguments[i];
+                    for (var key in source) {
+                        if (Object.prototype.hasOwnProperty.call(source, key)) {
+                            target[key] = source[key];
+                        }
+                    }
+                }
+                return target;
+            };
+
+        var _createClass = (function() {
+            function defineProperties(target, props) {
+                for (var i = 0; i < props.length; i++) {
+                    var descriptor = props[i];
+                    descriptor.enumerable = descriptor.enumerable || false;
+                    descriptor.configurable = true;
+                    if ("value" in descriptor) descriptor.writable = true;
+                    Object.defineProperty(target, descriptor.key, descriptor);
+                }
+            }
+            return function(Constructor, protoProps, staticProps) {
+                if (protoProps) defineProperties(Constructor.prototype, protoProps);
+                if (staticProps) defineProperties(Constructor, staticProps);
+                return Constructor;
+            };
+        })();
+
+        function _classCallCheck(instance, Constructor) {
+            if (!(instance instanceof Constructor)) {
+                throw new TypeError("Cannot call a class as a function");
+            }
+        }
+
+        function _possibleConstructorReturn(self, call) {
+            if (!self) {
+                throw new ReferenceError(
+                    "this hasn't been initialised - super() hasn't been called"
+                );
+            }
+            return call && (typeof call === "object" || typeof call === "function")
+                ? call
+                : self;
+        }
+
+        function _inherits(subClass, superClass) {
+            if (typeof superClass !== "function" && superClass !== null) {
+                throw new TypeError(
+                    "Super expression must either be null or a function, not " +
+                    typeof superClass
+                );
+            }
+            subClass.prototype = Object.create(superClass && superClass.prototype, {
+                constructor: {
+                    value: subClass,
+                    enumerable: false,
+                    writable: true,
+                    configurable: true
+                }
+            });
+            if (superClass)
+                Object.setPrototypeOf
+                    ? Object.setPrototypeOf(subClass, superClass)
+                    : (subClass.__proto__ = superClass);
+        }
+
+        moment.locale("zh-cn");
+        var locale = {
+            lang: {
+                placeholder: "请选择日期",
+                rangePlaceholder: ["开始日期", "结束日期"],
+                today: "今天",
+                now: "此刻",
+                backToToday: "返回今天",
+                ok: "确定",
+                timeSelect: "选择时间",
+                dateSelect: "选择日期",
+                weekSelect: "选择周",
+                clear: "清除",
+                month: "月",
+                year: "年",
+                previousMonth: "上个月 (翻页上键)",
+                nextMonth: "下个月 (翻页下键)",
+                monthSelect: "选择月份",
+                yearSelect: "选择年份",
+                decadeSelect: "选择年代",
+                yearFormat: "YYYY年",
+                dayFormat: "D日",
+                dateFormat: "YYYY年M月D日",
+                dateTimeFormat: "YYYY年M月D日 HH时mm分ss秒",
+                previousYear: "上一年 (Control键加左方向键)",
+                nextYear: "下一年 (Control键加右方向键)",
+                previousDecade: "上一年代",
+                nextDecade: "下一年代",
+                previousCentury: "上一世纪",
+                nextCentury: "下一世纪"
+            },
+            timePickerLocale: {
+                placeholder: "请选择时间"
+            },
+            dateFormat: "YYYY-MM-DD",
+            dateTimeFormat: "YYYY-MM-DD HH:mm:ss",
+            weekFormat: "YYYY-wo",
+            monthFormat: "YYYY-MM"
+        };
+
+        var _antd = antd;
+        var Row = _antd.Row;
+        var Col = _antd.Col;
+        var Form = _antd.Form;
+        var Button = _antd.Button;
+        var Card = _antd.Card;
+        var Input = _antd.Input;
+        var Select = _antd.Select;
+        var DatePicker = _antd.DatePicker;
+        var Table = _antd.Table;
+        var Popconfirm = _antd.Popconfirm;
+        var LocaleProvider = _antd.LocaleProvider;
+        var FormItem = Form.Item;
+        var Option = Select.Option;
+        var TextArea = Input.TextArea;
+
+        // 当事人基本信息
+
+        var Types = [
+            { value: "01", label: "个人" },
+            { value: "02", label: "单位" }
+        ];
+        var CardTypes = [
+            { value: "111", label: "居民身份证" },
+            { value: "112", label: "临时居民身份证" },
+            { value: "113", label: "户口簿" },
+            { value: "114", label: "中国人民解放军军官证" },
+            { value: "115", label: "中国人民武装警察部队警官证" },
+            { value: "233", label: "军人通行证" },
+            { value: "411", label: "外交护照" },
+            { value: "412", label: "公务护照" },
+            { value: "413", label: "因公普通护照" },
+            { value: "414", label: "普通护照" }
+        ];
+        var Sex = [{ value: "01", label: "男" }, { value: "02", label: "女" }];
+        // 纠纷基本信息
+        var DisputeIsDeath = [
+            { value: "01", label: "否" },
+            { value: "02", label: "是" }
+        ];
+        var DisputeDeathTypes = [
+            { value: "01", label: "医患纠纷死亡" },
+            { value: "02", label: "学生意外死亡" },
+            { value: "03", label: "安全生产事故致死" },
+            { value: "04", label: "交通事故致人死亡" },
+            { value: "05", label: "自杀死亡" },
+            { value: "06", label: "溺水死亡" },
+            { value: "99", label: "其他死亡" }
+        ];
+
+        var App = (function(_React$PureComponent) {
+            _inherits(App, _React$PureComponent);
+
+            function App(props) {
+                _classCallCheck(this, App);
+
+                var _this = _possibleConstructorReturn(
+                    this,
+                    (App.__proto__ || Object.getPrototypeOf(App)).call(this, props)
+                );
+
+                _this.onChangeDisputeIsDeath = function(value) {
+                    _this.setState({ disputeIsDeath: value });
+                };
+
+                _this.handleSubmit = function(e) {
+                    e.preventDefault();
+                    _this.setState({ submitting: true }, function() {
+                        var form = _this.props.form;
+
+                        form.validateFieldsAndScroll(function(err, values) {
+                            if (!err) {
+                                var another = values.another;
+                                var disputeTime = values.disputeTime;
+
+                                var fields = _extends({}, values, {
+                                    another: another.map(function(item) {
+                                        return _extends({}, item, {
+                                            key: undefined
+                                        });
+                                    }),
+                                    disputeTime: disputeTime
+                                        ? disputeTime.format("YYYY-MM-DD")
+                                        : undefined
+                                });
+                                // another 对方基本信息
+                                // another 里 name姓名 sex性别 number联系电话 address联系地址
+                                // disputeCommittee 申请调委会
+                                // disputeDescription 纠纷描述
+                                // disputeIsDeath 是否有死亡
+                                // disputeLocation 纠纷地点
+                                // disputeTime 纠纷时间
+                                // litigantAddress 当事人联系地址
+                                // litigantCardType 当事人证件类型
+                                // litigantMobile 当事人联系电话
+                                // litigantName 当事人姓名
+                                // litigantNumber 当事人证件号码
+                                // litigantSex 当事人性别
+                                // litigantType 当事人证件类型
+
+                                // 这里请求接口fields是请求接口参数
+                            }
+                            _this.setState({ submitting: false });
+                        });
+                    });
+                };
+
+                _this.validator = function(rule, value, callback) {
+                    if (value.length) {
+                        var _iteratorNormalCompletion = true;
+                        var _didIteratorError = false;
+                        var _iteratorError = undefined;
+
+                        try {
+                            for (
+                                var _iterator = value[Symbol.iterator](), _step;
+                                !(_iteratorNormalCompletion = (_step = _iterator.next())
+                                    .done);
+                                _iteratorNormalCompletion = true
+                            ) {
+                                var item = _step.value;
+
+                                if (!item.name || !item.sex) {
+                                    callback("姓名与性别为必填");
+                                    return;
+                                }
+                                if (item.number && !/^1\d{10}$/.test(item.number)) {
+                                    callback("请输入正确的联系方式");
+                                    return;
+                                }
+                            }
+                        } catch (err) {
+                            _didIteratorError = true;
+                            _iteratorError = err;
+                        } finally {
+                            try {
+                                if (!_iteratorNormalCompletion && _iterator.return) {
+                                    _iterator.return();
+                                }
+                            } finally {
+                                if (_didIteratorError) {
+                                    throw _iteratorError;
+                                }
+                            }
+                        }
+
+                        callback();
+                    } else {
+                        callback("至少有一条数据");
+                    }
+                };
+
+                _this.onSearchCity = function(val) {
+                    // 这里请求数据，val为值
+
+                    // 这里赋值区域和委员会数据
+                    _this.setState({
+                        district: [
+                            { value: "0201", label: "拱墅区" },
+                            { value: "0202", label: "临安区" }
+                        ],
+                        committee: [
+                            { value: "030101", label: "淳安县医调会" },
+                            { value: "040101", label: "富阳区人民调解委员会" },
+                            { value: "050101", label: "富阳区医疗纠纷人民调解委员会" }
+                        ]
+                    });
+                };
+
+                _this.onSearchDistrict = function(val) {
+                    // 这里请求数据，val为值
+
+                    // 这里赋值委员会数据
+                    _this.setState({
+                        committee: [
+                            { value: "030101", label: "淳安县医调会" },
+                            { value: "040101", label: "富阳区人民调解委员会" },
+                            { value: "050101", label: "富阳区医疗纠纷人民调解委员会" }
+                        ]
+                    });
+                };
+
+                _this.state = {
+                    submitting: false,
+                    disputeIsDeath: DisputeIsDeath[0].value,
+                    city: [],
+                    district: [],
+                    committee: []
+                };
+                return _this;
+            }
+
+            _createClass(App, [
+                {
+                    key: "componentDidMount",
+                    value: function componentDidMount() {
+                        // 这里做初始化查询，赋值市、区、委员会
+                        this.setState({
+                            city: [
+                                { value: "01", label: "杭州" },
+                                { value: "02", label: "宁波" }
+                            ],
+                            district: [
+                                { value: "0101", label: "下城区" },
+                                { value: "0102", label: "上城区" }
+                            ],
+                            committee: [
+                                { value: "010101", label: "下城区人民调解委员会" },
+                                {
+                                    value: "020101",
+                                    label: "杭州市下城区交通事故人民调解委员会"
+                                }
+                            ]
+                        });
+                    }
+                },
+                {
+                    key: "render",
+                    value: function render() {
+                        var getFieldDecorator = this.props.form.getFieldDecorator;
+                        var _state = this.state;
+                        var submitting = _state.submitting;
+                        var disputeIsDeath = _state.disputeIsDeath;
+                        var city = _state.city;
+                        var district = _state.district;
+                        var committee = _state.committee;
+
+                        return React.createElement(
+                            React.Fragment,
+                            null,
+                            React.createElement(
+                                Form,
+                                { layout: "vertical", onSubmit: this.handleSubmit },
+                                React.createElement(
+                                    Card,
+                                    {
+                                        bodyStyle: { paddingBottom: 0 },
+                                        title: "当事人基本信息",
+                                        bordered: false
+                                    },
+                                    React.createElement(
+                                        Row,
+                                        { gutter: 16 },
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 12, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "证件类型" },
+                                                getFieldDecorator("litigantType", {
+                                                    initialValue: Types[0].value,
+                                                    rules: [{ required: true, message: "证件类型必选" }]
+                                                })(
+                                                    React.createElement(
+                                                        Select,
+                                                        { placeholder: "请选择证件类型" },
+                                                        Types.map(function(_ref) {
+                                                            var value = _ref.value;
+                                                            var label = _ref.label;
+                                                            return React.createElement(
+                                                                Option,
+                                                                { key: value },
+                                                                label
+                                                            );
+                                                        })
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 24, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "证件类型" },
+                                                getFieldDecorator("litigantCardType", {
+                                                    initialValue: CardTypes[0].value,
+                                                    rules: [{ required: true, message: "证件类型必选" }]
+                                                })(
+                                                    React.createElement(
+                                                        Select,
+                                                        { placeholder: "请选择证件类型" },
+                                                        CardTypes.map(function(_ref2) {
+                                                            var value = _ref2.value;
+                                                            var label = _ref2.label;
+                                                            return React.createElement(
+                                                                Option,
+                                                                { key: value },
+                                                                label
+                                                            );
+                                                        })
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    React.createElement(
+                                        Row,
+                                        { gutter: 16 },
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 12, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "证件号码" },
+                                                getFieldDecorator("litigantNumber", {
+                                                    rules: [
+                                                        {
+                                                            pattern: /^[1-9]\d{5}(18|19|([23]\d))\d{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)\d{3}[0-9Xx]$/,
+                                                            message: "请输入正确的证件号码"
+                                                        },
+                                                        { required: true, message: "证件号码必填" }
+                                                    ]
+                                                })(
+                                                    React.createElement(Input, {
+                                                        placeholder: "请输入证件号码"
+                                                    })
+                                                )
+                                            )
+                                        ),
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 24, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "姓名" },
+                                                getFieldDecorator("litigantName", {
+                                                    rules: [{ required: true, message: "姓名必填" }]
+                                                })(
+                                                    React.createElement(Input, {
+                                                        placeholder: "请输入姓名"
+                                                    })
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    React.createElement(
+                                        Row,
+                                        { gutter: 16 },
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 24, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "性别" },
+                                                getFieldDecorator("litigantSex", {
+                                                    rules: [{ required: true, message: "性别必选" }]
+                                                })(
+                                                    React.createElement(
+                                                        Select,
+                                                        { placeholder: "请选择性别" },
+                                                        Sex.map(function(_ref3) {
+                                                            var value = _ref3.value;
+                                                            var label = _ref3.label;
+                                                            return React.createElement(
+                                                                Option,
+                                                                { key: value },
+                                                                label
+                                                            );
+                                                        })
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 12, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "联系电话" },
+                                                getFieldDecorator("litigantMobile", {
+                                                    rules: [
+                                                        {
+                                                            pattern: /^1\d{10}$/,
+                                                            message: "请输入正确的格式"
+                                                        },
+                                                        { required: true, message: "联系电话必填" }
+                                                    ]
+                                                })(
+                                                    React.createElement(Input, {
+                                                        placeholder: "请输入联系电话"
+                                                    })
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    React.createElement(
+                                        Row,
+                                        { gutter: 16 },
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 12, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "联系地址" },
+                                                getFieldDecorator("litigantAddress", {
+                                                    rules: [{ required: true, message: "联系地址必填" }]
+                                                })(
+                                                    React.createElement(Input, {
+                                                        placeholder: "请输入联系地址"
+                                                    })
+                                                )
+                                            )
+                                        )
+                                    )
+                                ),
+                                React.createElement(
+                                    Card,
+                                    {
+                                        bodyStyle: { paddingBottom: 0 },
+                                        title: "对方基本信息",
+                                        bordered: false
+                                    },
+                                    React.createElement(
+                                        FormItem,
+                                        null,
+                                        getFieldDecorator("another", {
+                                            initialValue: [],
+                                            rules: [{ validator: this.validator }]
+                                        })(React.createElement(TableForm, null))
+                                    )
+                                ),
+                                React.createElement(
+                                    Card,
+                                    {
+                                        bodyStyle: { paddingBottom: 0 },
+                                        title: "纠纷基本信息",
+                                        bordered: false
+                                    },
+                                    React.createElement(
+                                        Row,
+                                        { gutter: 16 },
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 12, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "是否有死亡" },
+                                                getFieldDecorator("disputeIsDeath", {
+                                                    initialValue: DisputeIsDeath[0].value,
+                                                    rules: [{ required: true, message: "此项必填" }]
+                                                })(
+                                                    React.createElement(
+                                                        Select,
+                                                        {
+                                                            placeholder: "请选择",
+                                                            onChange: this.onChangeDisputeIsDeath
+                                                        },
+                                                        DisputeIsDeath.map(function(_ref4) {
+                                                            var value = _ref4.value;
+                                                            var label = _ref4.label;
+                                                            return React.createElement(
+                                                                Option,
+                                                                { key: value },
+                                                                label
+                                                            );
+                                                        })
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        disputeIsDeath === "02" &&
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 24, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "死亡类型" },
+                                                getFieldDecorator("disputeDeathType")(
+                                                    React.createElement(
+                                                        Select,
+                                                        { placeholder: "请选择死亡类型" },
+                                                        DisputeDeathTypes.map(function(_ref5) {
+                                                            var value = _ref5.value;
+                                                            var label = _ref5.label;
+                                                            return React.createElement(
+                                                                Option,
+                                                                { key: value },
+                                                                label
+                                                            );
+                                                        })
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    React.createElement(
+                                        Row,
+                                        { gutter: 16 },
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 12, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "纠纷时间" },
+                                                getFieldDecorator("disputeTime")(
+                                                    React.createElement(DatePicker, {
+                                                        locale: locale,
+                                                        placeholder: "请选择时间",
+                                                        style: { width: "100%" }
+                                                    })
+                                                )
+                                            )
+                                        ),
+                                        React.createElement(
+                                            Col,
+                                            { lg: 12, md: 24, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "纠纷地点" },
+                                                getFieldDecorator("disputeLocation")(
+                                                    React.createElement(Input, {
+                                                        placeholder: "请输入纠纷地点"
+                                                    })
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    React.createElement(
+                                        Row,
+                                        { gutter: 16 },
+                                        React.createElement(
+                                            Col,
+                                            { span: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "纠纷描述" },
+                                                getFieldDecorator("disputeDescription", {
+                                                    rules: [{ max: 300, message: "长度不能超过300字" }]
+                                                })(
+                                                    React.createElement(TextArea, {
+                                                        rows: 4,
+                                                        placeholder: "请输入纠纷描述"
+                                                    })
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    React.createElement(
+                                        Row,
+                                        { gutter: 16 },
+                                        React.createElement(
+                                            Col,
+                                            { lg: 8, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "市" },
+                                                React.createElement(
+                                                    Select,
+                                                    {
+                                                        placeholder: "请选择市",
+                                                        onSearch: this.onSearchCity
+                                                    },
+                                                    city.map(function(_ref6) {
+                                                        var value = _ref6.value;
+                                                        var label = _ref6.label;
+                                                        return React.createElement(
+                                                            Option,
+                                                            { key: value },
+                                                            label
+                                                        );
+                                                    })
+                                                )
+                                            )
+                                        ),
+                                        React.createElement(
+                                            Col,
+                                            { lg: 8, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "区" },
+                                                React.createElement(
+                                                    Select,
+                                                    {
+                                                        placeholder: "请选择区",
+                                                        onSearch: this.onSearchDistrict
+                                                    },
+                                                    district.map(function(_ref7) {
+                                                        var value = _ref7.value;
+                                                        var label = _ref7.label;
+                                                        return React.createElement(
+                                                            Option,
+                                                            { key: value },
+                                                            label
+                                                        );
+                                                    })
+                                                )
+                                            )
+                                        ),
+                                        React.createElement(
+                                            Col,
+                                            { lg: 8, sm: 24 },
+                                            React.createElement(
+                                                FormItem,
+                                                { label: "申请调委会" },
+                                                getFieldDecorator("disputeCommittee", {
+                                                    rules: [
+                                                        { required: true, message: "申请调委会必选" }
+                                                    ]
+                                                })(
+                                                    React.createElement(
+                                                        Select,
+                                                        { placeholder: "请选择申请调委会" },
+                                                        committee.map(function(_ref8) {
+                                                            var value = _ref8.value;
+                                                            var label = _ref8.label;
+                                                            return React.createElement(
+                                                                Option,
+                                                                { key: value },
+                                                                label
+                                                            );
+                                                        })
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                ),
+                                React.createElement(
+                                    "div",
+                                    { style: { textAlign: "center" } },
+                                    React.createElement(
+                                        Button,
+                                        {
+                                            size: "large",
+                                            type: "primary",
+                                            htmlType: "submit",
+                                            loading: submitting
+                                        },
+                                        "提交申请"
+                                    )
+                                )
+                            )
+                        );
+                    }
+                }
+            ]);
+
+            return App;
+        })(React.PureComponent);
+
+        var TableForm = (function(_React$PureComponent2) {
+            _inherits(TableForm, _React$PureComponent2);
+
+            function TableForm() {
+                var _ref9;
+
+                var _temp, _this2, _ret;
+
+                _classCallCheck(this, TableForm);
+
+                for (
+                    var _len = arguments.length, args = Array(_len), _key = 0;
+                    _key < _len;
+                    _key++
+                ) {
+                    args[_key] = arguments[_key];
+                }
+
+                return (
+                    (_ret = ((_temp = ((_this2 = _possibleConstructorReturn(
+                        this,
+                        (_ref9 =
+                            TableForm.__proto__ ||
+                            Object.getPrototypeOf(TableForm)).call.apply(
+                            _ref9,
+                            [this].concat(args)
+                        )
+                    )),
+                        _this2)),
+                        (_this2.index = 0),
+                        (_this2.newMember = function() {
+                            var value = _this2.props.value;
+
+                            var newData = value.map(function(item) {
+                                return _extends({}, item);
+                            });
+                            newData.push({ key: "NEW_TEMP_ID_" + _this2.index });
+                            _this2.index += 1;
+                            _this2.props.onChange(newData);
+                        }),
+                        _temp)),
+                        _possibleConstructorReturn(_this2, _ret)
+                );
+            }
+
+            _createClass(TableForm, [
+                {
+                    key: "remove",
+                    value: function remove(key) {
+                        var value = this.props.value;
+
+                        var newData = value.filter(function(item) {
+                            return item.key !== key;
+                        });
+                        this.props.onChange(newData);
+                    }
+                },
+                {
+                    key: "handleFieldChange",
+                    value: function handleFieldChange(e, fieldName, key) {
+                        var value = this.props.value;
+
+                        var newData = value.map(function(item) {
+                            return _extends({}, item);
+                        });
+                        var target = newData.filter(function(item) {
+                            return item.key === key;
+                        })[0];
+                        if (target) {
+                            target[fieldName] = e;
+                            this.props.onChange(newData);
+                        }
+                    }
+                },
+                {
+                    key: "render",
+                    value: function render() {
+                        var _this3 = this;
+
+                        var value = this.props.value;
+
+                        var columns = [
+                            {
+                                title: "姓名",
+                                dataIndex: "name",
+                                key: "name",
+                                width: "20%",
+                                render: function render(text, record) {
+                                    return React.createElement(Input, {
+                                        value: text,
+                                        onChange: function onChange(e) {
+                                            return _this3.handleFieldChange(
+                                                e.target.value,
+                                                "name",
+                                                record.key
+                                            );
+                                        },
+                                        placeholder: "姓名"
+                                    });
+                                }
+                            },
+                            {
+                                title: "性别",
+                                dataIndex: "sex",
+                                key: "sex",
+                                width: "20%",
+                                render: function render(text, record) {
+                                    return React.createElement(
+                                        Select,
+                                        {
+                                            value: text,
+                                            onChange: function onChange(e) {
+                                                return _this3.handleFieldChange(e, "sex", record.key);
+                                            },
+                                            placeholder: "性别"
+                                        },
+                                        Sex.map(function(_ref10) {
+                                            var value = _ref10.value;
+                                            var label = _ref10.label;
+                                            return React.createElement(
+                                                Option,
+                                                { key: value },
+                                                label
+                                            );
+                                        })
+                                    );
+                                }
+                            },
+                            {
+                                title: "联系电话",
+                                dataIndex: "number",
+                                key: "number",
+                                width: "25%",
+                                render: function render(text, record) {
+                                    return React.createElement(Input, {
+                                        value: text,
+                                        onChange: function onChange(e) {
+                                            return _this3.handleFieldChange(
+                                                e.target.value,
+                                                "number",
+                                                record.key
+                                            );
+                                        },
+                                        placeholder: "联系电话"
+                                    });
+                                }
+                            },
+                            {
+                                title: "联系地址",
+                                dataIndex: "address",
+                                key: "address",
+                                width: "25%",
+                                render: function render(text, record) {
+                                    return React.createElement(Input, {
+                                        value: text,
+                                        onChange: function onChange(e) {
+                                            return _this3.handleFieldChange(
+                                                e.target.value,
+                                                "address",
+                                                record.key
+                                            );
+                                        },
+                                        placeholder: "联系地址"
+                                    });
+                                }
+                            },
+                            {
+                                title: "操作",
+                                key: "action",
+                                width: "10%",
+                                render: function render(text, record) {
+                                    return React.createElement(
+                                        Popconfirm,
+                                        {
+                                            title: "是否要删除此行？",
+                                            okText: "确认",
+                                            cancelText: "取消",
+                                            onConfirm: function onConfirm() {
+                                                return _this3.remove(record.key);
+                                            }
+                                        },
+                                        React.createElement("a", null, "删除")
+                                    );
+                                }
+                            }
+                        ];
+
+                        return React.createElement(
+                            React.Fragment,
+                            null,
+                            React.createElement(Table, {
+                                columns: columns,
+                                dataSource: value,
+                                pagination: false
+                            }),
+                            React.createElement(
+                                Button,
+                                {
+                                    style: { width: "100%", marginTop: 16, marginBottom: 8 },
+                                    type: "dashed",
+                                    onClick: this.newMember,
+                                    icon: "plus"
+                                },
+                                "新增成员"
+                            )
+                        );
+                    }
+                }
+            ]);
+
+            return TableForm;
+        })(React.PureComponent);
+
+        var WrappedNormalLoginForm = Form.create()(App);
+
+        ReactDOM.render(
+            React.createElement(WrappedNormalLoginForm, null),
+            document.getElementById("root")
+        );
+        //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwibmFtZXMiOlsibW9tZW50IiwibG9jYWxlIiwibGFuZyIsInBsYWNlaG9sZGVyIiwicmFuZ2VQbGFjZWhvbGRlciIsInRvZGF5Iiwibm93IiwiYmFja1RvVG9kYXkiLCJvayIsInRpbWVTZWxlY3QiLCJkYXRlU2VsZWN0Iiwid2Vla1NlbGVjdCIsImNsZWFyIiwibW9udGgiLCJ5ZWFyIiwicHJldmlvdXNNb250aCIsIm5leHRNb250aCIsIm1vbnRoU2VsZWN0IiwieWVhclNlbGVjdCIsImRlY2FkZVNlbGVjdCIsInllYXJGb3JtYXQiLCJkYXlGb3JtYXQiLCJkYXRlRm9ybWF0IiwiZGF0ZVRpbWVGb3JtYXQiLCJwcmV2aW91c1llYXIiLCJuZXh0WWVhciIsInByZXZpb3VzRGVjYWRlIiwibmV4dERlY2FkZSIsInByZXZpb3VzQ2VudHVyeSIsIm5leHRDZW50dXJ5IiwidGltZVBpY2tlckxvY2FsZSIsIndlZWtGb3JtYXQiLCJtb250aEZvcm1hdCIsImFudGQiLCJSb3ciLCJDb2wiLCJGb3JtIiwiQnV0dG9uIiwiQ2FyZCIsIklucHV0IiwiU2VsZWN0IiwiRGF0ZVBpY2tlciIsIlRhYmxlIiwiUG9wY29uZmlybSIsIkxvY2FsZVByb3ZpZGVyIiwiRm9ybUl0ZW0iLCJJdGVtIiwiT3B0aW9uIiwiVGV4dEFyZWEiLCJUeXBlcyIsInZhbHVlIiwibGFiZWwiLCJDYXJkVHlwZXMiLCJTZXgiLCJEaXNwdXRlSXNEZWF0aCIsIkRpc3B1dGVEZWF0aFR5cGVzIiwiQXBwIiwicHJvcHMiLCJvbkNoYW5nZURpc3B1dGVJc0RlYXRoIiwic2V0U3RhdGUiLCJkaXNwdXRlSXNEZWF0aCIsImhhbmRsZVN1Ym1pdCIsImUiLCJwcmV2ZW50RGVmYXVsdCIsInN1Ym1pdHRpbmciLCJmb3JtIiwidmFsaWRhdGVGaWVsZHNBbmRTY3JvbGwiLCJlcnIiLCJ2YWx1ZXMiLCJhbm90aGVyIiwiZGlzcHV0ZVRpbWUiLCJmaWVsZHMiLCJtYXAiLCJpdGVtIiwia2V5IiwidW5kZWZpbmVkIiwiZm9ybWF0IiwidmFsaWRhdG9yIiwicnVsZSIsImNhbGxiYWNrIiwibGVuZ3RoIiwibmFtZSIsInNleCIsIm51bWJlciIsInRlc3QiLCJvblNlYXJjaENpdHkiLCJkaXN0cmljdCIsImNvbW1pdHRlZSIsIm9uU2VhcmNoRGlzdHJpY3QiLCJzdGF0ZSIsImNpdHkiLCJnZXRGaWVsZERlY29yYXRvciIsInBhZGRpbmdCb3R0b20iLCJpbml0aWFsVmFsdWUiLCJydWxlcyIsInJlcXVpcmVkIiwibWVzc2FnZSIsInBhdHRlcm4iLCJ3aWR0aCIsIm1heCIsInRleHRBbGlnbiIsIlJlYWN0IiwiUHVyZUNvbXBvbmVudCIsIlRhYmxlRm9ybSIsImluZGV4IiwibmV3TWVtYmVyIiwibmV3RGF0YSIsInB1c2giLCJvbkNoYW5nZSIsImZpbHRlciIsImZpZWxkTmFtZSIsInRhcmdldCIsImNvbHVtbnMiLCJ0aXRsZSIsImRhdGFJbmRleCIsInJlbmRlciIsInRleHQiLCJyZWNvcmQiLCJoYW5kbGVGaWVsZENoYW5nZSIsInJlbW92ZSIsIm1hcmdpblRvcCIsIm1hcmdpbkJvdHRvbSIsIldyYXBwZWROb3JtYWxMb2dpbkZvcm0iLCJjcmVhdGUiLCJSZWFjdERPTSIsImRvY3VtZW50IiwiZ2V0RWxlbWVudEJ5SWQiXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQUNNQSxPQUFPQyxNQUFQLENBQWMsT0FBZDtBQUNBLElBQU1BLFNBQVM7QUFDYkMsUUFBTTtBQUNKQyxpQkFBYSxPQURUO0FBRUpDLHNCQUFrQixDQUFDLE1BQUQsRUFBUyxNQUFULENBRmQ7QUFHSkMsV0FBTyxJQUhIO0FBSUpDLFNBQUssSUFKRDtBQUtKQyxpQkFBYSxNQUxUO0FBTUpDLFFBQUksSUFOQTtBQU9KQyxnQkFBWSxNQVBSO0FBUUpDLGdCQUFZLE1BUlI7QUFTSkMsZ0JBQVksS0FUUjtBQVVKQyxXQUFPLElBVkg7QUFXSkMsV0FBTyxHQVhIO0FBWUpDLFVBQU0sR0FaRjtBQWFKQyxtQkFBZSxZQWJYO0FBY0pDLGVBQVcsWUFkUDtBQWVKQyxpQkFBYSxNQWZUO0FBZ0JKQyxnQkFBWSxNQWhCUjtBQWlCSkMsa0JBQWMsTUFqQlY7QUFrQkpDLGdCQUFZLE9BbEJSO0FBbUJKQyxlQUFXLElBbkJQO0FBb0JKQyxnQkFBWSxXQXBCUjtBQXFCSkMsb0JBQWdCLHFCQXJCWjtBQXNCSkMsa0JBQWMscUJBdEJWO0FBdUJKQyxjQUFVLHFCQXZCTjtBQXdCSkMsb0JBQWdCLE1BeEJaO0FBeUJKQyxnQkFBWSxNQXpCUjtBQTBCSkMscUJBQWlCLE1BMUJiO0FBMkJKQyxpQkFBYTtBQTNCVCxHQURPO0FBOEJiQyxvQkFBa0I7QUFDaEIzQixpQkFBYTtBQURHLEdBOUJMO0FBaUNibUIsY0FBWSxZQWpDQztBQWtDYkMsa0JBQWdCLHFCQWxDSDtBQW1DYlEsY0FBWSxTQW5DQztBQW9DYkMsZUFBYTtBQXBDQSxDQUFmOztZQW1ESUMsSTtJQVhGQyxHLFNBQUFBLEc7SUFDQUMsRyxTQUFBQSxHO0lBQ0FDLEksU0FBQUEsSTtJQUNBQyxNLFNBQUFBLE07SUFDQUMsSSxTQUFBQSxJO0lBQ0FDLEssU0FBQUEsSztJQUNBQyxNLFNBQUFBLE07SUFDQUMsVSxTQUFBQSxVO0lBQ0FDLEssU0FBQUEsSztJQUNBQyxVLFNBQUFBLFU7SUFDQUMsYyxTQUFBQSxjO0lBR1lDLFEsR0FBYVQsSSxDQUFuQlUsSTtJQUNBQyxNLEdBQVdQLE0sQ0FBWE8sTTtJQUNBQyxRLEdBQWFULEssQ0FBYlMsUTs7QUFFUjs7QUFDQSxJQUFNQyxRQUFRLENBQ1osRUFBRUMsT0FBTyxJQUFULEVBQWVDLE9BQU8sSUFBdEIsRUFEWSxFQUVaLEVBQUVELE9BQU8sSUFBVCxFQUFlQyxPQUFPLElBQXRCLEVBRlksQ0FBZDtBQUlBLElBQU1DLFlBQVksQ0FDaEIsRUFBRUYsT0FBTyxLQUFULEVBQWdCQyxPQUFPLE9BQXZCLEVBRGdCLEVBRWhCLEVBQUVELE9BQU8sS0FBVCxFQUFnQkMsT0FBTyxTQUF2QixFQUZnQixFQUdoQixFQUFFRCxPQUFPLEtBQVQsRUFBZ0JDLE9BQU8sS0FBdkIsRUFIZ0IsRUFJaEIsRUFBRUQsT0FBTyxLQUFULEVBQWdCQyxPQUFPLFlBQXZCLEVBSmdCLEVBS2hCLEVBQUVELE9BQU8sS0FBVCxFQUFnQkMsT0FBTyxlQUF2QixFQUxnQixFQU1oQixFQUFFRCxPQUFPLEtBQVQsRUFBZ0JDLE9BQU8sT0FBdkIsRUFOZ0IsRUFPaEIsRUFBRUQsT0FBTyxLQUFULEVBQWdCQyxPQUFPLE1BQXZCLEVBUGdCLEVBUWhCLEVBQUVELE9BQU8sS0FBVCxFQUFnQkMsT0FBTyxNQUF2QixFQVJnQixFQVNoQixFQUFFRCxPQUFPLEtBQVQsRUFBZ0JDLE9BQU8sUUFBdkIsRUFUZ0IsRUFVaEIsRUFBRUQsT0FBTyxLQUFULEVBQWdCQyxPQUFPLE1BQXZCLEVBVmdCLENBQWxCO0FBWUEsSUFBTUUsTUFBTSxDQUFDLEVBQUVILE9BQU8sSUFBVCxFQUFlQyxPQUFPLEdBQXRCLEVBQUQsRUFBOEIsRUFBRUQsT0FBTyxJQUFULEVBQWVDLE9BQU8sR0FBdEIsRUFBOUIsQ0FBWjtBQUNBO0FBQ0EsSUFBTUcsaUJBQWlCLENBQ3JCLEVBQUVKLE9BQU8sSUFBVCxFQUFlQyxPQUFPLEdBQXRCLEVBRHFCLEVBRXJCLEVBQUVELE9BQU8sSUFBVCxFQUFlQyxPQUFPLEdBQXRCLEVBRnFCLENBQXZCO0FBSUEsSUFBTUksb0JBQW9CLENBQ3hCLEVBQUVMLE9BQU8sSUFBVCxFQUFlQyxPQUFPLFFBQXRCLEVBRHdCLEVBRXhCLEVBQUVELE9BQU8sSUFBVCxFQUFlQyxPQUFPLFFBQXRCLEVBRndCLEVBR3hCLEVBQUVELE9BQU8sSUFBVCxFQUFlQyxPQUFPLFVBQXRCLEVBSHdCLEVBSXhCLEVBQUVELE9BQU8sSUFBVCxFQUFlQyxPQUFPLFVBQXRCLEVBSndCLEVBS3hCLEVBQUVELE9BQU8sSUFBVCxFQUFlQyxPQUFPLE1BQXRCLEVBTHdCLEVBTXhCLEVBQUVELE9BQU8sSUFBVCxFQUFlQyxPQUFPLE1BQXRCLEVBTndCLEVBT3hCLEVBQUVELE9BQU8sSUFBVCxFQUFlQyxPQUFPLE1BQXRCLEVBUHdCLENBQTFCOztJQVVNSyxHOzs7QUFDSixlQUFZQyxLQUFaLEVBQW1CO0FBQUE7O0FBQUEsMEdBQ1hBLEtBRFc7O0FBQUEsVUE2Qm5CQyxzQkE3Qm1CLEdBNkJNLGlCQUFTO0FBQ2hDLFlBQUtDLFFBQUwsQ0FBYyxFQUFFQyxnQkFBZ0JWLEtBQWxCLEVBQWQ7QUFDRCxLQS9Ca0I7O0FBQUEsVUFpQ25CVyxZQWpDbUIsR0FpQ0osYUFBSztBQUNsQkMsUUFBRUMsY0FBRjtBQUNBLFlBQUtKLFFBQUwsQ0FBYyxFQUFFSyxZQUFZLElBQWQsRUFBZCxFQUFvQyxZQUFNO0FBQUEsWUFDaENDLElBRGdDLEdBQ3ZCLE1BQUtSLEtBRGtCLENBQ2hDUSxJQURnQzs7QUFFeENBLGFBQUtDLHVCQUFMLENBQTZCLFVBQUNDLEdBQUQsRUFBTUMsTUFBTixFQUFpQjtBQUM1QyxjQUFJLENBQUNELEdBQUwsRUFBVTtBQUFBLGdCQUNBRSxPQURBLEdBQ3lCRCxNQUR6QixDQUNBQyxPQURBO0FBQUEsZ0JBQ1NDLFdBRFQsR0FDeUJGLE1BRHpCLENBQ1NFLFdBRFQ7O0FBRVIsZ0JBQU1DLHNCQUNESCxNQURDO0FBRUpDLHVCQUFTQSxRQUFRRyxHQUFSLENBQVk7QUFBQSxvQ0FDaEJDLElBRGdCO0FBRW5CQyx1QkFBS0M7QUFGYztBQUFBLGVBQVosQ0FGTDtBQU1KTCwyQkFBYUEsY0FDVEEsWUFBWU0sTUFBWixDQUFtQixZQUFuQixDQURTLEdBRVREO0FBUkEsY0FBTjtBQVVBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBRUE7QUFDRDtBQUNELGdCQUFLaEIsUUFBTCxDQUFjLEVBQUVLLFlBQVksS0FBZCxFQUFkO0FBQ0QsU0EvQkQ7QUFnQ0QsT0FsQ0Q7QUFtQ0QsS0F0RWtCOztBQUFBLFVBd0VuQmEsU0F4RW1CLEdBd0VQLFVBQUNDLElBQUQsRUFBTzVCLEtBQVAsRUFBYzZCLFFBQWQsRUFBMkI7QUFDckMsVUFBSTdCLE1BQU04QixNQUFWLEVBQWtCO0FBQUE7QUFBQTtBQUFBOztBQUFBO0FBQ2hCLCtCQUFtQjlCLEtBQW5CLDhIQUEwQjtBQUFBLGdCQUFmdUIsSUFBZTs7QUFDeEIsZ0JBQUksQ0FBQ0EsS0FBS1EsSUFBTixJQUFjLENBQUNSLEtBQUtTLEdBQXhCLEVBQTZCO0FBQzNCSCx1QkFBUyxVQUFUO0FBQ0E7QUFDRDtBQUNELGdCQUFJTixLQUFLVSxNQUFMLElBQWUsQ0FBQyxZQUFZQyxJQUFaLENBQWlCWCxLQUFLVSxNQUF0QixDQUFwQixFQUFtRDtBQUNqREosdUJBQVMsWUFBVDtBQUNBO0FBQ0Q7QUFDRjtBQVZlO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7O0FBV2hCQTtBQUNELE9BWkQsTUFZTztBQUNMQSxpQkFBUyxTQUFUO0FBQ0Q7QUFDRixLQXhGa0I7O0FBQUEsVUEwRm5CTSxZQTFGbUIsR0EwRkosZUFBTztBQUNwQjs7QUFFQTtBQUNBLFlBQUsxQixRQUFMLENBQWM7QUFDWjJCLGtCQUFVLENBQ1IsRUFBRXBDLE9BQU8sTUFBVCxFQUFpQkMsT0FBTyxLQUF4QixFQURRLEVBRVIsRUFBRUQsT0FBTyxNQUFULEVBQWlCQyxPQUFPLEtBQXhCLEVBRlEsQ0FERTtBQUtab0MsbUJBQVcsQ0FDVCxFQUFFckMsT0FBTyxRQUFULEVBQW1CQyxPQUFPLFFBQTFCLEVBRFMsRUFFVCxFQUFFRCxPQUFPLFFBQVQsRUFBbUJDLE9BQU8sWUFBMUIsRUFGUyxFQUdULEVBQUVELE9BQU8sUUFBVCxFQUFtQkMsT0FBTyxnQkFBMUIsRUFIUztBQUxDLE9BQWQ7QUFXRCxLQXpHa0I7O0FBQUEsVUEyR25CcUMsZ0JBM0dtQixHQTJHQSxlQUFPO0FBQ3hCOztBQUVBO0FBQ0EsWUFBSzdCLFFBQUwsQ0FBYztBQUNaNEIsbUJBQVcsQ0FDVCxFQUFFckMsT0FBTyxRQUFULEVBQW1CQyxPQUFPLFFBQTFCLEVBRFMsRUFFVCxFQUFFRCxPQUFPLFFBQVQsRUFBbUJDLE9BQU8sWUFBMUIsRUFGUyxFQUdULEVBQUVELE9BQU8sUUFBVCxFQUFtQkMsT0FBTyxnQkFBMUIsRUFIUztBQURDLE9BQWQ7QUFPRCxLQXRIa0I7O0FBRWpCLFVBQUtzQyxLQUFMLEdBQWE7QUFDWHpCLGtCQUFZLEtBREQ7QUFFWEosc0JBQWdCTixlQUFlLENBQWYsRUFBa0JKLEtBRnZCO0FBR1h3QyxZQUFNLEVBSEs7QUFJWEosZ0JBQVUsRUFKQztBQUtYQyxpQkFBVztBQUxBLEtBQWI7QUFGaUI7QUFTbEI7Ozs7d0NBRW1CO0FBQ2xCO0FBQ0EsV0FBSzVCLFFBQUwsQ0FBYztBQUNaK0IsY0FBTSxDQUNKLEVBQUV4QyxPQUFPLElBQVQsRUFBZUMsT0FBTyxJQUF0QixFQURJLEVBRUosRUFBRUQsT0FBTyxJQUFULEVBQWVDLE9BQU8sSUFBdEIsRUFGSSxDQURNO0FBS1ptQyxrQkFBVSxDQUNSLEVBQUVwQyxPQUFPLE1BQVQsRUFBaUJDLE9BQU8sS0FBeEIsRUFEUSxFQUVSLEVBQUVELE9BQU8sTUFBVCxFQUFpQkMsT0FBTyxLQUF4QixFQUZRLENBTEU7QUFTWm9DLG1CQUFXLENBQ1QsRUFBRXJDLE9BQU8sUUFBVCxFQUFtQkMsT0FBTyxZQUExQixFQURTLEVBRVQsRUFBRUQsT0FBTyxRQUFULEVBQW1CQyxPQUFPLG1CQUExQixFQUZTO0FBVEMsT0FBZDtBQWNEOzs7NkJBNkZRO0FBQUEsVUFDQ3dDLGlCQURELEdBQ3VCLEtBQUtsQyxLQUFMLENBQVdRLElBRGxDLENBQ0MwQixpQkFERDtBQUFBLG1CQVFILEtBQUtGLEtBUkY7QUFBQSxVQUdMekIsVUFISyxVQUdMQSxVQUhLO0FBQUEsVUFJTEosY0FKSyxVQUlMQSxjQUpLO0FBQUEsVUFLTDhCLElBTEssVUFLTEEsSUFMSztBQUFBLFVBTUxKLFFBTkssVUFNTEEsUUFOSztBQUFBLFVBT0xDLFNBUEssVUFPTEEsU0FQSzs7O0FBVVAsYUFDRTtBQUFDLGFBQUQsQ0FBTyxRQUFQO0FBQUE7QUFDRTtBQUFDLGNBQUQ7QUFBQSxZQUFNLFFBQU8sVUFBYixFQUF3QixVQUFVLEtBQUsxQixZQUF2QztBQUNFO0FBQUMsZ0JBQUQ7QUFBQTtBQUNFLHlCQUFXLEVBQUUrQixlQUFlLENBQWpCLEVBRGI7QUFFRSxxQkFBTSxTQUZSO0FBR0Usd0JBQVU7QUFIWjtBQUtFO0FBQUMsaUJBQUQ7QUFBQSxnQkFBSyxRQUFRLEVBQWI7QUFDRTtBQUFDLG1CQUFEO0FBQUEsa0JBQUssSUFBSSxFQUFULEVBQWEsSUFBSSxFQUFqQixFQUFxQixJQUFJLEVBQXpCO0FBQ0U7QUFBQywwQkFBRDtBQUFBLG9CQUFVLE9BQU0sTUFBaEI7QUFDR0Qsb0NBQWtCLGNBQWxCLEVBQWtDO0FBQ2pDRSxrQ0FBYzVDLE1BQU0sQ0FBTixFQUFTQyxLQURVO0FBRWpDNEMsMkJBQU8sQ0FBQyxFQUFFQyxVQUFVLElBQVosRUFBa0JDLFNBQVMsUUFBM0IsRUFBRDtBQUYwQixtQkFBbEMsRUFJQztBQUFDLDBCQUFEO0FBQUEsc0JBQVEsYUFBWSxTQUFwQjtBQUNHL0MsMEJBQU11QixHQUFOLENBQVU7QUFBQSwwQkFBR3RCLEtBQUgsUUFBR0EsS0FBSDtBQUFBLDBCQUFVQyxLQUFWLFFBQVVBLEtBQVY7QUFBQSw2QkFDVDtBQUFDLDhCQUFEO0FBQUEsMEJBQVEsS0FBS0QsS0FBYjtBQUFxQkM7QUFBckIsdUJBRFM7QUFBQSxxQkFBVjtBQURILG1CQUpEO0FBREg7QUFERixlQURGO0FBZUU7QUFBQyxtQkFBRDtBQUFBLGtCQUFLLElBQUksRUFBVCxFQUFhLElBQUksRUFBakIsRUFBcUIsSUFBSSxFQUF6QjtBQUNFO0FBQUMsMEJBQUQ7QUFBQSxvQkFBVSxPQUFNLE1BQWhCO0FBQ0d3QyxvQ0FBa0Isa0JBQWxCLEVBQXNDO0FBQ3JDRSxrQ0FBY3pDLFVBQVUsQ0FBVixFQUFhRixLQURVO0FBRXJDNEMsMkJBQU8sQ0FBQyxFQUFFQyxVQUFVLElBQVosRUFBa0JDLFNBQVMsUUFBM0IsRUFBRDtBQUY4QixtQkFBdEMsRUFJQztBQUFDLDBCQUFEO0FBQUEsc0JBQVEsYUFBWSxTQUFwQjtBQUNHNUMsOEJBQVVvQixHQUFWLENBQWM7QUFBQSwwQkFBR3RCLEtBQUgsU0FBR0EsS0FBSDtBQUFBLDBCQUFVQyxLQUFWLFNBQVVBLEtBQVY7QUFBQSw2QkFDYjtBQUFDLDhCQUFEO0FBQUEsMEJBQVEsS0FBS0QsS0FBYjtBQUFxQkM7QUFBckIsdUJBRGE7QUFBQSxxQkFBZDtBQURILG1CQUpEO0FBREg7QUFERjtBQWZGLGFBTEY7QUFtQ0U7QUFBQyxpQkFBRDtBQUFBLGdCQUFLLFFBQVEsRUFBYjtBQUNFO0FBQUMsbUJBQUQ7QUFBQSxrQkFBSyxJQUFJLEVBQVQsRUFBYSxJQUFJLEVBQWpCLEVBQXFCLElBQUksRUFBekI7QUFDRTtBQUFDLDBCQUFEO0FBQUEsb0JBQVUsT0FBTSxNQUFoQjtBQUNHd0Msb0NBQWtCLGdCQUFsQixFQUFvQztBQUNuQ0csMkJBQU8sQ0FDTDtBQUNFRywrQkFBUyw4RkFEWDtBQUVFRCwrQkFBUztBQUZYLHFCQURLLEVBS0wsRUFBRUQsVUFBVSxJQUFaLEVBQWtCQyxTQUFTLFFBQTNCLEVBTEs7QUFENEIsbUJBQXBDLEVBUUUsb0JBQUMsS0FBRCxJQUFPLGFBQVksU0FBbkIsR0FSRjtBQURIO0FBREYsZUFERjtBQWNFO0FBQUMsbUJBQUQ7QUFBQSxrQkFBSyxJQUFJLEVBQVQsRUFBYSxJQUFJLEVBQWpCLEVBQXFCLElBQUksRUFBekI7QUFDRTtBQUFDLDBCQUFEO0FBQUEsb0JBQVUsT0FBTSxJQUFoQjtBQUNHTCxvQ0FBa0IsY0FBbEIsRUFBa0M7QUFDakNHLDJCQUFPLENBQUMsRUFBRUMsVUFBVSxJQUFaLEVBQWtCQyxTQUFTLE1BQTNCLEVBQUQ7QUFEMEIsbUJBQWxDLEVBRUUsb0JBQUMsS0FBRCxJQUFPLGFBQVksT0FBbkIsR0FGRjtBQURIO0FBREY7QUFkRixhQW5DRjtBQXlERTtBQUFDLGlCQUFEO0FBQUEsZ0JBQUssUUFBUSxFQUFiO0FBQ0U7QUFBQyxtQkFBRDtBQUFBLGtCQUFLLElBQUksRUFBVCxFQUFhLElBQUksRUFBakIsRUFBcUIsSUFBSSxFQUF6QjtBQUNFO0FBQUMsMEJBQUQ7QUFBQSxvQkFBVSxPQUFNLElBQWhCO0FBQ0dMLG9DQUFrQixhQUFsQixFQUFpQztBQUNoQ0csMkJBQU8sQ0FBQyxFQUFFQyxVQUFVLElBQVosRUFBa0JDLFNBQVMsTUFBM0IsRUFBRDtBQUR5QixtQkFBakMsRUFHQztBQUFDLDBCQUFEO0FBQUEsc0JBQVEsYUFBWSxPQUFwQjtBQUNHM0Msd0JBQUltQixHQUFKLENBQVE7QUFBQSwwQkFBR3RCLEtBQUgsU0FBR0EsS0FBSDtBQUFBLDBCQUFVQyxLQUFWLFNBQVVBLEtBQVY7QUFBQSw2QkFDUDtBQUFDLDhCQUFEO0FBQUEsMEJBQVEsS0FBS0QsS0FBYjtBQUFxQkM7QUFBckIsdUJBRE87QUFBQSxxQkFBUjtBQURILG1CQUhEO0FBREg7QUFERixlQURGO0FBY0U7QUFBQyxtQkFBRDtBQUFBLGtCQUFLLElBQUksRUFBVCxFQUFhLElBQUksRUFBakIsRUFBcUIsSUFBSSxFQUF6QjtBQUNFO0FBQUMsMEJBQUQ7QUFBQSxvQkFBVSxPQUFNLE1BQWhCO0FBQ0d3QyxvQ0FBa0IsZ0JBQWxCLEVBQW9DO0FBQ25DRywyQkFBTyxDQUNMO0FBQ0VHLCtCQUFTLFdBRFg7QUFFRUQsK0JBQVM7QUFGWCxxQkFESyxFQUtMLEVBQUVELFVBQVUsSUFBWixFQUFrQkMsU0FBUyxRQUEzQixFQUxLO0FBRDRCLG1CQUFwQyxFQVFFLG9CQUFDLEtBQUQsSUFBTyxhQUFZLFNBQW5CLEdBUkY7QUFESDtBQURGO0FBZEYsYUF6REY7QUFxRkU7QUFBQyxpQkFBRDtBQUFBLGdCQUFLLFFBQVEsRUFBYjtBQUNFO0FBQUMsbUJBQUQ7QUFBQSxrQkFBSyxJQUFJLEVBQVQsRUFBYSxJQUFJLEVBQWpCLEVBQXFCLElBQUksRUFBekI7QUFDRTtBQUFDLDBCQUFEO0FBQUEsb0JBQVUsT0FBTSxNQUFoQjtBQUNHTCxvQ0FBa0IsaUJBQWxCLEVBQXFDO0FBQ3BDRywyQkFBTyxDQUFDLEVBQUVDLFVBQVUsSUFBWixFQUFrQkMsU0FBUyxRQUEzQixFQUFEO0FBRDZCLG1CQUFyQyxFQUVFLG9CQUFDLEtBQUQsSUFBTyxhQUFZLFNBQW5CLEdBRkY7QUFESDtBQURGO0FBREY7QUFyRkYsV0FERjtBQWdHRTtBQUFDLGdCQUFEO0FBQUE7QUFDRSx5QkFBVyxFQUFFSixlQUFlLENBQWpCLEVBRGI7QUFFRSxxQkFBTSxRQUZSO0FBR0Usd0JBQVU7QUFIWjtBQUtFO0FBQUMsc0JBQUQ7QUFBQTtBQUNHRCxnQ0FBa0IsU0FBbEIsRUFBNkI7QUFDNUJFLDhCQUFjLEVBRGM7QUFFNUJDLHVCQUFPLENBQUMsRUFBRWpCLFdBQVcsS0FBS0EsU0FBbEIsRUFBRDtBQUZxQixlQUE3QixFQUdFLG9CQUFDLFNBQUQsT0FIRjtBQURIO0FBTEYsV0FoR0Y7QUE0R0U7QUFBQyxnQkFBRDtBQUFBO0FBQ0UseUJBQVcsRUFBRWUsZUFBZSxDQUFqQixFQURiO0FBRUUscUJBQU0sUUFGUjtBQUdFLHdCQUFVO0FBSFo7QUFLRTtBQUFDLGlCQUFEO0FBQUEsZ0JBQUssUUFBUSxFQUFiO0FBQ0U7QUFBQyxtQkFBRDtBQUFBLGtCQUFLLElBQUksRUFBVCxFQUFhLElBQUksRUFBakIsRUFBcUIsSUFBSSxFQUF6QjtBQUNFO0FBQUMsMEJBQUQ7QUFBQSxvQkFBVSxPQUFNLE9BQWhCO0FBQ0dELG9DQUFrQixnQkFBbEIsRUFBb0M7QUFDbkNFLGtDQUFjdkMsZUFBZSxDQUFmLEVBQWtCSixLQURHO0FBRW5DNEMsMkJBQU8sQ0FBQyxFQUFFQyxVQUFVLElBQVosRUFBa0JDLFNBQVMsTUFBM0IsRUFBRDtBQUY0QixtQkFBcEMsRUFJQztBQUFDLDBCQUFEO0FBQUE7QUFDRSxtQ0FBWSxLQURkO0FBRUUsZ0NBQVUsS0FBS3RDO0FBRmpCO0FBSUdKLG1DQUFla0IsR0FBZixDQUFtQjtBQUFBLDBCQUFHdEIsS0FBSCxTQUFHQSxLQUFIO0FBQUEsMEJBQVVDLEtBQVYsU0FBVUEsS0FBVjtBQUFBLDZCQUNsQjtBQUFDLDhCQUFEO0FBQUEsMEJBQVEsS0FBS0QsS0FBYjtBQUFxQkM7QUFBckIsdUJBRGtCO0FBQUEscUJBQW5CO0FBSkgsbUJBSkQ7QUFESDtBQURGLGVBREY7QUFrQkdTLGlDQUFtQixJQUFuQixJQUNDO0FBQUMsbUJBQUQ7QUFBQSxrQkFBSyxJQUFJLEVBQVQsRUFBYSxJQUFJLEVBQWpCLEVBQXFCLElBQUksRUFBekI7QUFDRTtBQUFDLDBCQUFEO0FBQUEsb0JBQVUsT0FBTSxNQUFoQjtBQUNHK0Isb0NBQWtCLGtCQUFsQixFQUNDO0FBQUMsMEJBQUQ7QUFBQSxzQkFBUSxhQUFZLFNBQXBCO0FBQ0dwQyxzQ0FBa0JpQixHQUFsQixDQUFzQjtBQUFBLDBCQUFHdEIsS0FBSCxTQUFHQSxLQUFIO0FBQUEsMEJBQVVDLEtBQVYsU0FBVUEsS0FBVjtBQUFBLDZCQUNyQjtBQUFDLDhCQUFEO0FBQUEsMEJBQVEsS0FBS0QsS0FBYjtBQUFxQkM7QUFBckIsdUJBRHFCO0FBQUEscUJBQXRCO0FBREgsbUJBREQ7QUFESDtBQURGO0FBbkJKLGFBTEY7QUFxQ0U7QUFBQyxpQkFBRDtBQUFBLGdCQUFLLFFBQVEsRUFBYjtBQUNFO0FBQUMsbUJBQUQ7QUFBQSxrQkFBSyxJQUFJLEVBQVQsRUFBYSxJQUFJLEVBQWpCLEVBQXFCLElBQUksRUFBekI7QUFDRTtBQUFDLDBCQUFEO0FBQUEsb0JBQVUsT0FBTSxNQUFoQjtBQUNHd0Msb0NBQWtCLGFBQWxCLEVBQ0Msb0JBQUMsVUFBRDtBQUNFLDRCQUFRMUYsTUFEVjtBQUVFLGlDQUFZLE9BRmQ7QUFHRSwyQkFBTyxFQUFFaUcsT0FBTyxNQUFUO0FBSFQsb0JBREQ7QUFESDtBQURGLGVBREY7QUFZRTtBQUFDLG1CQUFEO0FBQUEsa0JBQUssSUFBSSxFQUFULEVBQWEsSUFBSSxFQUFqQixFQUFxQixJQUFJLEVBQXpCO0FBQ0U7QUFBQywwQkFBRDtBQUFBLG9CQUFVLE9BQU0sTUFBaEI7QUFDR1Asb0NBQWtCLGlCQUFsQixFQUNDLG9CQUFDLEtBQUQsSUFBTyxhQUFZLFNBQW5CLEdBREQ7QUFESDtBQURGO0FBWkYsYUFyQ0Y7QUF5REU7QUFBQyxpQkFBRDtBQUFBLGdCQUFLLFFBQVEsRUFBYjtBQUNFO0FBQUMsbUJBQUQ7QUFBQSxrQkFBSyxNQUFNLEVBQVg7QUFDRTtBQUFDLDBCQUFEO0FBQUEsb0JBQVUsT0FBTSxNQUFoQjtBQUNHQSxvQ0FBa0Isb0JBQWxCLEVBQXdDO0FBQ3ZDRywyQkFBTyxDQUFDLEVBQUVLLEtBQUssR0FBUCxFQUFZSCxTQUFTLFlBQXJCLEVBQUQ7QUFEZ0MsbUJBQXhDLEVBRUUsb0JBQUMsUUFBRCxJQUFVLE1BQU0sQ0FBaEIsRUFBbUIsYUFBWSxTQUEvQixHQUZGO0FBREg7QUFERjtBQURGLGFBekRGO0FBa0VFO0FBQUMsaUJBQUQ7QUFBQSxnQkFBSyxRQUFRLEVBQWI7QUFDRTtBQUFDLG1CQUFEO0FBQUEsa0JBQUssSUFBSSxDQUFULEVBQVksSUFBSSxFQUFoQjtBQUNFO0FBQUMsMEJBQUQ7QUFBQSxvQkFBVSxPQUFNLEdBQWhCO0FBQ0U7QUFBQywwQkFBRDtBQUFBO0FBQ0UsbUNBQVksTUFEZDtBQUVFLGdDQUFVLEtBQUtYO0FBRmpCO0FBSUdLLHlCQUFLbEIsR0FBTCxDQUFTO0FBQUEsMEJBQUd0QixLQUFILFNBQUdBLEtBQUg7QUFBQSwwQkFBVUMsS0FBVixTQUFVQSxLQUFWO0FBQUEsNkJBQ1I7QUFBQyw4QkFBRDtBQUFBLDBCQUFRLEtBQUtELEtBQWI7QUFBcUJDO0FBQXJCLHVCQURRO0FBQUEscUJBQVQ7QUFKSDtBQURGO0FBREYsZUFERjtBQWFFO0FBQUMsbUJBQUQ7QUFBQSxrQkFBSyxJQUFJLENBQVQsRUFBWSxJQUFJLEVBQWhCO0FBQ0U7QUFBQywwQkFBRDtBQUFBLG9CQUFVLE9BQU0sR0FBaEI7QUFDRTtBQUFDLDBCQUFEO0FBQUE7QUFDRSxtQ0FBWSxNQURkO0FBRUUsZ0NBQVUsS0FBS3FDO0FBRmpCO0FBSUdGLDZCQUFTZCxHQUFULENBQWE7QUFBQSwwQkFBR3RCLEtBQUgsU0FBR0EsS0FBSDtBQUFBLDBCQUFVQyxLQUFWLFNBQVVBLEtBQVY7QUFBQSw2QkFDWjtBQUFDLDhCQUFEO0FBQUEsMEJBQVEsS0FBS0QsS0FBYjtBQUFxQkM7QUFBckIsdUJBRFk7QUFBQSxxQkFBYjtBQUpIO0FBREY7QUFERixlQWJGO0FBeUJFO0FBQUMsbUJBQUQ7QUFBQSxrQkFBSyxJQUFJLENBQVQsRUFBWSxJQUFJLEVBQWhCO0FBQ0U7QUFBQywwQkFBRDtBQUFBLG9CQUFVLE9BQU0sT0FBaEI7QUFDR3dDLG9DQUFrQixrQkFBbEIsRUFBc0M7QUFDckNHLDJCQUFPLENBQUMsRUFBRUMsVUFBVSxJQUFaLEVBQWtCQyxTQUFTLFNBQTNCLEVBQUQ7QUFEOEIsbUJBQXRDLEVBR0M7QUFBQywwQkFBRDtBQUFBLHNCQUFRLGFBQVksVUFBcEI7QUFDR1QsOEJBQVVmLEdBQVYsQ0FBYztBQUFBLDBCQUFHdEIsS0FBSCxTQUFHQSxLQUFIO0FBQUEsMEJBQVVDLEtBQVYsU0FBVUEsS0FBVjtBQUFBLDZCQUNiO0FBQUMsOEJBQUQ7QUFBQSwwQkFBUSxLQUFLRCxLQUFiO0FBQXFCQztBQUFyQix1QkFEYTtBQUFBLHFCQUFkO0FBREgsbUJBSEQ7QUFESDtBQURGO0FBekJGO0FBbEVGLFdBNUdGO0FBc05FO0FBQUE7QUFBQSxjQUFLLE9BQU8sRUFBRWlELFdBQVcsUUFBYixFQUFaO0FBQ0U7QUFBQyxvQkFBRDtBQUFBO0FBQ0Usc0JBQUssT0FEUDtBQUVFLHNCQUFLLFNBRlA7QUFHRSwwQkFBUyxRQUhYO0FBSUUseUJBQVNwQztBQUpYO0FBQUE7QUFBQTtBQURGO0FBdE5GO0FBREYsT0FERjtBQXFPRDs7OztFQXhXZXFDLE1BQU1DLGE7O0lBMldsQkMsUzs7Ozs7Ozs7Ozs7Ozs7aU1BQ0pDLEssR0FBUSxDLFNBRVJDLFMsR0FBWSxZQUFNO0FBQUEsVUFDUnZELEtBRFEsR0FDRSxPQUFLTyxLQURQLENBQ1JQLEtBRFE7O0FBRWhCLFVBQU13RCxVQUFVeEQsTUFBTXNCLEdBQU4sQ0FBVTtBQUFBLDRCQUFjQyxJQUFkO0FBQUEsT0FBVixDQUFoQjtBQUNBaUMsY0FBUUMsSUFBUixDQUFhLEVBQUVqQyxzQkFBb0IsT0FBSzhCLEtBQTNCLEVBQWI7QUFDQSxhQUFLQSxLQUFMLElBQWMsQ0FBZDtBQUNBLGFBQUsvQyxLQUFMLENBQVdtRCxRQUFYLENBQW9CRixPQUFwQjtBQUNELEs7Ozs7OzJCQUVNaEMsRyxFQUFLO0FBQUEsVUFDRnhCLEtBREUsR0FDUSxLQUFLTyxLQURiLENBQ0ZQLEtBREU7O0FBRVYsVUFBTXdELFVBQVV4RCxNQUFNMkQsTUFBTixDQUFhO0FBQUEsZUFBUXBDLEtBQUtDLEdBQUwsS0FBYUEsR0FBckI7QUFBQSxPQUFiLENBQWhCO0FBQ0EsV0FBS2pCLEtBQUwsQ0FBV21ELFFBQVgsQ0FBb0JGLE9BQXBCO0FBQ0Q7OztzQ0FFaUI1QyxDLEVBQUdnRCxTLEVBQVdwQyxHLEVBQUs7QUFBQSxVQUMzQnhCLEtBRDJCLEdBQ2pCLEtBQUtPLEtBRFksQ0FDM0JQLEtBRDJCOztBQUVuQyxVQUFNd0QsVUFBVXhELE1BQU1zQixHQUFOLENBQVU7QUFBQSw0QkFBY0MsSUFBZDtBQUFBLE9BQVYsQ0FBaEI7QUFDQSxVQUFNc0MsU0FBU0wsUUFBUUcsTUFBUixDQUFlO0FBQUEsZUFBUXBDLEtBQUtDLEdBQUwsS0FBYUEsR0FBckI7QUFBQSxPQUFmLEVBQXlDLENBQXpDLENBQWY7QUFDQSxVQUFJcUMsTUFBSixFQUFZO0FBQ1ZBLGVBQU9ELFNBQVAsSUFBb0JoRCxDQUFwQjtBQUNBLGFBQUtMLEtBQUwsQ0FBV21ELFFBQVgsQ0FBb0JGLE9BQXBCO0FBQ0Q7QUFDRjs7OzZCQUVRO0FBQUE7O0FBQUEsVUFDQ3hELEtBREQsR0FDVyxLQUFLTyxLQURoQixDQUNDUCxLQUREOzs7QUFHUCxVQUFNOEQsVUFBVSxDQUNkO0FBQ0VDLGVBQU8sSUFEVDtBQUVFQyxtQkFBVyxNQUZiO0FBR0V4QyxhQUFLLE1BSFA7QUFJRXdCLGVBQU8sS0FKVDtBQUtFaUIsZ0JBQVEsZ0JBQUNDLElBQUQsRUFBT0MsTUFBUDtBQUFBLGlCQUNOLG9CQUFDLEtBQUQ7QUFDRSxtQkFBT0QsSUFEVDtBQUVFLHNCQUFVO0FBQUEscUJBQ1IsT0FBS0UsaUJBQUwsQ0FBdUJ4RCxFQUFFaUQsTUFBRixDQUFTN0QsS0FBaEMsRUFBdUMsTUFBdkMsRUFBK0NtRSxPQUFPM0MsR0FBdEQsQ0FEUTtBQUFBLGFBRlo7QUFLRSx5QkFBWTtBQUxkLFlBRE07QUFBQTtBQUxWLE9BRGMsRUFnQmQ7QUFDRXVDLGVBQU8sSUFEVDtBQUVFQyxtQkFBVyxLQUZiO0FBR0V4QyxhQUFLLEtBSFA7QUFJRXdCLGVBQU8sS0FKVDtBQUtFaUIsZ0JBQVEsZ0JBQUNDLElBQUQsRUFBT0MsTUFBUDtBQUFBLGlCQUNOO0FBQUMsa0JBQUQ7QUFBQTtBQUNFLHFCQUFPRCxJQURUO0FBRUUsd0JBQVU7QUFBQSx1QkFBSyxPQUFLRSxpQkFBTCxDQUF1QnhELENBQXZCLEVBQTBCLEtBQTFCLEVBQWlDdUQsT0FBTzNDLEdBQXhDLENBQUw7QUFBQSxlQUZaO0FBR0UsMkJBQVk7QUFIZDtBQUtHckIsZ0JBQUltQixHQUFKLENBQVE7QUFBQSxrQkFBR3RCLEtBQUgsVUFBR0EsS0FBSDtBQUFBLGtCQUFVQyxLQUFWLFVBQVVBLEtBQVY7QUFBQSxxQkFDUDtBQUFDLHNCQUFEO0FBQUEsa0JBQVEsS0FBS0QsS0FBYjtBQUFxQkM7QUFBckIsZUFETztBQUFBLGFBQVI7QUFMSCxXQURNO0FBQUE7QUFMVixPQWhCYyxFQWlDZDtBQUNFOEQsZUFBTyxNQURUO0FBRUVDLG1CQUFXLFFBRmI7QUFHRXhDLGFBQUssUUFIUDtBQUlFd0IsZUFBTyxLQUpUO0FBS0VpQixnQkFBUSxnQkFBQ0MsSUFBRCxFQUFPQyxNQUFQO0FBQUEsaUJBQ04sb0JBQUMsS0FBRDtBQUNFLG1CQUFPRCxJQURUO0FBRUUsc0JBQVU7QUFBQSxxQkFDUixPQUFLRSxpQkFBTCxDQUF1QnhELEVBQUVpRCxNQUFGLENBQVM3RCxLQUFoQyxFQUF1QyxRQUF2QyxFQUFpRG1FLE9BQU8zQyxHQUF4RCxDQURRO0FBQUEsYUFGWjtBQUtFLHlCQUFZO0FBTGQsWUFETTtBQUFBO0FBTFYsT0FqQ2MsRUFnRGQ7QUFDRXVDLGVBQU8sTUFEVDtBQUVFQyxtQkFBVyxTQUZiO0FBR0V4QyxhQUFLLFNBSFA7QUFJRXdCLGVBQU8sS0FKVDtBQUtFaUIsZ0JBQVEsZ0JBQUNDLElBQUQsRUFBT0MsTUFBUDtBQUFBLGlCQUNOLG9CQUFDLEtBQUQ7QUFDRSxtQkFBT0QsSUFEVDtBQUVFLHNCQUFVO0FBQUEscUJBQ1IsT0FBS0UsaUJBQUwsQ0FDRXhELEVBQUVpRCxNQUFGLENBQVM3RCxLQURYLEVBRUUsU0FGRixFQUdFbUUsT0FBTzNDLEdBSFQsQ0FEUTtBQUFBLGFBRlo7QUFTRSx5QkFBWTtBQVRkLFlBRE07QUFBQTtBQUxWLE9BaERjLEVBbUVkO0FBQ0V1QyxlQUFPLElBRFQ7QUFFRXZDLGFBQUssUUFGUDtBQUdFd0IsZUFBTyxLQUhUO0FBSUVpQixnQkFBUSxnQkFBQ0MsSUFBRCxFQUFPQyxNQUFQO0FBQUEsaUJBQ047QUFBQyxzQkFBRDtBQUFBO0FBQ0UscUJBQU0sVUFEUjtBQUVFLHNCQUFPLElBRlQ7QUFHRSwwQkFBVyxJQUhiO0FBSUUseUJBQVc7QUFBQSx1QkFBTSxPQUFLRSxNQUFMLENBQVlGLE9BQU8zQyxHQUFuQixDQUFOO0FBQUE7QUFKYjtBQU1FO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFORixXQURNO0FBQUE7QUFKVixPQW5FYyxDQUFoQjs7QUFvRkEsYUFDRTtBQUFDLGFBQUQsQ0FBTyxRQUFQO0FBQUE7QUFDRSw0QkFBQyxLQUFELElBQU8sU0FBU3NDLE9BQWhCLEVBQXlCLFlBQVk5RCxLQUFyQyxFQUE0QyxZQUFZLEtBQXhELEdBREY7QUFFRTtBQUFDLGdCQUFEO0FBQUE7QUFDRSxtQkFBTyxFQUFFZ0QsT0FBTyxNQUFULEVBQWlCc0IsV0FBVyxFQUE1QixFQUFnQ0MsY0FBYyxDQUE5QyxFQURUO0FBRUUsa0JBQUssUUFGUDtBQUdFLHFCQUFTLEtBQUtoQixTQUhoQjtBQUlFLGtCQUFLO0FBSlA7QUFBQTtBQUFBO0FBRkYsT0FERjtBQWFEOzs7O0VBL0hxQkosTUFBTUMsYTs7QUFrSTlCLElBQU1vQix5QkFBeUJ0RixLQUFLdUYsTUFBTCxHQUFjbkUsR0FBZCxDQUEvQjs7QUFFQW9FLFNBQVNULE1BQVQsQ0FDRSxvQkFBQyxzQkFBRCxPQURGLEVBRUVVLFNBQVNDLGNBQVQsQ0FBd0IsTUFBeEIsQ0FGRiIsImZpbGUiOiJJbmxpbmUgQmFiZWwgc2NyaXB0Iiwic291cmNlc0NvbnRlbnQiOlsiXG4gICAgICBtb21lbnQubG9jYWxlKFwiemgtY25cIik7XG4gICAgICBjb25zdCBsb2NhbGUgPSB7XG4gICAgICAgIGxhbmc6IHtcbiAgICAgICAgICBwbGFjZWhvbGRlcjogXCLor7fpgInmi6nml6XmnJ9cIixcbiAgICAgICAgICByYW5nZVBsYWNlaG9sZGVyOiBbXCLlvIDlp4vml6XmnJ9cIiwgXCLnu5PmnZ/ml6XmnJ9cIl0sXG4gICAgICAgICAgdG9kYXk6IFwi5LuK5aSpXCIsXG4gICAgICAgICAgbm93OiBcIuatpOWIu1wiLFxuICAgICAgICAgIGJhY2tUb1RvZGF5OiBcIui/lOWbnuS7iuWkqVwiLFxuICAgICAgICAgIG9rOiBcIuehruWumlwiLFxuICAgICAgICAgIHRpbWVTZWxlY3Q6IFwi6YCJ5oup5pe26Ze0XCIsXG4gICAgICAgICAgZGF0ZVNlbGVjdDogXCLpgInmi6nml6XmnJ9cIixcbiAgICAgICAgICB3ZWVrU2VsZWN0OiBcIumAieaLqeWRqFwiLFxuICAgICAgICAgIGNsZWFyOiBcIua4hemZpFwiLFxuICAgICAgICAgIG1vbnRoOiBcIuaciFwiLFxuICAgICAgICAgIHllYXI6IFwi5bm0XCIsXG4gICAgICAgICAgcHJldmlvdXNNb250aDogXCLkuIrkuKrmnIggKOe/u+mhteS4iumUrilcIixcbiAgICAgICAgICBuZXh0TW9udGg6IFwi5LiL5Liq5pyIICjnv7vpobXkuIvplK4pXCIsXG4gICAgICAgICAgbW9udGhTZWxlY3Q6IFwi6YCJ5oup5pyI5Lu9XCIsXG4gICAgICAgICAgeWVhclNlbGVjdDogXCLpgInmi6nlubTku71cIixcbiAgICAgICAgICBkZWNhZGVTZWxlY3Q6IFwi6YCJ5oup5bm05LujXCIsXG4gICAgICAgICAgeWVhckZvcm1hdDogXCJZWVlZ5bm0XCIsXG4gICAgICAgICAgZGF5Rm9ybWF0OiBcIkTml6VcIixcbiAgICAgICAgICBkYXRlRm9ybWF0OiBcIllZWVnlubRN5pyIROaXpVwiLFxuICAgICAgICAgIGRhdGVUaW1lRm9ybWF0OiBcIllZWVnlubRN5pyIROaXpSBISOaXtm1t5YiGc3Pnp5JcIixcbiAgICAgICAgICBwcmV2aW91c1llYXI6IFwi5LiK5LiA5bm0IChDb250cm9s6ZSu5Yqg5bem5pa55ZCR6ZSuKVwiLFxuICAgICAgICAgIG5leHRZZWFyOiBcIuS4i+S4gOW5tCAoQ29udHJvbOmUruWKoOWPs+aWueWQkemUrilcIixcbiAgICAgICAgICBwcmV2aW91c0RlY2FkZTogXCLkuIrkuIDlubTku6NcIixcbiAgICAgICAgICBuZXh0RGVjYWRlOiBcIuS4i+S4gOW5tOS7o1wiLFxuICAgICAgICAgIHByZXZpb3VzQ2VudHVyeTogXCLkuIrkuIDkuJbnuqpcIixcbiAgICAgICAgICBuZXh0Q2VudHVyeTogXCLkuIvkuIDkuJbnuqpcIlxuICAgICAgICB9LFxuICAgICAgICB0aW1lUGlja2VyTG9jYWxlOiB7XG4gICAgICAgICAgcGxhY2Vob2xkZXI6IFwi6K+36YCJ5oup5pe26Ze0XCJcbiAgICAgICAgfSxcbiAgICAgICAgZGF0ZUZvcm1hdDogXCJZWVlZLU1NLUREXCIsXG4gICAgICAgIGRhdGVUaW1lRm9ybWF0OiBcIllZWVktTU0tREQgSEg6bW06c3NcIixcbiAgICAgICAgd2Vla0Zvcm1hdDogXCJZWVlZLXdvXCIsXG4gICAgICAgIG1vbnRoRm9ybWF0OiBcIllZWVktTU1cIlxuICAgICAgfTtcblxuICAgICAgY29uc3Qge1xuICAgICAgICBSb3csXG4gICAgICAgIENvbCxcbiAgICAgICAgRm9ybSxcbiAgICAgICAgQnV0dG9uLFxuICAgICAgICBDYXJkLFxuICAgICAgICBJbnB1dCxcbiAgICAgICAgU2VsZWN0LFxuICAgICAgICBEYXRlUGlja2VyLFxuICAgICAgICBUYWJsZSxcbiAgICAgICAgUG9wY29uZmlybSxcbiAgICAgICAgTG9jYWxlUHJvdmlkZXJcbiAgICAgIH0gPSBhbnRkO1xuXG4gICAgICBjb25zdCB7IEl0ZW06IEZvcm1JdGVtIH0gPSBGb3JtO1xuICAgICAgY29uc3QgeyBPcHRpb24gfSA9IFNlbGVjdDtcbiAgICAgIGNvbnN0IHsgVGV4dEFyZWEgfSA9IElucHV0O1xuXG4gICAgICAvLyDlvZPkuovkurrln7rmnKzkv6Hmga9cbiAgICAgIGNvbnN0IFR5cGVzID0gW1xuICAgICAgICB7IHZhbHVlOiBcIjAxXCIsIGxhYmVsOiBcIuS4quS6ulwiIH0sXG4gICAgICAgIHsgdmFsdWU6IFwiMDJcIiwgbGFiZWw6IFwi5Y2V5L2NXCIgfVxuICAgICAgXTtcbiAgICAgIGNvbnN0IENhcmRUeXBlcyA9IFtcbiAgICAgICAgeyB2YWx1ZTogXCIxMTFcIiwgbGFiZWw6IFwi5bGF5rCR6Lqr5Lu96K+BXCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCIxMTJcIiwgbGFiZWw6IFwi5Li05pe25bGF5rCR6Lqr5Lu96K+BXCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCIxMTNcIiwgbGFiZWw6IFwi5oi35Y+j57C/XCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCIxMTRcIiwgbGFiZWw6IFwi5Lit5Zu95Lq65rCR6Kej5pS+5Yab5Yab5a6Y6K+BXCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCIxMTVcIiwgbGFiZWw6IFwi5Lit5Zu95Lq65rCR5q2m6KOF6K2m5a+f6YOo6Zif6K2m5a6Y6K+BXCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCIyMzNcIiwgbGFiZWw6IFwi5Yab5Lq66YCa6KGM6K+BXCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCI0MTFcIiwgbGFiZWw6IFwi5aSW5Lqk5oqk54WnXCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCI0MTJcIiwgbGFiZWw6IFwi5YWs5Yqh5oqk54WnXCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCI0MTNcIiwgbGFiZWw6IFwi5Zug5YWs5pmu6YCa5oqk54WnXCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCI0MTRcIiwgbGFiZWw6IFwi5pmu6YCa5oqk54WnXCIgfVxuICAgICAgXTtcbiAgICAgIGNvbnN0IFNleCA9IFt7IHZhbHVlOiBcIjAxXCIsIGxhYmVsOiBcIueUt1wiIH0sIHsgdmFsdWU6IFwiMDJcIiwgbGFiZWw6IFwi5aWzXCIgfV07XG4gICAgICAvLyDnuqDnurfln7rmnKzkv6Hmga9cbiAgICAgIGNvbnN0IERpc3B1dGVJc0RlYXRoID0gW1xuICAgICAgICB7IHZhbHVlOiBcIjAxXCIsIGxhYmVsOiBcIuWQplwiIH0sXG4gICAgICAgIHsgdmFsdWU6IFwiMDJcIiwgbGFiZWw6IFwi5pivXCIgfVxuICAgICAgXTtcbiAgICAgIGNvbnN0IERpc3B1dGVEZWF0aFR5cGVzID0gW1xuICAgICAgICB7IHZhbHVlOiBcIjAxXCIsIGxhYmVsOiBcIuWMu+aCo+e6oOe6t+atu+S6oVwiIH0sXG4gICAgICAgIHsgdmFsdWU6IFwiMDJcIiwgbGFiZWw6IFwi5a2m55Sf5oSP5aSW5q275LqhXCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCIwM1wiLCBsYWJlbDogXCLlronlhajnlJ/kuqfkuovmlYXoh7TmrbtcIiB9LFxuICAgICAgICB7IHZhbHVlOiBcIjA0XCIsIGxhYmVsOiBcIuS6pOmAmuS6i+aVheiHtOS6uuatu+S6oVwiIH0sXG4gICAgICAgIHsgdmFsdWU6IFwiMDVcIiwgbGFiZWw6IFwi6Ieq5p2A5q275LqhXCIgfSxcbiAgICAgICAgeyB2YWx1ZTogXCIwNlwiLCBsYWJlbDogXCLmurrmsLTmrbvkuqFcIiB9LFxuICAgICAgICB7IHZhbHVlOiBcIjk5XCIsIGxhYmVsOiBcIuWFtuS7luatu+S6oVwiIH1cbiAgICAgIF07XG5cbiAgICAgIGNsYXNzIEFwcCBleHRlbmRzIFJlYWN0LlB1cmVDb21wb25lbnQge1xuICAgICAgICBjb25zdHJ1Y3Rvcihwcm9wcykge1xuICAgICAgICAgIHN1cGVyKHByb3BzKTtcbiAgICAgICAgICB0aGlzLnN0YXRlID0ge1xuICAgICAgICAgICAgc3VibWl0dGluZzogZmFsc2UsXG4gICAgICAgICAgICBkaXNwdXRlSXNEZWF0aDogRGlzcHV0ZUlzRGVhdGhbMF0udmFsdWUsXG4gICAgICAgICAgICBjaXR5OiBbXSxcbiAgICAgICAgICAgIGRpc3RyaWN0OiBbXSxcbiAgICAgICAgICAgIGNvbW1pdHRlZTogW11cbiAgICAgICAgICB9O1xuICAgICAgICB9XG5cbiAgICAgICAgY29tcG9uZW50RGlkTW91bnQoKSB7XG4gICAgICAgICAgLy8g6L+Z6YeM5YGa5Yid5aeL5YyW5p+l6K+i77yM6LWL5YC85biC44CB5Yy644CB5aeU5ZGY5LyaXG4gICAgICAgICAgdGhpcy5zZXRTdGF0ZSh7XG4gICAgICAgICAgICBjaXR5OiBbXG4gICAgICAgICAgICAgIHsgdmFsdWU6IFwiMDFcIiwgbGFiZWw6IFwi5p2t5beeXCIgfSxcbiAgICAgICAgICAgICAgeyB2YWx1ZTogXCIwMlwiLCBsYWJlbDogXCLlroHms6JcIiB9XG4gICAgICAgICAgICBdLFxuICAgICAgICAgICAgZGlzdHJpY3Q6IFtcbiAgICAgICAgICAgICAgeyB2YWx1ZTogXCIwMTAxXCIsIGxhYmVsOiBcIuS4i+WfjuWMulwiIH0sXG4gICAgICAgICAgICAgIHsgdmFsdWU6IFwiMDEwMlwiLCBsYWJlbDogXCLkuIrln47ljLpcIiB9XG4gICAgICAgICAgICBdLFxuICAgICAgICAgICAgY29tbWl0dGVlOiBbXG4gICAgICAgICAgICAgIHsgdmFsdWU6IFwiMDEwMTAxXCIsIGxhYmVsOiBcIuS4i+WfjuWMuuS6uuawkeiwg+ino+WnlOWRmOS8mlwiIH0sXG4gICAgICAgICAgICAgIHsgdmFsdWU6IFwiMDIwMTAxXCIsIGxhYmVsOiBcIuadreW3nuW4guS4i+WfjuWMuuS6pOmAmuS6i+aVheS6uuawkeiwg+ino+WnlOWRmOS8mlwiIH1cbiAgICAgICAgICAgIF1cbiAgICAgICAgICB9KTtcbiAgICAgICAgfVxuXG4gICAgICAgIG9uQ2hhbmdlRGlzcHV0ZUlzRGVhdGggPSB2YWx1ZSA9PiB7XG4gICAgICAgICAgdGhpcy5zZXRTdGF0ZSh7IGRpc3B1dGVJc0RlYXRoOiB2YWx1ZSB9KTtcbiAgICAgICAgfTtcblxuICAgICAgICBoYW5kbGVTdWJtaXQgPSBlID0+IHtcbiAgICAgICAgICBlLnByZXZlbnREZWZhdWx0KCk7XG4gICAgICAgICAgdGhpcy5zZXRTdGF0ZSh7IHN1Ym1pdHRpbmc6IHRydWUgfSwgKCkgPT4ge1xuICAgICAgICAgICAgY29uc3QgeyBmb3JtIH0gPSB0aGlzLnByb3BzO1xuICAgICAgICAgICAgZm9ybS52YWxpZGF0ZUZpZWxkc0FuZFNjcm9sbCgoZXJyLCB2YWx1ZXMpID0+IHtcbiAgICAgICAgICAgICAgaWYgKCFlcnIpIHtcbiAgICAgICAgICAgICAgICBjb25zdCB7IGFub3RoZXIsIGRpc3B1dGVUaW1lIH0gPSB2YWx1ZXM7XG4gICAgICAgICAgICAgICAgY29uc3QgZmllbGRzID0ge1xuICAgICAgICAgICAgICAgICAgLi4udmFsdWVzLFxuICAgICAgICAgICAgICAgICAgYW5vdGhlcjogYW5vdGhlci5tYXAoaXRlbSA9PiAoe1xuICAgICAgICAgICAgICAgICAgICAuLi5pdGVtLFxuICAgICAgICAgICAgICAgICAgICBrZXk6IHVuZGVmaW5lZFxuICAgICAgICAgICAgICAgICAgfSkpLFxuICAgICAgICAgICAgICAgICAgZGlzcHV0ZVRpbWU6IGRpc3B1dGVUaW1lXG4gICAgICAgICAgICAgICAgICAgID8gZGlzcHV0ZVRpbWUuZm9ybWF0KFwiWVlZWS1NTS1ERFwiKVxuICAgICAgICAgICAgICAgICAgICA6IHVuZGVmaW5lZFxuICAgICAgICAgICAgICAgIH07XG4gICAgICAgICAgICAgICAgLy8gYW5vdGhlciDlr7nmlrnln7rmnKzkv6Hmga9cbiAgICAgICAgICAgICAgICAvLyBhbm90aGVyIOmHjCBuYW1l5aeT5ZCNIHNleOaAp+WIqyBudW1iZXLogZTns7vnlLXor50gYWRkcmVzc+iBlOezu+WcsOWdgFxuICAgICAgICAgICAgICAgIC8vIGRpc3B1dGVDb21taXR0ZWUg55Sz6K+36LCD5aeU5LyaXG4gICAgICAgICAgICAgICAgLy8gZGlzcHV0ZURlc2NyaXB0aW9uIOe6oOe6t+aPj+i/sFxuICAgICAgICAgICAgICAgIC8vIGRpc3B1dGVJc0RlYXRoIOaYr+WQpuacieatu+S6oVxuICAgICAgICAgICAgICAgIC8vIGRpc3B1dGVMb2NhdGlvbiDnuqDnurflnLDngrlcbiAgICAgICAgICAgICAgICAvLyBkaXNwdXRlVGltZSDnuqDnurfml7bpl7RcbiAgICAgICAgICAgICAgICAvLyBsaXRpZ2FudEFkZHJlc3Mg5b2T5LqL5Lq66IGU57O75Zyw5Z2AXG4gICAgICAgICAgICAgICAgLy8gbGl0aWdhbnRDYXJkVHlwZSDlvZPkuovkurror4Hku7bnsbvlnotcbiAgICAgICAgICAgICAgICAvLyBsaXRpZ2FudE1vYmlsZSDlvZPkuovkurrogZTns7vnlLXor51cbiAgICAgICAgICAgICAgICAvLyBsaXRpZ2FudE5hbWUg5b2T5LqL5Lq65aeT5ZCNXG4gICAgICAgICAgICAgICAgLy8gbGl0aWdhbnROdW1iZXIg5b2T5LqL5Lq66K+B5Lu25Y+356CBXG4gICAgICAgICAgICAgICAgLy8gbGl0aWdhbnRTZXgg5b2T5LqL5Lq65oCn5YirXG4gICAgICAgICAgICAgICAgLy8gbGl0aWdhbnRUeXBlIOW9k+S6i+S6uuivgeS7tuexu+Wei1xuXG4gICAgICAgICAgICAgICAgLy8g6L+Z6YeM6K+35rGC5o6l5Y+jZmllbGRz5piv6K+35rGC5o6l5Y+j5Y+C5pWwXG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgdGhpcy5zZXRTdGF0ZSh7IHN1Ym1pdHRpbmc6IGZhbHNlIH0pO1xuICAgICAgICAgICAgfSk7XG4gICAgICAgICAgfSk7XG4gICAgICAgIH07XG5cbiAgICAgICAgdmFsaWRhdG9yID0gKHJ1bGUsIHZhbHVlLCBjYWxsYmFjaykgPT4ge1xuICAgICAgICAgIGlmICh2YWx1ZS5sZW5ndGgpIHtcbiAgICAgICAgICAgIGZvciAoY29uc3QgaXRlbSBvZiB2YWx1ZSkge1xuICAgICAgICAgICAgICBpZiAoIWl0ZW0ubmFtZSB8fCAhaXRlbS5zZXgpIHtcbiAgICAgICAgICAgICAgICBjYWxsYmFjayhcIuWnk+WQjeS4juaAp+WIq+S4uuW/heWhq1wiKTtcbiAgICAgICAgICAgICAgICByZXR1cm47XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgaWYgKGl0ZW0ubnVtYmVyICYmICEvXjFcXGR7MTB9JC8udGVzdChpdGVtLm51bWJlcikpIHtcbiAgICAgICAgICAgICAgICBjYWxsYmFjayhcIuivt+i+k+WFpeato+ehrueahOiBlOezu+aWueW8j1wiKTtcbiAgICAgICAgICAgICAgICByZXR1cm47XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIGNhbGxiYWNrKCk7XG4gICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgIGNhbGxiYWNrKFwi6Iez5bCR5pyJ5LiA5p2h5pWw5o2uXCIpO1xuICAgICAgICAgIH1cbiAgICAgICAgfTtcblxuICAgICAgICBvblNlYXJjaENpdHkgPSB2YWwgPT4ge1xuICAgICAgICAgIC8vIOi/memHjOivt+axguaVsOaNru+8jHZhbOS4uuWAvFxuXG4gICAgICAgICAgLy8g6L+Z6YeM6LWL5YC85Yy65Z+f5ZKM5aeU5ZGY5Lya5pWw5o2uXG4gICAgICAgICAgdGhpcy5zZXRTdGF0ZSh7XG4gICAgICAgICAgICBkaXN0cmljdDogW1xuICAgICAgICAgICAgICB7IHZhbHVlOiBcIjAyMDFcIiwgbGFiZWw6IFwi5oux5aKF5Yy6XCIgfSxcbiAgICAgICAgICAgICAgeyB2YWx1ZTogXCIwMjAyXCIsIGxhYmVsOiBcIuS4tOWuieWMulwiIH1cbiAgICAgICAgICAgIF0sXG4gICAgICAgICAgICBjb21taXR0ZWU6IFtcbiAgICAgICAgICAgICAgeyB2YWx1ZTogXCIwMzAxMDFcIiwgbGFiZWw6IFwi5rez5a6J5Y6/5Yy76LCD5LyaXCIgfSxcbiAgICAgICAgICAgICAgeyB2YWx1ZTogXCIwNDAxMDFcIiwgbGFiZWw6IFwi5a+M6Ziz5Yy65Lq65rCR6LCD6Kej5aeU5ZGY5LyaXCIgfSxcbiAgICAgICAgICAgICAgeyB2YWx1ZTogXCIwNTAxMDFcIiwgbGFiZWw6IFwi5a+M6Ziz5Yy65Yy755aX57qg57q35Lq65rCR6LCD6Kej5aeU5ZGY5LyaXCIgfVxuICAgICAgICAgICAgXVxuICAgICAgICAgIH0pO1xuICAgICAgICB9O1xuXG4gICAgICAgIG9uU2VhcmNoRGlzdHJpY3QgPSB2YWwgPT4ge1xuICAgICAgICAgIC8vIOi/memHjOivt+axguaVsOaNru+8jHZhbOS4uuWAvFxuXG4gICAgICAgICAgLy8g6L+Z6YeM6LWL5YC85aeU5ZGY5Lya5pWw5o2uXG4gICAgICAgICAgdGhpcy5zZXRTdGF0ZSh7XG4gICAgICAgICAgICBjb21taXR0ZWU6IFtcbiAgICAgICAgICAgICAgeyB2YWx1ZTogXCIwMzAxMDFcIiwgbGFiZWw6IFwi5rez5a6J5Y6/5Yy76LCD5LyaXCIgfSxcbiAgICAgICAgICAgICAgeyB2YWx1ZTogXCIwNDAxMDFcIiwgbGFiZWw6IFwi5a+M6Ziz5Yy65Lq65rCR6LCD6Kej5aeU5ZGY5LyaXCIgfSxcbiAgICAgICAgICAgICAgeyB2YWx1ZTogXCIwNTAxMDFcIiwgbGFiZWw6IFwi5a+M6Ziz5Yy65Yy755aX57qg57q35Lq65rCR6LCD6Kej5aeU5ZGY5LyaXCIgfVxuICAgICAgICAgICAgXVxuICAgICAgICAgIH0pO1xuICAgICAgICB9O1xuXG4gICAgICAgIHJlbmRlcigpIHtcbiAgICAgICAgICBjb25zdCB7IGdldEZpZWxkRGVjb3JhdG9yIH0gPSB0aGlzLnByb3BzLmZvcm07XG4gICAgICAgICAgY29uc3Qge1xuICAgICAgICAgICAgc3VibWl0dGluZyxcbiAgICAgICAgICAgIGRpc3B1dGVJc0RlYXRoLFxuICAgICAgICAgICAgY2l0eSxcbiAgICAgICAgICAgIGRpc3RyaWN0LFxuICAgICAgICAgICAgY29tbWl0dGVlXG4gICAgICAgICAgfSA9IHRoaXMuc3RhdGU7XG5cbiAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPFJlYWN0LkZyYWdtZW50PlxuICAgICAgICAgICAgICA8Rm9ybSBsYXlvdXQ9XCJ2ZXJ0aWNhbFwiIG9uU3VibWl0PXt0aGlzLmhhbmRsZVN1Ym1pdH0+XG4gICAgICAgICAgICAgICAgPENhcmRcbiAgICAgICAgICAgICAgICAgIGJvZHlTdHlsZT17eyBwYWRkaW5nQm90dG9tOiAwIH19XG4gICAgICAgICAgICAgICAgICB0aXRsZT1cIuW9k+S6i+S6uuWfuuacrOS/oeaBr1wiXG4gICAgICAgICAgICAgICAgICBib3JkZXJlZD17ZmFsc2V9XG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgPFJvdyBndXR0ZXI9ezE2fT5cbiAgICAgICAgICAgICAgICAgICAgPENvbCBsZz17MTJ9IG1kPXsxMn0gc209ezI0fT5cbiAgICAgICAgICAgICAgICAgICAgICA8Rm9ybUl0ZW0gbGFiZWw9XCLor4Hku7bnsbvlnotcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIHtnZXRGaWVsZERlY29yYXRvcihcImxpdGlnYW50VHlwZVwiLCB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgIGluaXRpYWxWYWx1ZTogVHlwZXNbMF0udmFsdWUsXG4gICAgICAgICAgICAgICAgICAgICAgICAgIHJ1bGVzOiBbeyByZXF1aXJlZDogdHJ1ZSwgbWVzc2FnZTogXCLor4Hku7bnsbvlnovlv4XpgIlcIiB9XVxuICAgICAgICAgICAgICAgICAgICAgICAgfSkoXG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxTZWxlY3QgcGxhY2Vob2xkZXI9XCLor7fpgInmi6nor4Hku7bnsbvlnotcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7VHlwZXMubWFwKCh7IHZhbHVlLCBsYWJlbCB9KSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8T3B0aW9uIGtleT17dmFsdWV9PntsYWJlbH08L09wdGlvbj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgPC9TZWxlY3Q+XG4gICAgICAgICAgICAgICAgICAgICAgICApfVxuICAgICAgICAgICAgICAgICAgICAgIDwvRm9ybUl0ZW0+XG4gICAgICAgICAgICAgICAgICAgIDwvQ29sPlxuICAgICAgICAgICAgICAgICAgICA8Q29sIGxnPXsxMn0gbWQ9ezI0fSBzbT17MjR9PlxuICAgICAgICAgICAgICAgICAgICAgIDxGb3JtSXRlbSBsYWJlbD1cIuivgeS7tuexu+Wei1wiPlxuICAgICAgICAgICAgICAgICAgICAgICAge2dldEZpZWxkRGVjb3JhdG9yKFwibGl0aWdhbnRDYXJkVHlwZVwiLCB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgIGluaXRpYWxWYWx1ZTogQ2FyZFR5cGVzWzBdLnZhbHVlLFxuICAgICAgICAgICAgICAgICAgICAgICAgICBydWxlczogW3sgcmVxdWlyZWQ6IHRydWUsIG1lc3NhZ2U6IFwi6K+B5Lu257G75Z6L5b+F6YCJXCIgfV1cbiAgICAgICAgICAgICAgICAgICAgICAgIH0pKFxuICAgICAgICAgICAgICAgICAgICAgICAgICA8U2VsZWN0IHBsYWNlaG9sZGVyPVwi6K+36YCJ5oup6K+B5Lu257G75Z6LXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAge0NhcmRUeXBlcy5tYXAoKHsgdmFsdWUsIGxhYmVsIH0pID0+IChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxPcHRpb24ga2V5PXt2YWx1ZX0+e2xhYmVsfTwvT3B0aW9uPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgICAgICAgICAgICA8L1NlbGVjdD5cbiAgICAgICAgICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgICAgICAgICAgPC9Gb3JtSXRlbT5cbiAgICAgICAgICAgICAgICAgICAgPC9Db2w+XG4gICAgICAgICAgICAgICAgICA8L1Jvdz5cbiAgICAgICAgICAgICAgICAgIDxSb3cgZ3V0dGVyPXsxNn0+XG4gICAgICAgICAgICAgICAgICAgIDxDb2wgbGc9ezEyfSBtZD17MTJ9IHNtPXsyNH0+XG4gICAgICAgICAgICAgICAgICAgICAgPEZvcm1JdGVtIGxhYmVsPVwi6K+B5Lu25Y+356CBXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICB7Z2V0RmllbGREZWNvcmF0b3IoXCJsaXRpZ2FudE51bWJlclwiLCB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgIHJ1bGVzOiBbXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAge1xuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgcGF0dGVybjogL15bMS05XVxcZHs1fSgxOHwxOXwoWzIzXVxcZCkpXFxkezJ9KCgwWzEtOV0pfCgxMHwxMXwxMikpKChbMC0yXVsxLTldKXwxMHwyMHwzMHwzMSlcXGR7M31bMC05WHhdJC8sXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZXNzYWdlOiBcIuivt+i+k+WFpeato+ehrueahOivgeS7tuWPt+eggVwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7IHJlcXVpcmVkOiB0cnVlLCBtZXNzYWdlOiBcIuivgeS7tuWPt+eggeW/heWhq1wiIH1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgXVxuICAgICAgICAgICAgICAgICAgICAgICAgfSkoPElucHV0IHBsYWNlaG9sZGVyPVwi6K+36L6T5YWl6K+B5Lu25Y+356CBXCIgLz4pfVxuICAgICAgICAgICAgICAgICAgICAgIDwvRm9ybUl0ZW0+XG4gICAgICAgICAgICAgICAgICAgIDwvQ29sPlxuICAgICAgICAgICAgICAgICAgICA8Q29sIGxnPXsxMn0gbWQ9ezI0fSBzbT17MjR9PlxuICAgICAgICAgICAgICAgICAgICAgIDxGb3JtSXRlbSBsYWJlbD1cIuWnk+WQjVwiPlxuICAgICAgICAgICAgICAgICAgICAgICAge2dldEZpZWxkRGVjb3JhdG9yKFwibGl0aWdhbnROYW1lXCIsIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcnVsZXM6IFt7IHJlcXVpcmVkOiB0cnVlLCBtZXNzYWdlOiBcIuWnk+WQjeW/heWhq1wiIH1dXG4gICAgICAgICAgICAgICAgICAgICAgICB9KSg8SW5wdXQgcGxhY2Vob2xkZXI9XCLor7fovpPlhaXlp5PlkI1cIiAvPil9XG4gICAgICAgICAgICAgICAgICAgICAgPC9Gb3JtSXRlbT5cbiAgICAgICAgICAgICAgICAgICAgPC9Db2w+XG4gICAgICAgICAgICAgICAgICA8L1Jvdz5cbiAgICAgICAgICAgICAgICAgIDxSb3cgZ3V0dGVyPXsxNn0+XG4gICAgICAgICAgICAgICAgICAgIDxDb2wgbGc9ezEyfSBtZD17MjR9IHNtPXsyNH0+XG4gICAgICAgICAgICAgICAgICAgICAgPEZvcm1JdGVtIGxhYmVsPVwi5oCn5YirXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICB7Z2V0RmllbGREZWNvcmF0b3IoXCJsaXRpZ2FudFNleFwiLCB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgIHJ1bGVzOiBbeyByZXF1aXJlZDogdHJ1ZSwgbWVzc2FnZTogXCLmgKfliKvlv4XpgIlcIiB9XVxuICAgICAgICAgICAgICAgICAgICAgICAgfSkoXG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxTZWxlY3QgcGxhY2Vob2xkZXI9XCLor7fpgInmi6nmgKfliKtcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7U2V4Lm1hcCgoeyB2YWx1ZSwgbGFiZWwgfSkgPT4gKFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPE9wdGlvbiBrZXk9e3ZhbHVlfT57bGFiZWx9PC9PcHRpb24+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDwvU2VsZWN0PlxuICAgICAgICAgICAgICAgICAgICAgICAgKX1cbiAgICAgICAgICAgICAgICAgICAgICA8L0Zvcm1JdGVtPlxuICAgICAgICAgICAgICAgICAgICA8L0NvbD5cbiAgICAgICAgICAgICAgICAgICAgPENvbCBsZz17MTJ9IG1kPXsxMn0gc209ezI0fT5cbiAgICAgICAgICAgICAgICAgICAgICA8Rm9ybUl0ZW0gbGFiZWw9XCLogZTns7vnlLXor51cIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIHtnZXRGaWVsZERlY29yYXRvcihcImxpdGlnYW50TW9iaWxlXCIsIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcnVsZXM6IFtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwYXR0ZXJuOiAvXjFcXGR7MTB9JC8sXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBtZXNzYWdlOiBcIuivt+i+k+WFpeato+ehrueahOagvOW8j1wiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgfSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICB7IHJlcXVpcmVkOiB0cnVlLCBtZXNzYWdlOiBcIuiBlOezu+eUteivneW/heWhq1wiIH1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgXVxuICAgICAgICAgICAgICAgICAgICAgICAgfSkoPElucHV0IHBsYWNlaG9sZGVyPVwi6K+36L6T5YWl6IGU57O755S16K+dXCIgLz4pfVxuICAgICAgICAgICAgICAgICAgICAgIDwvRm9ybUl0ZW0+XG4gICAgICAgICAgICAgICAgICAgIDwvQ29sPlxuICAgICAgICAgICAgICAgICAgPC9Sb3c+XG4gICAgICAgICAgICAgICAgICA8Um93IGd1dHRlcj17MTZ9PlxuICAgICAgICAgICAgICAgICAgICA8Q29sIGxnPXsxMn0gbWQ9ezEyfSBzbT17MjR9PlxuICAgICAgICAgICAgICAgICAgICAgIDxGb3JtSXRlbSBsYWJlbD1cIuiBlOezu+WcsOWdgFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAge2dldEZpZWxkRGVjb3JhdG9yKFwibGl0aWdhbnRBZGRyZXNzXCIsIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcnVsZXM6IFt7IHJlcXVpcmVkOiB0cnVlLCBtZXNzYWdlOiBcIuiBlOezu+WcsOWdgOW/heWhq1wiIH1dXG4gICAgICAgICAgICAgICAgICAgICAgICB9KSg8SW5wdXQgcGxhY2Vob2xkZXI9XCLor7fovpPlhaXogZTns7vlnLDlnYBcIiAvPil9XG4gICAgICAgICAgICAgICAgICAgICAgPC9Gb3JtSXRlbT5cbiAgICAgICAgICAgICAgICAgICAgPC9Db2w+XG4gICAgICAgICAgICAgICAgICA8L1Jvdz5cbiAgICAgICAgICAgICAgICA8L0NhcmQ+XG4gICAgICAgICAgICAgICAgPENhcmRcbiAgICAgICAgICAgICAgICAgIGJvZHlTdHlsZT17eyBwYWRkaW5nQm90dG9tOiAwIH19XG4gICAgICAgICAgICAgICAgICB0aXRsZT1cIuWvueaWueWfuuacrOS/oeaBr1wiXG4gICAgICAgICAgICAgICAgICBib3JkZXJlZD17ZmFsc2V9XG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgPEZvcm1JdGVtPlxuICAgICAgICAgICAgICAgICAgICB7Z2V0RmllbGREZWNvcmF0b3IoXCJhbm90aGVyXCIsIHtcbiAgICAgICAgICAgICAgICAgICAgICBpbml0aWFsVmFsdWU6IFtdLFxuICAgICAgICAgICAgICAgICAgICAgIHJ1bGVzOiBbeyB2YWxpZGF0b3I6IHRoaXMudmFsaWRhdG9yIH1dXG4gICAgICAgICAgICAgICAgICAgIH0pKDxUYWJsZUZvcm0gLz4pfVxuICAgICAgICAgICAgICAgICAgPC9Gb3JtSXRlbT5cbiAgICAgICAgICAgICAgICA8L0NhcmQ+XG4gICAgICAgICAgICAgICAgPENhcmRcbiAgICAgICAgICAgICAgICAgIGJvZHlTdHlsZT17eyBwYWRkaW5nQm90dG9tOiAwIH19XG4gICAgICAgICAgICAgICAgICB0aXRsZT1cIue6oOe6t+WfuuacrOS/oeaBr1wiXG4gICAgICAgICAgICAgICAgICBib3JkZXJlZD17ZmFsc2V9XG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgPFJvdyBndXR0ZXI9ezE2fT5cbiAgICAgICAgICAgICAgICAgICAgPENvbCBsZz17MTJ9IG1kPXsxMn0gc209ezI0fT5cbiAgICAgICAgICAgICAgICAgICAgICA8Rm9ybUl0ZW0gbGFiZWw9XCLmmK/lkKbmnInmrbvkuqFcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIHtnZXRGaWVsZERlY29yYXRvcihcImRpc3B1dGVJc0RlYXRoXCIsIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgaW5pdGlhbFZhbHVlOiBEaXNwdXRlSXNEZWF0aFswXS52YWx1ZSxcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcnVsZXM6IFt7IHJlcXVpcmVkOiB0cnVlLCBtZXNzYWdlOiBcIuatpOmhueW/heWhq1wiIH1dXG4gICAgICAgICAgICAgICAgICAgICAgICB9KShcbiAgICAgICAgICAgICAgICAgICAgICAgICAgPFNlbGVjdFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPVwi6K+36YCJ5oupXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICBvbkNoYW5nZT17dGhpcy5vbkNoYW5nZURpc3B1dGVJc0RlYXRofVxuICAgICAgICAgICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAge0Rpc3B1dGVJc0RlYXRoLm1hcCgoeyB2YWx1ZSwgbGFiZWwgfSkgPT4gKFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgPE9wdGlvbiBrZXk9e3ZhbHVlfT57bGFiZWx9PC9PcHRpb24+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgICAgICAgICAgIDwvU2VsZWN0PlxuICAgICAgICAgICAgICAgICAgICAgICAgKX1cbiAgICAgICAgICAgICAgICAgICAgICA8L0Zvcm1JdGVtPlxuICAgICAgICAgICAgICAgICAgICA8L0NvbD5cbiAgICAgICAgICAgICAgICAgICAge2Rpc3B1dGVJc0RlYXRoID09PSBcIjAyXCIgJiYgKFxuICAgICAgICAgICAgICAgICAgICAgIDxDb2wgbGc9ezEyfSBtZD17MjR9IHNtPXsyNH0+XG4gICAgICAgICAgICAgICAgICAgICAgICA8Rm9ybUl0ZW0gbGFiZWw9XCLmrbvkuqHnsbvlnotcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAge2dldEZpZWxkRGVjb3JhdG9yKFwiZGlzcHV0ZURlYXRoVHlwZVwiKShcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8U2VsZWN0IHBsYWNlaG9sZGVyPVwi6K+36YCJ5oup5q275Lqh57G75Z6LXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICB7RGlzcHV0ZURlYXRoVHlwZXMubWFwKCh7IHZhbHVlLCBsYWJlbCB9KSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxPcHRpb24ga2V5PXt2YWx1ZX0+e2xhYmVsfTwvT3B0aW9uPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPC9TZWxlY3Q+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgICAgICAgICAgICA8L0Zvcm1JdGVtPlxuICAgICAgICAgICAgICAgICAgICAgIDwvQ29sPlxuICAgICAgICAgICAgICAgICAgICApfVxuICAgICAgICAgICAgICAgICAgPC9Sb3c+XG4gICAgICAgICAgICAgICAgICA8Um93IGd1dHRlcj17MTZ9PlxuICAgICAgICAgICAgICAgICAgICA8Q29sIGxnPXsxMn0gbWQ9ezEyfSBzbT17MjR9PlxuICAgICAgICAgICAgICAgICAgICAgIDxGb3JtSXRlbSBsYWJlbD1cIue6oOe6t+aXtumXtFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAge2dldEZpZWxkRGVjb3JhdG9yKFwiZGlzcHV0ZVRpbWVcIikoXG4gICAgICAgICAgICAgICAgICAgICAgICAgIDxEYXRlUGlja2VyXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgbG9jYWxlPXtsb2NhbGV9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9XCLor7fpgInmi6nml7bpl7RcIlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7IHdpZHRoOiBcIjEwMCVcIiB9fVxuICAgICAgICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgKX1cbiAgICAgICAgICAgICAgICAgICAgICA8L0Zvcm1JdGVtPlxuICAgICAgICAgICAgICAgICAgICA8L0NvbD5cbiAgICAgICAgICAgICAgICAgICAgPENvbCBsZz17MTJ9IG1kPXsyNH0gc209ezI0fT5cbiAgICAgICAgICAgICAgICAgICAgICA8Rm9ybUl0ZW0gbGFiZWw9XCLnuqDnurflnLDngrlcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIHtnZXRGaWVsZERlY29yYXRvcihcImRpc3B1dGVMb2NhdGlvblwiKShcbiAgICAgICAgICAgICAgICAgICAgICAgICAgPElucHV0IHBsYWNlaG9sZGVyPVwi6K+36L6T5YWl57qg57q35Zyw54K5XCIgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgICAgICAgICAgPC9Gb3JtSXRlbT5cbiAgICAgICAgICAgICAgICAgICAgPC9Db2w+XG4gICAgICAgICAgICAgICAgICA8L1Jvdz5cbiAgICAgICAgICAgICAgICAgIDxSb3cgZ3V0dGVyPXsxNn0+XG4gICAgICAgICAgICAgICAgICAgIDxDb2wgc3Bhbj17MjR9PlxuICAgICAgICAgICAgICAgICAgICAgIDxGb3JtSXRlbSBsYWJlbD1cIue6oOe6t+aPj+i/sFwiPlxuICAgICAgICAgICAgICAgICAgICAgICAge2dldEZpZWxkRGVjb3JhdG9yKFwiZGlzcHV0ZURlc2NyaXB0aW9uXCIsIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcnVsZXM6IFt7IG1heDogMzAwLCBtZXNzYWdlOiBcIumVv+W6puS4jeiDvei2hei/hzMwMOWtl1wiIH1dXG4gICAgICAgICAgICAgICAgICAgICAgICB9KSg8VGV4dEFyZWEgcm93cz17NH0gcGxhY2Vob2xkZXI9XCLor7fovpPlhaXnuqDnurfmj4/ov7BcIiAvPil9XG4gICAgICAgICAgICAgICAgICAgICAgPC9Gb3JtSXRlbT5cbiAgICAgICAgICAgICAgICAgICAgPC9Db2w+XG4gICAgICAgICAgICAgICAgICA8L1Jvdz5cbiAgICAgICAgICAgICAgICAgIDxSb3cgZ3V0dGVyPXsxNn0+XG4gICAgICAgICAgICAgICAgICAgIDxDb2wgbGc9ezh9IHNtPXsyNH0+XG4gICAgICAgICAgICAgICAgICAgICAgPEZvcm1JdGVtIGxhYmVsPVwi5biCXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICA8U2VsZWN0XG4gICAgICAgICAgICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPVwi6K+36YCJ5oup5biCXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgb25TZWFyY2g9e3RoaXMub25TZWFyY2hDaXR5fVxuICAgICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAgICB7Y2l0eS5tYXAoKHsgdmFsdWUsIGxhYmVsIH0pID0+IChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8T3B0aW9uIGtleT17dmFsdWV9PntsYWJlbH08L09wdGlvbj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgICAgICAgICAgICA8L1NlbGVjdD5cbiAgICAgICAgICAgICAgICAgICAgICA8L0Zvcm1JdGVtPlxuICAgICAgICAgICAgICAgICAgICA8L0NvbD5cbiAgICAgICAgICAgICAgICAgICAgPENvbCBsZz17OH0gc209ezI0fT5cbiAgICAgICAgICAgICAgICAgICAgICA8Rm9ybUl0ZW0gbGFiZWw9XCLljLpcIj5cbiAgICAgICAgICAgICAgICAgICAgICAgIDxTZWxlY3RcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9XCLor7fpgInmi6nljLpcIlxuICAgICAgICAgICAgICAgICAgICAgICAgICBvblNlYXJjaD17dGhpcy5vblNlYXJjaERpc3RyaWN0fVxuICAgICAgICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICAgICAgICB7ZGlzdHJpY3QubWFwKCh7IHZhbHVlLCBsYWJlbCB9KSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPE9wdGlvbiBrZXk9e3ZhbHVlfT57bGFiZWx9PC9PcHRpb24+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgICAgICAgICAgPC9TZWxlY3Q+XG4gICAgICAgICAgICAgICAgICAgICAgPC9Gb3JtSXRlbT5cbiAgICAgICAgICAgICAgICAgICAgPC9Db2w+XG4gICAgICAgICAgICAgICAgICAgIDxDb2wgbGc9ezh9IHNtPXsyNH0+XG4gICAgICAgICAgICAgICAgICAgICAgPEZvcm1JdGVtIGxhYmVsPVwi55Sz6K+36LCD5aeU5LyaXCI+XG4gICAgICAgICAgICAgICAgICAgICAgICB7Z2V0RmllbGREZWNvcmF0b3IoXCJkaXNwdXRlQ29tbWl0dGVlXCIsIHtcbiAgICAgICAgICAgICAgICAgICAgICAgICAgcnVsZXM6IFt7IHJlcXVpcmVkOiB0cnVlLCBtZXNzYWdlOiBcIueUs+ivt+iwg+WnlOS8muW/hemAiVwiIH1dXG4gICAgICAgICAgICAgICAgICAgICAgICB9KShcbiAgICAgICAgICAgICAgICAgICAgICAgICAgPFNlbGVjdCBwbGFjZWhvbGRlcj1cIuivt+mAieaLqeeUs+ivt+iwg+WnlOS8mlwiPlxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIHtjb21taXR0ZWUubWFwKCh7IHZhbHVlLCBsYWJlbCB9KSA9PiAoXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICA8T3B0aW9uIGtleT17dmFsdWV9PntsYWJlbH08L09wdGlvbj5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgPC9TZWxlY3Q+XG4gICAgICAgICAgICAgICAgICAgICAgICApfVxuICAgICAgICAgICAgICAgICAgICAgIDwvRm9ybUl0ZW0+XG4gICAgICAgICAgICAgICAgICAgIDwvQ29sPlxuICAgICAgICAgICAgICAgICAgPC9Sb3c+XG4gICAgICAgICAgICAgICAgPC9DYXJkPlxuICAgICAgICAgICAgICAgIDxkaXYgc3R5bGU9e3sgdGV4dEFsaWduOiBcImNlbnRlclwiIH19PlxuICAgICAgICAgICAgICAgICAgPEJ1dHRvblxuICAgICAgICAgICAgICAgICAgICBzaXplPVwibGFyZ2VcIlxuICAgICAgICAgICAgICAgICAgICB0eXBlPVwicHJpbWFyeVwiXG4gICAgICAgICAgICAgICAgICAgIGh0bWxUeXBlPVwic3VibWl0XCJcbiAgICAgICAgICAgICAgICAgICAgbG9hZGluZz17c3VibWl0dGluZ31cbiAgICAgICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICAgICAg5o+Q5Lqk55Sz6K+3XG4gICAgICAgICAgICAgICAgICA8L0J1dHRvbj5cbiAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgPC9Gb3JtPlxuICAgICAgICAgICAgPC9SZWFjdC5GcmFnbWVudD5cbiAgICAgICAgICApO1xuICAgICAgICB9XG4gICAgICB9XG5cbiAgICAgIGNsYXNzIFRhYmxlRm9ybSBleHRlbmRzIFJlYWN0LlB1cmVDb21wb25lbnQge1xuICAgICAgICBpbmRleCA9IDA7XG5cbiAgICAgICAgbmV3TWVtYmVyID0gKCkgPT4ge1xuICAgICAgICAgIGNvbnN0IHsgdmFsdWUgfSA9IHRoaXMucHJvcHM7XG4gICAgICAgICAgY29uc3QgbmV3RGF0YSA9IHZhbHVlLm1hcChpdGVtID0+ICh7IC4uLml0ZW0gfSkpO1xuICAgICAgICAgIG5ld0RhdGEucHVzaCh7IGtleTogYE5FV19URU1QX0lEXyR7dGhpcy5pbmRleH1gIH0pO1xuICAgICAgICAgIHRoaXMuaW5kZXggKz0gMTtcbiAgICAgICAgICB0aGlzLnByb3BzLm9uQ2hhbmdlKG5ld0RhdGEpO1xuICAgICAgICB9O1xuXG4gICAgICAgIHJlbW92ZShrZXkpIHtcbiAgICAgICAgICBjb25zdCB7IHZhbHVlIH0gPSB0aGlzLnByb3BzO1xuICAgICAgICAgIGNvbnN0IG5ld0RhdGEgPSB2YWx1ZS5maWx0ZXIoaXRlbSA9PiBpdGVtLmtleSAhPT0ga2V5KTtcbiAgICAgICAgICB0aGlzLnByb3BzLm9uQ2hhbmdlKG5ld0RhdGEpO1xuICAgICAgICB9XG5cbiAgICAgICAgaGFuZGxlRmllbGRDaGFuZ2UoZSwgZmllbGROYW1lLCBrZXkpIHtcbiAgICAgICAgICBjb25zdCB7IHZhbHVlIH0gPSB0aGlzLnByb3BzO1xuICAgICAgICAgIGNvbnN0IG5ld0RhdGEgPSB2YWx1ZS5tYXAoaXRlbSA9PiAoeyAuLi5pdGVtIH0pKTtcbiAgICAgICAgICBjb25zdCB0YXJnZXQgPSBuZXdEYXRhLmZpbHRlcihpdGVtID0+IGl0ZW0ua2V5ID09PSBrZXkpWzBdO1xuICAgICAgICAgIGlmICh0YXJnZXQpIHtcbiAgICAgICAgICAgIHRhcmdldFtmaWVsZE5hbWVdID0gZTtcbiAgICAgICAgICAgIHRoaXMucHJvcHMub25DaGFuZ2UobmV3RGF0YSk7XG4gICAgICAgICAgfVxuICAgICAgICB9XG5cbiAgICAgICAgcmVuZGVyKCkge1xuICAgICAgICAgIGNvbnN0IHsgdmFsdWUgfSA9IHRoaXMucHJvcHM7XG5cbiAgICAgICAgICBjb25zdCBjb2x1bW5zID0gW1xuICAgICAgICAgICAge1xuICAgICAgICAgICAgICB0aXRsZTogXCLlp5PlkI1cIixcbiAgICAgICAgICAgICAgZGF0YUluZGV4OiBcIm5hbWVcIixcbiAgICAgICAgICAgICAga2V5OiBcIm5hbWVcIixcbiAgICAgICAgICAgICAgd2lkdGg6IFwiMjAlXCIsXG4gICAgICAgICAgICAgIHJlbmRlcjogKHRleHQsIHJlY29yZCkgPT4gKFxuICAgICAgICAgICAgICAgIDxJbnB1dFxuICAgICAgICAgICAgICAgICAgdmFsdWU9e3RleHR9XG4gICAgICAgICAgICAgICAgICBvbkNoYW5nZT17ZSA9PlxuICAgICAgICAgICAgICAgICAgICB0aGlzLmhhbmRsZUZpZWxkQ2hhbmdlKGUudGFyZ2V0LnZhbHVlLCBcIm5hbWVcIiwgcmVjb3JkLmtleSlcbiAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPVwi5aeT5ZCNXCJcbiAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICApXG4gICAgICAgICAgICB9LFxuICAgICAgICAgICAge1xuICAgICAgICAgICAgICB0aXRsZTogXCLmgKfliKtcIixcbiAgICAgICAgICAgICAgZGF0YUluZGV4OiBcInNleFwiLFxuICAgICAgICAgICAgICBrZXk6IFwic2V4XCIsXG4gICAgICAgICAgICAgIHdpZHRoOiBcIjIwJVwiLFxuICAgICAgICAgICAgICByZW5kZXI6ICh0ZXh0LCByZWNvcmQpID0+IChcbiAgICAgICAgICAgICAgICA8U2VsZWN0XG4gICAgICAgICAgICAgICAgICB2YWx1ZT17dGV4dH1cbiAgICAgICAgICAgICAgICAgIG9uQ2hhbmdlPXtlID0+IHRoaXMuaGFuZGxlRmllbGRDaGFuZ2UoZSwgXCJzZXhcIiwgcmVjb3JkLmtleSl9XG4gICAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcj1cIuaAp+WIq1wiXG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAge1NleC5tYXAoKHsgdmFsdWUsIGxhYmVsIH0pID0+IChcbiAgICAgICAgICAgICAgICAgICAgPE9wdGlvbiBrZXk9e3ZhbHVlfT57bGFiZWx9PC9PcHRpb24+XG4gICAgICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgICAgICA8L1NlbGVjdD5cbiAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgfSxcbiAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgdGl0bGU6IFwi6IGU57O755S16K+dXCIsXG4gICAgICAgICAgICAgIGRhdGFJbmRleDogXCJudW1iZXJcIixcbiAgICAgICAgICAgICAga2V5OiBcIm51bWJlclwiLFxuICAgICAgICAgICAgICB3aWR0aDogXCIyNSVcIixcbiAgICAgICAgICAgICAgcmVuZGVyOiAodGV4dCwgcmVjb3JkKSA9PiAoXG4gICAgICAgICAgICAgICAgPElucHV0XG4gICAgICAgICAgICAgICAgICB2YWx1ZT17dGV4dH1cbiAgICAgICAgICAgICAgICAgIG9uQ2hhbmdlPXtlID0+XG4gICAgICAgICAgICAgICAgICAgIHRoaXMuaGFuZGxlRmllbGRDaGFuZ2UoZS50YXJnZXQudmFsdWUsIFwibnVtYmVyXCIsIHJlY29yZC5rZXkpXG4gICAgICAgICAgICAgICAgICB9XG4gICAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcj1cIuiBlOezu+eUteivnVwiXG4gICAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgfSxcbiAgICAgICAgICAgIHtcbiAgICAgICAgICAgICAgdGl0bGU6IFwi6IGU57O75Zyw5Z2AXCIsXG4gICAgICAgICAgICAgIGRhdGFJbmRleDogXCJhZGRyZXNzXCIsXG4gICAgICAgICAgICAgIGtleTogXCJhZGRyZXNzXCIsXG4gICAgICAgICAgICAgIHdpZHRoOiBcIjI1JVwiLFxuICAgICAgICAgICAgICByZW5kZXI6ICh0ZXh0LCByZWNvcmQpID0+IChcbiAgICAgICAgICAgICAgICA8SW5wdXRcbiAgICAgICAgICAgICAgICAgIHZhbHVlPXt0ZXh0fVxuICAgICAgICAgICAgICAgICAgb25DaGFuZ2U9e2UgPT5cbiAgICAgICAgICAgICAgICAgICAgdGhpcy5oYW5kbGVGaWVsZENoYW5nZShcbiAgICAgICAgICAgICAgICAgICAgICBlLnRhcmdldC52YWx1ZSxcbiAgICAgICAgICAgICAgICAgICAgICBcImFkZHJlc3NcIixcbiAgICAgICAgICAgICAgICAgICAgICByZWNvcmQua2V5XG4gICAgICAgICAgICAgICAgICAgIClcbiAgICAgICAgICAgICAgICAgIH1cbiAgICAgICAgICAgICAgICAgIHBsYWNlaG9sZGVyPVwi6IGU57O75Zyw5Z2AXCJcbiAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICApXG4gICAgICAgICAgICB9LFxuICAgICAgICAgICAge1xuICAgICAgICAgICAgICB0aXRsZTogXCLmk43kvZxcIixcbiAgICAgICAgICAgICAga2V5OiBcImFjdGlvblwiLFxuICAgICAgICAgICAgICB3aWR0aDogXCIxMCVcIixcbiAgICAgICAgICAgICAgcmVuZGVyOiAodGV4dCwgcmVjb3JkKSA9PiAoXG4gICAgICAgICAgICAgICAgPFBvcGNvbmZpcm1cbiAgICAgICAgICAgICAgICAgIHRpdGxlPVwi5piv5ZCm6KaB5Yig6Zmk5q2k6KGM77yfXCJcbiAgICAgICAgICAgICAgICAgIG9rVGV4dD1cIuehruiupFwiXG4gICAgICAgICAgICAgICAgICBjYW5jZWxUZXh0PVwi5Y+W5raIXCJcbiAgICAgICAgICAgICAgICAgIG9uQ29uZmlybT17KCkgPT4gdGhpcy5yZW1vdmUocmVjb3JkLmtleSl9XG4gICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgPGE+5Yig6ZmkPC9hPlxuICAgICAgICAgICAgICAgIDwvUG9wY29uZmlybT5cbiAgICAgICAgICAgICAgKVxuICAgICAgICAgICAgfVxuICAgICAgICAgIF07XG5cbiAgICAgICAgICByZXR1cm4gKFxuICAgICAgICAgICAgPFJlYWN0LkZyYWdtZW50PlxuICAgICAgICAgICAgICA8VGFibGUgY29sdW1ucz17Y29sdW1uc30gZGF0YVNvdXJjZT17dmFsdWV9IHBhZ2luYXRpb249e2ZhbHNlfSAvPlxuICAgICAgICAgICAgICA8QnV0dG9uXG4gICAgICAgICAgICAgICAgc3R5bGU9e3sgd2lkdGg6IFwiMTAwJVwiLCBtYXJnaW5Ub3A6IDE2LCBtYXJnaW5Cb3R0b206IDggfX1cbiAgICAgICAgICAgICAgICB0eXBlPVwiZGFzaGVkXCJcbiAgICAgICAgICAgICAgICBvbkNsaWNrPXt0aGlzLm5ld01lbWJlcn1cbiAgICAgICAgICAgICAgICBpY29uPVwicGx1c1wiXG4gICAgICAgICAgICAgID5cbiAgICAgICAgICAgICAgICDmlrDlop7miJDlkZhcbiAgICAgICAgICAgICAgPC9CdXR0b24+XG4gICAgICAgICAgICA8L1JlYWN0LkZyYWdtZW50PlxuICAgICAgICAgICk7XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgY29uc3QgV3JhcHBlZE5vcm1hbExvZ2luRm9ybSA9IEZvcm0uY3JlYXRlKCkoQXBwKTtcblxuICAgICAgUmVhY3RET00ucmVuZGVyKFxuICAgICAgICA8V3JhcHBlZE5vcm1hbExvZ2luRm9ybSAvPixcbiAgICAgICAgZG9jdW1lbnQuZ2V0RWxlbWVudEJ5SWQoXCJyb290XCIpXG4gICAgICApO1xuICAgICJdfQ==
+    </script>
+  </body>
+</html>
