@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 315px;
+            z-index: -1;
+        }
+
+        .header {
+            height: 315px;
+        }
+
+        .header-user {
+            margin-top: 80px;
+            margin-left: 24px;
+            height: 101px;
+            line-height: 101px;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-user-img {
+            width: 101px;
+            height: 101px;
+            border-radius: 50%;
+        }
+
+        .header-user-detail {
+            height: 101px;
+            padding: 20px 0 20px 30px;
+        }
+
+        .header-user-detail-top {
+            display: flex;
+        }
+
+        .header-user-detail-name {
+            font-size: 34px;
+            line-height: 36px;
+            color: #fff;
+        }
+
+        .header-user-detail-party {
+            margin-left: 25px;
+            width: 120px;
+            height: 40px;
+            border-radius: 20px;
+            border: solid 1px #fff;
+            font-size: 24px;
+            line-height: 41px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .header-user-detail-bottom {
+            font-size: 28px;
+            line-height: 36px;
+            color: #fff;
+        }
+
+        .notification {
+            margin: 0 auto;
+            width: 702px;
+            height: 120px;
+            background-color: #fff;
+            box-shadow: 0 3px 7px 0 rgba(174, 174, 174, 0.35);
+            border-radius: 5px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="header">
+    <img class="header-image" src="/react-demo/pictures/home-header.png"></img>
+    <div class='header-user'>
+        <img class='header-user-img' src='/react-demo/pictures/user.png'></img>
+        <div class='header-user-detail'>
+            <div class='header-user-detail-top'>
+                <text class='header-user-detail-name'>王小明</text>
+                <text class='header-user-detail-party'>正式党员</text>
+            </div>
+            <text class='header-user-detail-bottom'>演示党支部</text>
+        </div>
+    </div>
+</div>
+<div class='notification'>1</div>
+<span class="iconfont icon-shipinhuiyi" style="font-size: 40px"></span>
+</body>
+</html>

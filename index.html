@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Have a nice day with wonderful mood</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/react-demo/iconfont/iconfont.css"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      #root {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      body div,
+      body p,
+      body a,
+      body ul,
+      body li,
+      body span,
+      body button,
+      body input {
+        box-sizing: border-box;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 11vw;
+        line-height: 11vw;
+        text-align: center;
+        font-size: 36vw;
+        padding: 0 4vw;
+        color: #ffffff;
+        background: #ef4444;
+      }
+
+      .header i {
+        font-size: 4vw;
+        color: #ffffff;
+      }
+
+      .header .title {
+        font-size: 5vw;
+        color: #ffffff;
+      }
+
+      .header .extra {
+        font-size: 4vw;
+        color: #ffffff;
+      }
+
+      .card {
+        background: #fff;
+        margin-top: 2vh;
+      }
+
+      .card .title {
+        font-size: 4vw;
+        margin-left: 2vw;
+      }
+
+      .card .body .grid {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .card .body .grid .app {
+        margin: 1vw 1vw;
+        padding: 1vw 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .card .body .grid .app > i {
+        font-size: 6vw;
+      }
+
+      .card .body .grid .app > span {
+        font-size: 4vw;
+      }
+
+      .card .body .grid .app .icon {
+        font-size: 4vw;
+        position: absolute;
+        right: 1vw;
+        top: 1vw;
+      }
+
+      .card .body .grid .app .icon-add {
+        color: #0f8eed;
+      }
+
+      .card .body .grid .app .icon-minus {
+        color: #ff423d;
+      }
+
+      .edit {
+        background: #f2f2f2;
+      }
+
+      .divider {
+        font-size: 4vw;
+        color: #757575;
+        display: table;
+        margin: 4vw 0;
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 500;
+        white-space: nowrap;
+        text-align: center;
+        background: transparent;
+        clear: both;
+        width: 100%;
+        min-width: 100%;
+        vertical-align: middle;
+        box-sizing: border-box;
+        padding: 0;
+        font-variant: tabular-nums;
+        list-style: none;
+        font-feature-settings: "tnum";
+      }
+
+      .divider::before {
+        position: relative;
+        top: 50%;
+        display: table-cell;
+        width: 50%;
+        border-top: 1px solid #e8e8e8;
+        transform: translateY(50%);
+        content: "";
+      }
+
+      .divider::after {
+        position: relative;
+        top: 50%;
+        display: table-cell;
+        width: 50%;
+        border-top: 1px solid #e8e8e8;
+        transform: translateY(50%);
+        content: "";
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="header">
+        <i class="iconfont icon-jiantou3"></i><span class="title">更多应用</span
+        ><span class="extra">编辑</span>
+      </div>
+      <div class="card">
+        <div class="title">常用应用</div>
+        <div class="body">
+          <div class="grid">
+            <div class="app" style="width: 25%;">
+              <i class="iconfont icon-2" style="color: rgb(15, 142, 237);"></i
+              ><span>智慧决策</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-dangwugongkai"
+                style="color: rgb(237, 91, 76);"
+              ></i
+              ><span>智慧党建</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-bangong"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>办公审批</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-zheng"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>智慧政工</span>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-anjiandangan"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>案件分配</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-wj-ws"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>文书交换</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-tongxunlu"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>通讯录</span>
+            </div>
+            <div class="app" style="width: 25%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="title">规定动作</div>
+        <div class="body">
+          <div class="grid">
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-wj-ws"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>文书交换</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-wj-ws"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>知识库服务</span>
+            </div>
+            <div class="app" style="width: 25%;"></div>
+            <div class="app" style="width: 25%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="title">自选动作</div>
+        <div class="body">
+          <div class="grid">
+            <div class="app" style="width: 25%;">
+              <i class="iconfont icon-2" style="color: rgb(15, 142, 237);"></i
+              ><span>智慧决策</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-dangwugongkai"
+                style="color: rgb(237, 91, 76);"
+              ></i
+              ><span>智慧党建</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-bangong"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>办公审批</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-zheng"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>智慧政工</span>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-anjiandangan"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>案件分配</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-wj-ws"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>文书交换</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-tongxunlu"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>通讯录</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-tongxunlu"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>通知公告</span>
+            </div>
+          </div>
+          <div class="grid">
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-anjiandangan"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>简答网</span>
+            </div>
+            <div class="app" style="width: 25%;">
+              <i
+                class="iconfont icon-wj-ws"
+                style="color: rgb(15, 142, 237);"
+              ></i
+              ><span>知识库服务</span>
+            </div>
+            <div class="app" style="width: 25%;"></div>
+            <div class="app" style="width: 25%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="divider">我是有底线的</div>
+    </div>
+    <script>
+      "use strict";
+
+      var _extends =
+              Object.assign ||
+              function(target) {
+                for (var i = 1; i < arguments.length; i++) {
+                  var source = arguments[i];
+                  for (var key in source) {
+                    if (Object.prototype.hasOwnProperty.call(source, key)) {
+                      target[key] = source[key];
+                    }
+                  }
+                }
+                return target;
+              };
+
+      var _createClass = (function() {
+        function defineProperties(target, props) {
+          for (var i = 0; i < props.length; i++) {
+            var descriptor = props[i];
+            descriptor.enumerable = descriptor.enumerable || false;
+            descriptor.configurable = true;
+            if ("value" in descriptor) descriptor.writable = true;
+            Object.defineProperty(target, descriptor.key, descriptor);
+          }
+        }
+        return function(Constructor, protoProps, staticProps) {
+          if (protoProps) defineProperties(Constructor.prototype, protoProps);
+          if (staticProps) defineProperties(Constructor, staticProps);
+          return Constructor;
+        };
+      })();
+
+      function _classCallCheck(instance, Constructor) {
+        if (!(instance instanceof Constructor)) {
+          throw new TypeError("Cannot call a class as a function");
+        }
+      }
+
+      function _possibleConstructorReturn(self, call) {
+        if (!self) {
+          throw new ReferenceError(
+                  "this hasn't been initialised - super() hasn't been called"
+          );
+        }
+        return call && (typeof call === "object" || typeof call === "function")
+                ? call
+                : self;
+      }
+
+      function _inherits(subClass, superClass) {
+        if (typeof superClass !== "function" && superClass !== null) {
+          throw new TypeError(
+                  "Super expression must either be null or a function, not " +
+                  typeof superClass
+          );
+        }
+        subClass.prototype = Object.create(superClass && superClass.prototype, {
+          constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+          }
+        });
+        if (superClass)
+          Object.setPrototypeOf
+                  ? Object.setPrototypeOf(subClass, superClass)
+                  : (subClass.__proto__ = superClass);
+      }
+
+      var origin = [
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-2",
+            style: { color: "#0f8eed" }
+          }),
+          text: "智慧决策",
+          link: "/decision"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-dangwugongkai",
+            style: { color: "#ed5b4c" }
+          }),
+          text: "智慧党建",
+          link: "http://60.167.238.3:9000/wap/app/index?type=ty"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-bangong",
+            style: { color: "#0f8eed" }
+          }),
+          text: "办公审批"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-zheng",
+            style: { color: "#0f8eed" }
+          }),
+          text: "智慧政工"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-anjiandangan",
+            style: { color: "#0f8eed" }
+          }),
+          text: "案件分配"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-wj-ws",
+            style: { color: "#0f8eed" }
+          }),
+          text: "文书交换"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-tongxunlu",
+            style: { color: "#0f8eed" }
+          }),
+          text: "通讯录"
+        }
+      ];
+      var recently = [
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-wj-ws",
+            style: { color: "#0f8eed" }
+          }),
+          text: "文书交换"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-wj-ws",
+            style: { color: "#0f8eed" }
+          }),
+          text: "知识库服务"
+        }
+      ];
+      var all = [
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-2",
+            style: { color: "#0f8eed" }
+          }),
+          text: "智慧决策",
+          link: "/decision"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-dangwugongkai",
+            style: { color: "#ed5b4c" }
+          }),
+          text: "智慧党建",
+          link: "http://60.167.238.3:9000/wap/app/index?type=ty"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-bangong",
+            style: { color: "#0f8eed" }
+          }),
+          text: "办公审批"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-zheng",
+            style: { color: "#0f8eed" }
+          }),
+          text: "智慧政工"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-anjiandangan",
+            style: { color: "#0f8eed" }
+          }),
+          text: "案件分配"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-wj-ws",
+            style: { color: "#0f8eed" }
+          }),
+          text: "文书交换"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-tongxunlu",
+            style: { color: "#0f8eed" }
+          }),
+          text: "通讯录"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-tongxunlu",
+            style: { color: "#0f8eed" }
+          }),
+          text: "通知公告"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-anjiandangan",
+            style: { color: "#0f8eed" }
+          }),
+          text: "简答网"
+        },
+        {
+          icon: React.createElement("i", {
+            className: "iconfont icon-wj-ws",
+            style: { color: "#0f8eed" }
+          }),
+          text: "知识库服务"
+        }
+      ];
+
+      var App = (function(_React$PureComponent) {
+        _inherits(App, _React$PureComponent);
+
+        function App(props) {
+          _classCallCheck(this, App);
+
+          var _this = _possibleConstructorReturn(
+                  this,
+                  (App.__proto__ || Object.getPrototypeOf(App)).call(this, props)
+          );
+
+          _this.onAdd = function(item) {
+            var _this$state = _this.state;
+            var officeRecently = _this$state.officeRecently;
+            var officeAll = _this$state.officeAll;
+
+            var target1 = officeRecently.filter(function(tar) {
+              return tar.text === item.text;
+            })[0];
+            if (target1) target1.editable = true;
+            var target2 = officeAll.filter(function(tar) {
+              return tar.text === item.text;
+            })[0];
+            if (target2) target2.editable = true;
+            _this.setState(function(_ref) {
+              var office = _ref.office;
+              var officeRecently = _ref.officeRecently;
+              var officeAll = _ref.officeAll;
+              return {
+                office: office.concat(
+                        _extends({}, item, { editable: undefined })
+                ),
+                officeRecently: officeRecently,
+                officeAll: officeAll
+              };
+            });
+          };
+
+          _this.onMinus = function(item) {
+            var _this$state2 = _this.state;
+            var officeRecently = _this$state2.officeRecently;
+            var officeAll = _this$state2.officeAll;
+
+            var target1 = officeRecently.filter(function(tar) {
+              return tar.text === item.text;
+            })[0];
+            if (target1) delete target1.editable;
+            var target2 = officeAll.filter(function(tar) {
+              return tar.text === item.text;
+            })[0];
+            if (target2) delete target2.editable;
+            _this.setState(function(_ref2) {
+              var office = _ref2.office;
+              var officeRecently = _ref2.officeRecently;
+              var officeAll = _ref2.officeAll;
+              return {
+                office: office.filter(function(tar) {
+                  return tar.text !== item.text;
+                }),
+                officeRecently: officeRecently,
+                officeAll: officeAll
+              };
+            });
+          };
+
+          _this.edit = function() {
+            return _this.setState({ edit: true });
+          };
+
+          _this.finish = function() {
+            // 这里是保存
+            _this.setState(function(_ref3) {
+              var office = _ref3.office;
+              var officeRecently = _ref3.officeRecently;
+              var officeAll = _ref3.officeAll;
+              return {
+                office: office,
+                officeCache: office.map(function(item) {
+                  return _extends({}, item);
+                }),
+                officeRecentlyCache: officeRecently.map(function(item) {
+                  return _extends({}, item);
+                }),
+                officeAllCache: officeAll.map(function(item) {
+                  return _extends({}, item);
+                }),
+                edit: false
+              };
+            });
+          };
+
+          _this.cancel = function() {
+            _this.setState(function(_ref4) {
+              var officeCache = _ref4.officeCache;
+              var officeRecentlyCache = _ref4.officeRecentlyCache;
+              var officeAllCache = _ref4.officeAllCache;
+              return {
+                edit: false,
+                office: officeCache.map(function(item) {
+                  return _extends({}, item);
+                }),
+                officeRecently: officeRecentlyCache.map(function(item) {
+                  return _extends({}, item);
+                }),
+                officeAll: officeAllCache.map(function(item) {
+                  return _extends({}, item);
+                })
+              };
+            });
+          };
+
+          _this.state = {
+            edit: false,
+            office: origin,
+            officeCache: origin,
+            officeRecently: recently,
+            officeRecentlyCache: recently,
+            officeAll: all,
+            officeAllCache: all
+          };
+          return _this;
+        }
+
+        _createClass(App, [
+          {
+            key: "componentDidMount",
+            value: function componentDidMount() {
+              // 这里是读数据
+              var _state = this.state;
+              var office = _state.office;
+              var officeRecently = _state.officeRecently;
+              var officeAll = _state.officeAll;
+
+              officeRecently.forEach(function(item) {
+                if (
+                        office.filter(function(tar) {
+                          return tar.text === item.text;
+                        }).length
+                )
+                  item.editable = true;
+              });
+              officeAll.forEach(function(item) {
+                if (
+                        office.filter(function(tar) {
+                          return tar.text === item.text;
+                        }).length
+                )
+                  item.editable = true;
+              });
+              this.setState({
+                office: office,
+                officeCache: office.map(function(item) {
+                  return _extends({}, item);
+                }),
+                officeRecentlyCache: officeRecently.map(function(item) {
+                  return _extends({}, item);
+                }),
+                officeAllCache: officeAll.map(function(item) {
+                  return _extends({}, item);
+                })
+              });
+            }
+          },
+          {
+            key: "render",
+            value: function render() {
+              var _this2 = this;
+
+              var _state2 = this.state;
+              var office = _state2.office;
+              var officeRecently = _state2.officeRecently;
+              var officeAll = _state2.officeAll;
+              var edit = _state2.edit;
+
+              var consumer = function consumer(data) {
+                var list = [];
+                for (var i = 0; i < data.length; i += 4) {
+                  var ts = data.slice(i, i + 4);
+                  if (ts.length === 4) {
+                    list.push(ts);
+                  } else {
+                    // eslint-disable-next-line compat/compat
+                    list.push(ts.concat(Array.from(new Array(4 - ts.length))));
+                  }
+                }
+                return list.map(function(item, i) {
+                  return React.createElement(
+                          "div",
+                          { key: i, className: "grid" },
+                          item.map(function(target, j) {
+                            return React.createElement(
+                                    "div",
+                                    {
+                                      key: j,
+                                      className: edit && target ? "app edit" : "app",
+                                      style: { width: "25%" }
+                                    },
+                                    target &&
+                                    React.createElement(
+                                            React.Fragment,
+                                            null,
+                                            target.icon,
+                                            React.createElement("span", null, target.text),
+                                            edit &&
+                                            (target.editable
+                                                    ? React.createElement("span", {
+                                                      className:
+                                                              "iconfont icon-tianjia icon icon-add",
+                                                      onClick: function onClick() {
+                                                        return _this2.onAdd(target);
+                                                      }
+                                                    })
+                                                    : React.createElement("span", {
+                                                      className:
+                                                              "iconfont icon-jianshao1 icon icon-minus",
+                                                      onClick: function onClick() {
+                                                        return _this2.onMinus(target);
+                                                      }
+                                                    }))
+                                    )
+                            );
+                          })
+                  );
+                });
+              };
+
+              var Provider = function Provider(data) {
+                var list = [];
+                for (var i = 0; i < data.length; i += 4) {
+                  var ts = data.slice(i, i + 4);
+                  if (ts.length === 4) {
+                    list.push(ts);
+                  } else {
+                    // eslint-disable-next-line compat/compat
+                    list.push(ts.concat(Array.from(new Array(4 - ts.length))));
+                  }
+                }
+                return list.map(function(item, i) {
+                  return React.createElement(
+                          "div",
+                          { key: i, className: "grid" },
+                          item.map(function(target, j) {
+                            return React.createElement(
+                                    "div",
+                                    {
+                                      key: j,
+                                      className: edit && target ? "app edit" : "app",
+                                      style: { width: "25%" }
+                                    },
+                                    target &&
+                                    React.createElement(
+                                            React.Fragment,
+                                            null,
+                                            target.icon,
+                                            React.createElement("span", null, target.text),
+                                            edit &&
+                                            (target.editable
+                                                    ? React.createElement("span", {
+                                                      className:
+                                                              "iconfont icon-jianshao1 icon icon-minus",
+                                                      onClick: function onClick() {
+                                                        return _this2.onMinus(target);
+                                                      }
+                                                    })
+                                                    : React.createElement("span", {
+                                                      className:
+                                                              "iconfont icon-tianjia icon icon-add",
+                                                      onClick: function onClick() {
+                                                        return _this2.onAdd(target);
+                                                      }
+                                                    }))
+                                    )
+                            );
+                          })
+                  );
+                });
+              };
+
+              return React.createElement(
+                      React.Fragment,
+                      null,
+                      React.createElement(
+                              "div",
+                              { className: "header" },
+                              edit
+                                      ? React.createElement(
+                                      "span",
+                                      { className: "extra", onClick: this.cancel },
+                                      "取消"
+                                      )
+                                      : React.createElement("i", {
+                                        className: "iconfont icon-jiantou3"
+                                      }),
+                              React.createElement(
+                                      "span",
+                                      { className: "title" },
+                                      "更多应用"
+                              ),
+                              edit
+                                      ? React.createElement(
+                                      "span",
+                                      { className: "extra", onClick: this.finish },
+                                      "完成"
+                                      )
+                                      : React.createElement(
+                                      "span",
+                                      { className: "extra", onClick: this.edit },
+                                      "编辑"
+                                      )
+                      ),
+                      React.createElement(
+                              "div",
+                              { className: "card" },
+                              React.createElement(
+                                      "div",
+                                      { className: "title" },
+                                      "常用应用"
+                              ),
+                              React.createElement(
+                                      "div",
+                                      { className: "body" },
+                                      consumer(office)
+                              )
+                      ),
+                      React.createElement(
+                              "div",
+                              { className: "card" },
+                              React.createElement(
+                                      "div",
+                                      { className: "title" },
+                                      "规定动作"
+                              ),
+                              React.createElement(
+                                      "div",
+                                      { className: "body" },
+                                      Provider(officeRecently)
+                              )
+                      ),
+                      React.createElement(
+                              "div",
+                              { className: "card" },
+                              React.createElement(
+                                      "div",
+                                      { className: "title" },
+                                      "自选动作"
+                              ),
+                              React.createElement(
+                                      "div",
+                                      { className: "body" },
+                                      Provider(officeAll)
+                              )
+                      ),
+                      React.createElement(
+                              "div",
+                              { className: "divider" },
+                              "我是有底线的"
+                      )
+              );
+            }
+          }
+        ]);
+
+        return App;
+      })(React.PureComponent);
+
+      ReactDOM.render(
+              React.createElement(App, null),
+              document.getElementById("root")
+      );
+      //# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIklubGluZSBCYWJlbCBzY3JpcHQiXSwibmFtZXMiOlsib3JpZ2luIiwiaWNvbiIsImNvbG9yIiwidGV4dCIsImxpbmsiLCJyZWNlbnRseSIsImFsbCIsIkFwcCIsInByb3BzIiwib25BZGQiLCJzdGF0ZSIsIm9mZmljZVJlY2VudGx5Iiwib2ZmaWNlQWxsIiwidGFyZ2V0MSIsImZpbHRlciIsInRhciIsIml0ZW0iLCJlZGl0YWJsZSIsInRhcmdldDIiLCJzZXRTdGF0ZSIsIm9mZmljZSIsImNvbmNhdCIsInVuZGVmaW5lZCIsIm9uTWludXMiLCJlZGl0IiwiZmluaXNoIiwib2ZmaWNlQ2FjaGUiLCJtYXAiLCJvZmZpY2VSZWNlbnRseUNhY2hlIiwib2ZmaWNlQWxsQ2FjaGUiLCJjYW5jZWwiLCJmb3JFYWNoIiwibGVuZ3RoIiwiY29uc3VtZXIiLCJsaXN0IiwiaSIsImRhdGEiLCJ0cyIsInNsaWNlIiwicHVzaCIsIkFycmF5IiwiZnJvbSIsInRhcmdldCIsImoiLCJ3aWR0aCIsIlByb3ZpZGVyIiwiUmVhY3QiLCJQdXJlQ29tcG9uZW50IiwiUmVhY3RET00iLCJyZW5kZXIiLCJkb2N1bWVudCIsImdldEVsZW1lbnRCeUlkIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7QUFDTSxJQUFNQSxTQUFTLENBQ2I7QUFDRUMsUUFBTSwyQkFBRyxXQUFVLGlCQUFiLEVBQStCLE9BQU8sRUFBRUMsT0FBTyxTQUFULEVBQXRDLEdBRFI7QUFFRUMsUUFBTSxNQUZSO0FBR0VDLFFBQU07QUFIUixDQURhLEVBTWI7QUFDRUgsUUFDRTtBQUNFLGVBQVUsNkJBRFo7QUFFRSxXQUFPLEVBQUVDLE9BQU8sU0FBVDtBQUZULElBRko7QUFPRUMsUUFBTSxNQVBSO0FBUUVDLFFBQU07QUFSUixDQU5hLEVBZ0JiO0FBQ0VILFFBQ0UsMkJBQUcsV0FBVSx1QkFBYixFQUFxQyxPQUFPLEVBQUVDLE9BQU8sU0FBVCxFQUE1QyxHQUZKO0FBSUVDLFFBQU07QUFKUixDQWhCYSxFQXNCYjtB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QixFQUF3QixTQUFTLEtBQUtELElBQXRDO0FBQUE7QUFBQTtBQWRKLFNBREY7QUFvQkU7QUFBQTtBQUFBLFlBQUssV0FBVSxNQUFmO0FBQ0U7QUFBQTtBQUFBLGNBQUssV0FBVSxPQUFmO0FBQUE7QUFBQSxXQURGO0FBRUU7QUFBQTtBQUFBLGNBQUssV0FBVSxNQUFmO0FBQXVCUyxxQkFBU2IsTUFBVDtBQUF2QjtBQUZGLFNBcEJGO0FBd0JFO0FBQUE7QUFBQSxZQUFLLFdBQVUsTUFBZjtBQUNFO0FBQUE7QUFBQSxjQUFLLFdBQVUsT0FBZjtBQUFBO0FBQUEsV0FERjtBQUVFO0FBQUE7QUFBQSxjQUFLLFdBQVUsTUFBZjtBQUF1QnlCLHFCQUFTbEMsY0FBVDtBQUF2QjtBQUZGLFNBeEJGO0FBNEJFO0FBQUE7QUFBQSxZQUFLLFdBQVUsTUFBZjtBQUNFO0FBQUE7QUFBQSxjQUFLLFdBQVUsT0FBZjtBQUFBO0FBQUEsV0FERjtBQUVFO0FBQUE7QUFBQSxjQUFLLFdBQVUsTUFBZjtBQUF1QmtDLHFCQUFTakMsU0FBVDtBQUF2QjtBQUZGLFNBNUJGO0FBZ0NFO0FBQUE7QUFBQSxZQUFLLFdBQVUsU0FBZjtBQUFBO0FBQUE7QUFoQ0YsT0FERjtBQW9DRDs7OztFQXBOZWtDLE1BQU1DLGE7O0FBdU54QkMsU0FBU0MsTUFBVCxDQUFnQixvQkFBQyxHQUFELE9BQWhCLEVBQXlCQyxTQUFTQyxjQUFULENBQXdCLE1BQXhCLENBQXpCIiwiZmlsZSI6IklubGluZSBCYWJlbCBzY3JpcHQiLCJzb3VyY2VzQ29udGVudCI6WyJcbiAgICAgIGNvbnN0IG9yaWdpbiA9IFtcbiAgICAgICAge1xuICAgICAgICAgIGljb246IDxpIGNsYXNzTmFtZT1cImljb25mb250IGljb24tMlwiIHN0eWxlPXt7IGNvbG9yOiBcIiMwZjhlZWRcIiB9fSAvPixcbiAgICAgICAgICB0ZXh0OiBcIuaZuuaFp+WGs+etllwiLFxuICAgICAgICAgIGxpbms6IFwiL2RlY2lzaW9uXCJcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGljb246IChcbiAgICAgICAgICAgIDxpXG4gICAgICAgICAgICAgIGNsYXNzTmFtZT1cImljb25mb250IGljb24tZGFuZ3d1Z29uZ2thaVwiXG4gICAgICAgICAgICAgIHN0eWxlPXt7IGNvbG9yOiBcIiNlZDViNGNcIiB9fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICApLFxuICAgICAgICAgIHRleHQ6IFwi5pm65oWn5YWa5bu6XCIsXG4gICAgICAgICAgbGluazogXCJodHRwOi8vNjAuMTY3LjIzOC4zOjkwMDAvd2FwL2FwcC9pbmRleD90eXBlPXR5XCJcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGljb246IChcbiAgICAgICAgICAgIDxpIGNsYXNzTmFtZT1cImljb25mb250IGljb24tYmFuZ29uZ1wiIHN0eWxlPXt7IGNvbG9yOiBcIiMwZjhlZWRcIiB9fSAvPlxuICAgICAgICAgICksXG4gICAgICAgICAgdGV4dDogXCLlip7lhazlrqHmiblcIlxuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgaWNvbjogKFxuICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiaWNvbmZvbnQgaWNvbi16aGVuZ1wiIHN0eWxlPXt7IGNvbG9yOiBcIiMwZjhlZWRcIiB9fSAvPlxuICAgICAgICAgICksXG4gICAgICAgICAgdGV4dDogXCLmmbrmhafmlL/lt6VcIlxuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgaWNvbjogKFxuICAgICAgICAgICAgPGlcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaWNvbmZvbnQgaWNvbi1hbmppYW5kYW5nYW5cIlxuICAgICAgICAgICAgICBzdHlsZT17eyBjb2xvcjogXCIjMGY4ZWVkXCIgfX1cbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgKSxcbiAgICAgICAgICB0ZXh0OiBcIuahiOS7tuWIhumFjVwiXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICBpY29uOiAoXG4gICAgICAgICAgICA8aSBjbGFzc05hbWU9XCJpY29uZm9udCBpY29uLXdqLXdzXCIgc3R5bGU9e3sgY29sb3I6IFwiIzBmOGVlZFwiIH19IC8+XG4gICAgICAgICAgKSxcbiAgICAgICAgICB0ZXh0OiBcIuaWh+S5puS6pOaNolwiXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICBpY29uOiAoXG4gICAgICAgICAgICA8aVxuICAgICAgICAgICAgICBjbGFzc05hbWU9XCJpY29uZm9udCBpY29uLXRvbmd4dW5sdVwiXG4gICAgICAgICAgICAgIHN0eWxlPXt7IGNvbG9yOiBcIiMwZjhlZWRcIiB9fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICApLFxuICAgICAgICAgIHRleHQ6IFwi6YCa6K6v5b2VXCJcbiAgICAgICAgfVxuICAgICAgXTtcbiAgICAgIGNvbnN0IHJlY2VudGx5ID0gW1xuICAgICAgICB7XG4gICAgICAgICAgaWNvbjogKFxuICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiaWNvbmZvbnQgaWNvbi13ai13c1wiIHN0eWxlPXt7IGNvbG9yOiBcIiMwZjhlZWRcIiB9fSAvPlxuICAgICAgICAgICksXG4gICAgICAgICAgdGV4dDogXCLmlofkuabkuqTmjaJcIlxuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgaWNvbjogKFxuICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiaWNvbmZvbnQgaWNvbi13ai13c1wiIHN0eWxlPXt7IGNvbG9yOiBcIiMwZjhlZWRcIiB9fSAvPlxuICAgICAgICAgICksXG4gICAgICAgICAgdGV4dDogXCLnn6Xor4blupPmnI3liqFcIlxuICAgICAgICB9XG4gICAgICBdO1xuICAgICAgY29uc3QgYWxsID0gW1xuICAgICAgICB7XG4gICAgICAgICAgaWNvbjogPGkgY2xhc3NOYW1lPVwiaWNvbmZvbnQgaWNvbi0yXCIgc3R5bGU9e3sgY29sb3I6IFwiIzBmOGVlZFwiIH19IC8+LFxuICAgICAgICAgIHRleHQ6IFwi5pm65oWn5Yaz562WXCIsXG4gICAgICAgICAgbGluazogXCIvZGVjaXNpb25cIlxuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgaWNvbjogKFxuICAgICAgICAgICAgPGlcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaWNvbmZvbnQgaWNvbi1kYW5nd3Vnb25na2FpXCJcbiAgICAgICAgICAgICAgc3R5bGU9e3sgY29sb3I6IFwiI2VkNWI0Y1wiIH19XG4gICAgICAgICAgICAvPlxuICAgICAgICAgICksXG4gICAgICAgICAgdGV4dDogXCLmmbrmhaflhZrlu7pcIixcbiAgICAgICAgICBsaW5rOiBcImh0dHA6Ly82MC4xNjcuMjM4LjM6OTAwMC93YXAvYXBwL2luZGV4P3R5cGU9dHlcIlxuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgaWNvbjogKFxuICAgICAgICAgICAgPGkgY2xhc3NOYW1lPVwiaWNvbmZvbnQgaWNvbi1iYW5nb25nXCIgc3R5bGU9e3sgY29sb3I6IFwiIzBmOGVlZFwiIH19IC8+XG4gICAgICAgICAgKSxcbiAgICAgICAgICB0ZXh0OiBcIuWKnuWFrOWuoeaJuVwiXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICBpY29uOiAoXG4gICAgICAgICAgICA8aSBjbGFzc05hbWU9XCJpY29uZm9udCBpY29uLXpoZW5nXCIgc3R5bGU9e3sgY29sb3I6IFwiIzBmOGVlZFwiIH19IC8+XG4gICAgICAgICAgKSxcbiAgICAgICAgICB0ZXh0OiBcIuaZuuaFp+aUv+W3pVwiXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICBpY29uOiAoXG4gICAgICAgICAgICA8aVxuICAgICAgICAgICAgICBjbGFzc05hbWU9XCJpY29uZm9udCBpY29uLWFuamlhbmRhbmdhblwiXG4gICAgICAgICAgICAgIHN0eWxlPXt7IGNvbG9yOiBcIiMwZjhlZWRcIiB9fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICApLFxuICAgICAgICAgIHRleHQ6IFwi5qGI5Lu25YiG6YWNXCJcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGljb246IChcbiAgICAgICAgICAgIDxpIGNsYXNzTmFtZT1cImljb25mb250IGljb24td2otd3NcIiBzdHlsZT17eyBjb2xvcjogXCIjMGY4ZWVkXCIgfX0gLz5cbiAgICAgICAgICApLFxuICAgICAgICAgIHRleHQ6IFwi5paH5Lmm5Lqk5o2iXCJcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGljb246IChcbiAgICAgICAgICAgIDxpXG4gICAgICAgICAgICAgIGNsYXNzTmFtZT1cImljb25mb250IGljb24tdG9uZ3h1bmx1XCJcbiAgICAgICAgICAgICAgc3R5bGU9e3sgY29sb3I6IFwiIzBmOGVlZFwiIH19XG4gICAgICAgICAgICAvPlxuICAgICAgICAgICksXG4gICAgICAgICAgdGV4dDogXCLpgJrorq/lvZVcIlxuICAgICAgICB9LFxuICAgICAgICB7XG4gICAgICAgICAgaWNvbjogKFxuICAgICAgICAgICAgPGlcbiAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaWNvbmZvbnQgaWNvbi10b25neHVubHVcIlxuICAgICAgICAgICAgICBzdHlsZT17eyBjb2xvcjogXCIjMGY4ZWVkXCIgfX1cbiAgICAgICAgICAgIC8+XG4gICAgICAgICAgKSxcbiAgICAgICAgICB0ZXh0OiBcIumAmuefpeWFrOWRilwiXG4gICAgICAgIH0sXG4gICAgICAgIHtcbiAgICAgICAgICBpY29uOiAoXG4gICAgICAgICAgICA8aVxuICAgICAgICAgICAgICBjbGFzc05hbWU9XCJpY29uZm9udCBpY29uLWFuamlhbmRhbmdhblwiXG4gICAgICAgICAgICAgIHN0eWxlPXt7IGNvbG9yOiBcIiMwZjhlZWRcIiB9fVxuICAgICAgICAgICAgLz5cbiAgICAgICAgICApLFxuICAgICAgICAgIHRleHQ6IFwi566A562U572RXCJcbiAgICAgICAgfSxcbiAgICAgICAge1xuICAgICAgICAgIGljb246IChcbiAgICAgICAgICAgIDxpIGNsYXNzTmFtZT1cImljb25mb250IGljb24td2otd3NcIiBzdHlsZT17eyBjb2xvcjogXCIjMGY4ZWVkXCIgfX0gLz5cbiAgICAgICAgICApLFxuICAgICAgICAgIHRleHQ6IFwi55+l6K+G5bqT5pyN5YqhXCJcbiAgICAgICAgfVxuICAgICAgXTtcblxuICAgICAgY2xhc3MgQXBwIGV4dGVuZHMgUmVhY3QuUHVyZUNvbXBvbmVudCB7XG4gICAgICAgIGNvbnN0cnVjdG9yKHByb3BzKSB7XG4gICAgICAgICAgc3VwZXIocHJvcHMpO1xuICAgICAgICAgIHRoaXMuc3RhdGUgPSB7XG4gICAgICAgICAgICBlZGl0OiBmYWxzZSxcbiAgICAgICAgICAgIG9mZmljZTogb3JpZ2luLFxuICAgICAgICAgICAgb2ZmaWNlQ2FjaGU6IG9yaWdpbixcbiAgICAgICAgICAgIG9mZmljZVJlY2VudGx5OiByZWNlbnRseSxcbiAgICAgICAgICAgIG9mZmljZVJlY2VudGx5Q2FjaGU6IHJlY2VudGx5LFxuICAgICAgICAgICAgb2ZmaWNlQWxsOiBhbGwsXG4gICAgICAgICAgICBvZmZpY2VBbGxDYWNoZTogYWxsXG4gICAgICAgICAgfTtcbiAgICAgICAgfVxuXG4gICAgICAgIGNvbXBvbmVudERpZE1vdW50KCkge1xuICAgICAgICAgIC8vIOi/memHjOaYr+ivu+aVsOaNrlxuICAgICAgICAgIGNvbnN0IHsgb2ZmaWNlLCBvZmZpY2VSZWNlbnRseSwgb2ZmaWNlQWxsIH0gPSB0aGlzLnN0YXRlO1xuICAgICAgICAgIG9mZmljZVJlY2VudGx5LmZvckVhY2goaXRlbSA9PiB7XG4gICAgICAgICAgICBpZiAob2ZmaWNlLmZpbHRlcih0YXIgPT4gdGFyLnRleHQgPT09IGl0ZW0udGV4dCkubGVuZ3RoKVxuICAgICAgICAgICAgICBpdGVtLmVkaXRhYmxlID0gdHJ1ZTtcbiAgICAgICAgICB9KTtcbiAgICAgICAgICBvZmZpY2VBbGwuZm9yRWFjaChpdGVtID0+IHtcbiAgICAgICAgICAgIGlmIChvZmZpY2UuZmlsdGVyKHRhciA9PiB0YXIudGV4dCA9PT0gaXRlbS50ZXh0KS5sZW5ndGgpXG4gICAgICAgICAgICAgIGl0ZW0uZWRpdGFibGUgPSB0cnVlO1xuICAgICAgICAgIH0pO1xuICAgICAgICAgIHRoaXMuc2V0U3RhdGUoe1xuICAgICAgICAgICAgb2ZmaWNlLFxuICAgICAgICAgICAgb2ZmaWNlQ2FjaGU6IG9mZmljZS5tYXAoaXRlbSA9PiAoeyAuLi5pdGVtIH0pKSxcbiAgICAgICAgICAgIG9mZmljZVJlY2VudGx5Q2FjaGU6IG9mZmljZVJlY2VudGx5Lm1hcChpdGVtID0+ICh7IC4uLml0ZW0gfSkpLFxuICAgICAgICAgICAgb2ZmaWNlQWxsQ2FjaGU6IG9mZmljZUFsbC5tYXAoaXRlbSA9PiAoeyAuLi5pdGVtIH0pKVxuICAgICAgICAgIH0pO1xuICAgICAgICB9XG5cbiAgICAgICAgb25BZGQgPSBpdGVtID0+IHtcbiAgICAgICAgICBjb25zdCB7IG9mZmljZVJlY2VudGx5LCBvZmZpY2VBbGwgfSA9IHRoaXMuc3RhdGU7XG4gICAgICAgICAgY29uc3QgdGFyZ2V0MSA9IG9mZmljZVJlY2VudGx5LmZpbHRlcihcbiAgICAgICAgICAgIHRhciA9PiB0YXIudGV4dCA9PT0gaXRlbS50ZXh0XG4gICAgICAgICAgKVswXTtcbiAgICAgICAgICBpZiAodGFyZ2V0MSkgdGFyZ2V0MS5lZGl0YWJsZSA9IHRydWU7XG4gICAgICAgICAgY29uc3QgdGFyZ2V0MiA9IG9mZmljZUFsbC5maWx0ZXIodGFyID0+IHRhci50ZXh0ID09PSBpdGVtLnRleHQpWzBdO1xuICAgICAgICAgIGlmICh0YXJnZXQyKSB0YXJnZXQyLmVkaXRhYmxlID0gdHJ1ZTtcbiAgICAgICAgICB0aGlzLnNldFN0YXRlKCh7IG9mZmljZSwgb2ZmaWNlUmVjZW50bHksIG9mZmljZUFsbCB9KSA9PiAoe1xuICAgICAgICAgICAgb2ZmaWNlOiBvZmZpY2UuY29uY2F0KHsgLi4uaXRlbSwgZWRpdGFibGU6IHVuZGVmaW5lZCB9KSxcbiAgICAgICAgICAgIG9mZmljZVJlY2VudGx5LFxuICAgICAgICAgICAgb2ZmaWNlQWxsXG4gICAgICAgICAgfSkpO1xuICAgICAgICB9O1xuXG4gICAgICAgIG9uTWludXMgPSBpdGVtID0+IHtcbiAgICAgICAgICBjb25zdCB7IG9mZmljZVJlY2VudGx5LCBvZmZpY2VBbGwgfSA9IHRoaXMuc3RhdGU7XG4gICAgICAgICAgY29uc3QgdGFyZ2V0MSA9IG9mZmljZVJlY2VudGx5LmZpbHRlcihcbiAgICAgICAgICAgIHRhciA9PiB0YXIudGV4dCA9PT0gaXRlbS50ZXh0XG4gICAgICAgICAgKVswXTtcbiAgICAgICAgICBpZiAodGFyZ2V0MSkgZGVsZXRlIHRhcmdldDEuZWRpdGFibGU7XG4gICAgICAgICAgY29uc3QgdGFyZ2V0MiA9IG9mZmljZUFsbC5maWx0ZXIodGFyID0+IHRhci50ZXh0ID09PSBpdGVtLnRleHQpWzBdO1xuICAgICAgICAgIGlmICh0YXJnZXQyKSBkZWxldGUgdGFyZ2V0Mi5lZGl0YWJsZTtcbiAgICAgICAgICB0aGlzLnNldFN0YXRlKCh7IG9mZmljZSwgb2ZmaWNlUmVjZW50bHksIG9mZmljZUFsbCB9KSA9PiAoe1xuICAgICAgICAgICAgb2ZmaWNlOiBvZmZpY2UuZmlsdGVyKHRhciA9PiB0YXIudGV4dCAhPT0gaXRlbS50ZXh0KSxcbiAgICAgICAgICAgIG9mZmljZVJlY2VudGx5LFxuICAgICAgICAgICAgb2ZmaWNlQWxsXG4gICAgICAgICAgfSkpO1xuICAgICAgICB9O1xuXG4gICAgICAgIGVkaXQgPSAoKSA9PiB0aGlzLnNldFN0YXRlKHsgZWRpdDogdHJ1ZSB9KTtcblxuICAgICAgICBmaW5pc2ggPSAoKSA9PiB7XG4gICAgICAgICAgLy8g6L+Z6YeM5piv5L+d5a2YXG4gICAgICAgICAgdGhpcy5zZXRTdGF0ZSgoeyBvZmZpY2UsIG9mZmljZVJlY2VudGx5LCBvZmZpY2VBbGwgfSkgPT4gKHtcbiAgICAgICAgICAgIG9mZmljZSxcbiAgICAgICAgICAgIG9mZmljZUNhY2hlOiBvZmZpY2UubWFwKGl0ZW0gPT4gKHsgLi4uaXRlbSB9KSksXG4gICAgICAgICAgICBvZmZpY2VSZWNlbnRseUNhY2hlOiBvZmZpY2VSZWNlbnRseS5tYXAoaXRlbSA9PiAoeyAuLi5pdGVtIH0pKSxcbiAgICAgICAgICAgIG9mZmljZUFsbENhY2hlOiBvZmZpY2VBbGwubWFwKGl0ZW0gPT4gKHsgLi4uaXRlbSB9KSksXG4gICAgICAgICAgICBlZGl0OiBmYWxzZVxuICAgICAgICAgIH0pKTtcbiAgICAgICAgfTtcblxuICAgICAgICBjYW5jZWwgPSAoKSA9PiB7XG4gICAgICAgICAgdGhpcy5zZXRTdGF0ZShcbiAgICAgICAgICAgICh7IG9mZmljZUNhY2hlLCBvZmZpY2VSZWNlbnRseUNhY2hlLCBvZmZpY2VBbGxDYWNoZSB9KSA9PiAoe1xuICAgICAgICAgICAgICBlZGl0OiBmYWxzZSxcbiAgICAgICAgICAgICAgb2ZmaWNlOiBvZmZpY2VDYWNoZS5tYXAoaXRlbSA9PiAoeyAuLi5pdGVtIH0pKSxcbiAgICAgICAgICAgICAgb2ZmaWNlUmVjZW50bHk6IG9mZmljZVJlY2VudGx5Q2FjaGUubWFwKGl0ZW0gPT4gKHsgLi4uaXRlbSB9KSksXG4gICAgICAgICAgICAgIG9mZmljZUFsbDogb2ZmaWNlQWxsQ2FjaGUubWFwKGl0ZW0gPT4gKHsgLi4uaXRlbSB9KSlcbiAgICAgICAgICAgIH0pXG4gICAgICAgICAgKTtcbiAgICAgICAgfTtcblxuICAgICAgICByZW5kZXIoKSB7XG4gICAgICAgICAgY29uc3QgeyBvZmZpY2UsIG9mZmljZVJlY2VudGx5LCBvZmZpY2VBbGwsIGVkaXQgfSA9IHRoaXMuc3RhdGU7XG5cbiAgICAgICAgICBjb25zdCBjb25zdW1lciA9IGRhdGEgPT4ge1xuICAgICAgICAgICAgY29uc3QgbGlzdCA9IFtdO1xuICAgICAgICAgICAgZm9yIChsZXQgaSA9IDA7IGkgPCBkYXRhLmxlbmd0aDsgaSArPSA0KSB7XG4gICAgICAgICAgICAgIGxldCB0cyA9IGRhdGEuc2xpY2UoaSwgaSArIDQpO1xuICAgICAgICAgICAgICBpZiAodHMubGVuZ3RoID09PSA0KSB7XG4gICAgICAgICAgICAgICAgbGlzdC5wdXNoKHRzKTtcbiAgICAgICAgICAgICAgfSBlbHNlIHtcbiAgICAgICAgICAgICAgICAvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgY29tcGF0L2NvbXBhdFxuICAgICAgICAgICAgICAgIGxpc3QucHVzaCh0cy5jb25jYXQoQXJyYXkuZnJvbShuZXcgQXJyYXkoNCAtIHRzLmxlbmd0aCkpKSk7XG4gICAgICAgICAgICAgIH1cbiAgICAgICAgICAgIH1cbiAgICAgICAgICAgIHJldHVybiBsaXN0Lm1hcCgoaXRlbSwgaSkgPT4gKFxuICAgICAgICAgICAgICA8ZGl2IGtleT17aX0gY2xhc3NOYW1lPVwiZ3JpZFwiPlxuICAgICAgICAgICAgICAgIHtpdGVtLm1hcCgodGFyZ2V0LCBqKSA9PiAoXG4gICAgICAgICAgICAgICAgICA8ZGl2XG4gICAgICAgICAgICAgICAgICAgIGtleT17an1cbiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPXtlZGl0ICYmIHRhcmdldCA/IFwiYXBwIGVkaXRcIiA6IFwiYXBwXCJ9XG4gICAgICAgICAgICAgICAgICAgIHN0eWxlPXt7IHdpZHRoOiBcIjI1JVwiIH19XG4gICAgICAgICAgICAgICAgICA+XG4gICAgICAgICAgICAgICAgICAgIHt0YXJnZXQgJiYgKFxuICAgICAgICAgICAgICAgICAgICAgIDxSZWFjdC5GcmFnbWVudD5cbiAgICAgICAgICAgICAgICAgICAgICAgIHt0YXJnZXQuaWNvbn1cbiAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuPnt0YXJnZXQudGV4dH08L3NwYW4+XG4gICAgICAgICAgICAgICAgICAgICAgICB7ZWRpdCAmJlxuICAgICAgICAgICAgICAgICAgICAgICAgICAodGFyZ2V0LmVkaXRhYmxlID8gKFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIDxzcGFuXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9XCJpY29uZm9udCBpY29uLXRpYW5qaWEgaWNvbiBpY29uLWFkZFwiXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICBvbkNsaWNrPXsoKSA9PiB0aGlzLm9uQWRkKHRhcmdldCl9XG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgLz5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgKSA6IChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhblxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaWNvbmZvbnQgaWNvbi1qaWFuc2hhbzEgaWNvbiBpY29uLW1pbnVzXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHRoaXMub25NaW51cyh0YXJnZXQpfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICkpfVxuICAgICAgICAgICAgICAgICAgICAgIDwvUmVhY3QuRnJhZ21lbnQ+XG4gICAgICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICApKTtcbiAgICAgICAgICB9O1xuXG4gICAgICAgICAgY29uc3QgUHJvdmlkZXIgPSBkYXRhID0+IHtcbiAgICAgICAgICAgIGNvbnN0IGxpc3QgPSBbXTtcbiAgICAgICAgICAgIGZvciAobGV0IGkgPSAwOyBpIDwgZGF0YS5sZW5ndGg7IGkgKz0gNCkge1xuICAgICAgICAgICAgICBsZXQgdHMgPSBkYXRhLnNsaWNlKGksIGkgKyA0KTtcbiAgICAgICAgICAgICAgaWYgKHRzLmxlbmd0aCA9PT0gNCkge1xuICAgICAgICAgICAgICAgIGxpc3QucHVzaCh0cyk7XG4gICAgICAgICAgICAgIH0gZWxzZSB7XG4gICAgICAgICAgICAgICAgLy8gZXNsaW50LWRpc2FibGUtbmV4dC1saW5lIGNvbXBhdC9jb21wYXRcbiAgICAgICAgICAgICAgICBsaXN0LnB1c2godHMuY29uY2F0KEFycmF5LmZyb20obmV3IEFycmF5KDQgLSB0cy5sZW5ndGgpKSkpO1xuICAgICAgICAgICAgICB9XG4gICAgICAgICAgICB9XG4gICAgICAgICAgICByZXR1cm4gbGlzdC5tYXAoKGl0ZW0sIGkpID0+IChcbiAgICAgICAgICAgICAgPGRpdiBrZXk9e2l9IGNsYXNzTmFtZT1cImdyaWRcIj5cbiAgICAgICAgICAgICAgICB7aXRlbS5tYXAoKHRhcmdldCwgaikgPT4gKFxuICAgICAgICAgICAgICAgICAgPGRpdlxuICAgICAgICAgICAgICAgICAgICBrZXk9e2p9XG4gICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT17ZWRpdCAmJiB0YXJnZXQgPyBcImFwcCBlZGl0XCIgOiBcImFwcFwifVxuICAgICAgICAgICAgICAgICAgICBzdHlsZT17eyB3aWR0aDogXCIyNSVcIiB9fVxuICAgICAgICAgICAgICAgICAgPlxuICAgICAgICAgICAgICAgICAgICB7dGFyZ2V0ICYmIChcbiAgICAgICAgICAgICAgICAgICAgICA8UmVhY3QuRnJhZ21lbnQ+XG4gICAgICAgICAgICAgICAgICAgICAgICB7dGFyZ2V0Lmljb259XG4gICAgICAgICAgICAgICAgICAgICAgICA8c3Bhbj57dGFyZ2V0LnRleHR9PC9zcGFuPlxuICAgICAgICAgICAgICAgICAgICAgICAge2VkaXQgJiZcbiAgICAgICAgICAgICAgICAgICAgICAgICAgKHRhcmdldC5lZGl0YWJsZSA/IChcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhblxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPVwiaWNvbmZvbnQgaWNvbi1qaWFuc2hhbzEgaWNvbiBpY29uLW1pbnVzXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHRoaXMub25NaW51cyh0YXJnZXQpfVxuICAgICAgICAgICAgICAgICAgICAgICAgICAgIC8+XG4gICAgICAgICAgICAgICAgICAgICAgICAgICkgOiAoXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgPHNwYW5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT1cImljb25mb250IGljb24tdGlhbmppYSBpY29uIGljb24tYWRkXCJcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHRoaXMub25BZGQodGFyZ2V0KX1cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAvPlxuICAgICAgICAgICAgICAgICAgICAgICAgICApKX1cbiAgICAgICAgICAgICAgICAgICAgICA8L1JlYWN0LkZyYWdtZW50PlxuICAgICAgICAgICAgICAgICAgICApfVxuICAgICAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgICAgKSl9XG4gICAgICAgICAgICAgIDwvZGl2PlxuICAgICAgICAgICAgKSk7XG4gICAgICAgICAgfTtcblxuICAgICAgICAgIHJldHVybiAoXG4gICAgICAgICAgICA8UmVhY3QuRnJhZ21lbnQ+XG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiaGVhZGVyXCI+XG4gICAgICAgICAgICAgICAge2VkaXQgPyAoXG4gICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJleHRyYVwiIG9uQ2xpY2s9e3RoaXMuY2FuY2VsfT5cbiAgICAgICAgICAgICAgICAgICAg5Y+W5raIXG4gICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgKSA6IChcbiAgICAgICAgICAgICAgICAgIDxpIGNsYXNzTmFtZT1cImljb25mb250IGljb24tamlhbnRvdTNcIiAvPlxuICAgICAgICAgICAgICAgICl9XG4gICAgICAgICAgICAgICAgPHNwYW4gY2xhc3NOYW1lPVwidGl0bGVcIj7mm7TlpJrlupTnlKg8L3NwYW4+XG4gICAgICAgICAgICAgICAge2VkaXQgPyAoXG4gICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9XCJleHRyYVwiIG9uQ2xpY2s9e3RoaXMuZmluaXNofT5cbiAgICAgICAgICAgICAgICAgICAg5a6M5oiQXG4gICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgKSA6IChcbiAgICAgICAgICAgICAgICAgIDxzcGFuIGNsYXNzTmFtZT1cImV4dHJhXCIgb25DbGljaz17dGhpcy5lZGl0fT5cbiAgICAgICAgICAgICAgICAgICAg57yW6L6RXG4gICAgICAgICAgICAgICAgICA8L3NwYW4+XG4gICAgICAgICAgICAgICAgKX1cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2FyZFwiPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwidGl0bGVcIj7luLjnlKjlupTnlKg8L2Rpdj5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImJvZHlcIj57Y29uc3VtZXIob2ZmaWNlKX08L2Rpdj5cbiAgICAgICAgICAgICAgPC9kaXY+XG4gICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiY2FyZFwiPlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwidGl0bGVcIj7op4TlrprliqjkvZw8L2Rpdj5cbiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT1cImJvZHlcIj57UHJvdmlkZXIob2ZmaWNlUmVjZW50bHkpfTwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJjYXJkXCI+XG4gICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJ0aXRsZVwiPuiHqumAieWKqOS9nDwvZGl2PlxuICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPVwiYm9keVwiPntQcm92aWRlcihvZmZpY2VBbGwpfTwvZGl2PlxuICAgICAgICAgICAgICA8L2Rpdj5cbiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9XCJkaXZpZGVyXCI+5oiR5piv5pyJ5bqV57q/55qEPC9kaXY+XG4gICAgICAgICAgICA8L1JlYWN0LkZyYWdtZW50PlxuICAgICAgICAgICk7XG4gICAgICAgIH1cbiAgICAgIH1cblxuICAgICAgUmVhY3RET00ucmVuZGVyKDxBcHAgLz4sIGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKFwicm9vdFwiKSk7XG4gICAgIl19
+    </script>
+  </body>
+</html>

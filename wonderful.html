@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    />
+    <title>Have a nice day with wonderful mood</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/react-demo/iconfont/iconfont.css"
+    />
+    <link rel="icon" href="/react-demo/favicon.png" type="image/x-icon" />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      #root {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      body div,
+      body p,
+      body a,
+      body ul,
+      body li,
+      body span,
+      body button,
+      body input {
+        box-sizing: border-box;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 11vw;
+        line-height: 11vw;
+        text-align: center;
+        font-size: 36vw;
+        padding: 0 4vw;
+        color: #ffffff;
+        background: #ef4444;
+      }
+
+      .header i {
+        font-size: 4vw;
+        color: #ffffff;
+      }
+
+      .header .title {
+        font-size: 5vw;
+        color: #ffffff;
+      }
+
+      .header .extra {
+        font-size: 4vw;
+        color: #ffffff;
+      }
+
+      .card {
+        background: #fff;
+        margin-top: 2vh;
+      }
+
+      .card .title {
+        font-size: 4vw;
+        margin-left: 2vw;
+      }
+
+      .card .body .grid {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .card .body .grid .app {
+        margin: 1vw 1vw;
+        padding: 1vw 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .card .body .grid .app > i {
+        font-size: 6vw;
+      }
+
+      .card .body .grid .app > span {
+        font-size: 4vw;
+      }
+
+      .card .body .grid .app .icon {
+        font-size: 4vw;
+        position: absolute;
+        right: 1vw;
+        top: 1vw;
+      }
+
+      .card .body .grid .app .icon-add {
+        color: #0f8eed;
+      }
+
+      .card .body .grid .app .icon-minus {
+        color: #ff423d;
+      }
+
+      .edit {
+        background: #f2f2f2;
+      }
+
+      .divider {
+        font-size: 4vw;
+        color: #757575;
+        display: table;
+        margin: 4vw 0;
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 500;
+        white-space: nowrap;
+        text-align: center;
+        background: transparent;
+        clear: both;
+        width: 100%;
+        min-width: 100%;
+        vertical-align: middle;
+        box-sizing: border-box;
+        padding: 0;
+        font-variant: tabular-nums;
+        list-style: none;
+        font-feature-settings: "tnum";
+      }
+
+      .divider::before {
+        position: relative;
+        top: 50%;
+        display: table-cell;
+        width: 50%;
+        border-top: 1px solid #e8e8e8;
+        transform: translateY(50%);
+        content: "";
+      }
+
+      .divider::after {
+        position: relative;
+        top: 50%;
+        display: table-cell;
+        width: 50%;
+        border-top: 1px solid #e8e8e8;
+        transform: translateY(50%);
+        content: "";
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const origin = [
+        {
+          icon: <i className="iconfont icon-2" style={{ color: "#0f8eed" }} />,
+          text: "智慧决策",
+          link: "/decision"
+        },
+        {
+          icon: (
+            <i
+              className="iconfont icon-dangwugongkai"
+              style={{ color: "#ed5b4c" }}
+            />
+          ),
+          text: "智慧党建",
+          link: "http://60.167.238.3:9000/wap/app/index?type=ty"
+        },
+        {
+          icon: (
+            <i className="iconfont icon-bangong" style={{ color: "#0f8eed" }} />
+          ),
+          text: "办公审批"
+        },
+        {
+          icon: (
+            <i className="iconfont icon-zheng" style={{ color: "#0f8eed" }} />
+          ),
+          text: "智慧政工"
+        },
+        {
+          icon: (
+            <i
+              className="iconfont icon-anjiandangan"
+              style={{ color: "#0f8eed" }}
+            />
+          ),
+          text: "案件分配"
+        },
+        {
+          icon: (
+            <i className="iconfont icon-wj-ws" style={{ color: "#0f8eed" }} />
+          ),
+          text: "文书交换"
+        },
+        {
+          icon: (
+            <i
+              className="iconfont icon-tongxunlu"
+              style={{ color: "#0f8eed" }}
+            />
+          ),
+          text: "通讯录"
+        }
+      ];
+      const recently = [
+        {
+          icon: (
+            <i className="iconfont icon-wj-ws" style={{ color: "#0f8eed" }} />
+          ),
+          text: "文书交换"
+        },
+        {
+          icon: (
+            <i className="iconfont icon-wj-ws" style={{ color: "#0f8eed" }} />
+          ),
+          text: "知识库服务"
+        }
+      ];
+      const all = [
+        {
+          icon: <i className="iconfont icon-2" style={{ color: "#0f8eed" }} />,
+          text: "智慧决策",
+          link: "/decision"
+        },
+        {
+          icon: (
+            <i
+              className="iconfont icon-dangwugongkai"
+              style={{ color: "#ed5b4c" }}
+            />
+          ),
+          text: "智慧党建",
+          link: "http://60.167.238.3:9000/wap/app/index?type=ty"
+        },
+        {
+          icon: (
+            <i className="iconfont icon-bangong" style={{ color: "#0f8eed" }} />
+          ),
+          text: "办公审批"
+        },
+        {
+          icon: (
+            <i className="iconfont icon-zheng" style={{ color: "#0f8eed" }} />
+          ),
+          text: "智慧政工"
+        },
+        {
+          icon: (
+            <i
+              className="iconfont icon-anjiandangan"
+              style={{ color: "#0f8eed" }}
+            />
+          ),
+          text: "案件分配"
+        },
+        {
+          icon: (
+            <i className="iconfont icon-wj-ws" style={{ color: "#0f8eed" }} />
+          ),
+          text: "文书交换"
+        },
+        {
+          icon: (
+            <i
+              className="iconfont icon-tongxunlu"
+              style={{ color: "#0f8eed" }}
+            />
+          ),
+          text: "通讯录"
+        },
+        {
+          icon: (
+            <i
+              className="iconfont icon-tongxunlu"
+              style={{ color: "#0f8eed" }}
+            />
+          ),
+          text: "通知公告"
+        },
+        {
+          icon: (
+            <i
+              className="iconfont icon-anjiandangan"
+              style={{ color: "#0f8eed" }}
+            />
+          ),
+          text: "简答网"
+        },
+        {
+          icon: (
+            <i className="iconfont icon-wj-ws" style={{ color: "#0f8eed" }} />
+          ),
+          text: "知识库服务"
+        }
+      ];
+
+      class App extends React.PureComponent {
+        constructor(props) {
+          super(props);
+          this.state = {
+            edit: false,
+            office: origin,
+            officeCache: origin,
+            officeRecently: recently,
+            officeRecentlyCache: recently,
+            officeAll: all,
+            officeAllCache: all
+          };
+        }
+
+        componentDidMount() {
+          // 这里是读数据
+          const { office, officeRecently, officeAll } = this.state;
+          officeRecently.forEach(item => {
+            if (office.filter(tar => tar.text === item.text).length)
+              item.editable = true;
+          });
+          officeAll.forEach(item => {
+            if (office.filter(tar => tar.text === item.text).length)
+              item.editable = true;
+          });
+          this.setState({
+            office,
+            officeCache: office.map(item => ({ ...item })),
+            officeRecentlyCache: officeRecently.map(item => ({ ...item })),
+            officeAllCache: officeAll.map(item => ({ ...item }))
+          });
+        }
+
+        onAdd = item => {
+          const { officeRecently, officeAll } = this.state;
+          const target1 = officeRecently.filter(
+            tar => tar.text === item.text
+          )[0];
+          if (target1) target1.editable = true;
+          const target2 = officeAll.filter(tar => tar.text === item.text)[0];
+          if (target2) target2.editable = true;
+          this.setState(({ office, officeRecently, officeAll }) => ({
+            office: office.concat({ ...item, editable: undefined }),
+            officeRecently,
+            officeAll
+          }));
+        };
+
+        onMinus = item => {
+          const { officeRecently, officeAll } = this.state;
+          const target1 = officeRecently.filter(
+            tar => tar.text === item.text
+          )[0];
+          if (target1) delete target1.editable;
+          const target2 = officeAll.filter(tar => tar.text === item.text)[0];
+          if (target2) delete target2.editable;
+          this.setState(({ office, officeRecently, officeAll }) => ({
+            office: office.filter(tar => tar.text !== item.text),
+            officeRecently,
+            officeAll
+          }));
+        };
+
+        edit = () => this.setState({ edit: true });
+
+        finish = () => {
+          // 这里是保存
+          this.setState(({ office, officeRecently, officeAll }) => ({
+            office,
+            officeCache: office.map(item => ({ ...item })),
+            officeRecentlyCache: officeRecently.map(item => ({ ...item })),
+            officeAllCache: officeAll.map(item => ({ ...item })),
+            edit: false
+          }));
+        };
+
+        cancel = () => {
+          this.setState(
+            ({ officeCache, officeRecentlyCache, officeAllCache }) => ({
+              edit: false,
+              office: officeCache.map(item => ({ ...item })),
+              officeRecently: officeRecentlyCache.map(item => ({ ...item })),
+              officeAll: officeAllCache.map(item => ({ ...item }))
+            })
+          );
+        };
+
+        render() {
+          const { office, officeRecently, officeAll, edit } = this.state;
+
+          const consumer = data => {
+            const list = [];
+            for (let i = 0; i < data.length; i += 4) {
+              let ts = data.slice(i, i + 4);
+              if (ts.length === 4) {
+                list.push(ts);
+              } else {
+                // eslint-disable-next-line compat/compat
+                list.push(ts.concat(Array.from(new Array(4 - ts.length))));
+              }
+            }
+            return list.map((item, i) => (
+              <div key={i} className="grid">
+                <div className="app" style={{ width: "25%" }}>
+                  <i className="iconfont icon-2" style={{ color: "#0f8eed" }} />
+                  <span>智慧决策</span>
+                  <span className="iconfont icon-jianshao1 icon icon-minus" />
+                </div>
+              </div>
+            ));
+          };
+
+          const Provider = data => {
+            const list = [];
+            for (let i = 0; i < data.length; i += 4) {
+              let ts = data.slice(i, i + 4);
+              if (ts.length === 4) {
+                list.push(ts);
+              } else {
+                // eslint-disable-next-line compat/compat
+                list.push(ts.concat(Array.from(new Array(4 - ts.length))));
+              }
+            }
+            return list.map((item, i) => (
+              <div key={i} className="grid">
+                {item.map((target, j) => (
+                  <div
+                    key={j}
+                    className={edit && target ? "app edit" : "app"}
+                    style={{ width: "25%" }}
+                  >
+                    {target && (
+                      <React.Fragment>
+                        {target.icon}
+                        <span>{target.text}</span>
+                        {edit &&
+                          (target.editable ? (
+                            <span
+                              className="iconfont icon-jianshao1 icon icon-minus"
+                              onClick={() => this.onMinus(target)}
+                            />
+                          ) : (
+                            <span
+                              className="iconfont icon-tianjia icon icon-add"
+                              onClick={() => this.onAdd(target)}
+                            />
+                          ))}
+                      </React.Fragment>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ));
+          };
+
+          return (
+            <React.Fragment>
+              <div className="header">
+                {edit ? (
+                  <span className="extra" onClick={this.cancel}>
+                    取消
+                  </span>
+                ) : (
+                  <i className="iconfont icon-jiantou3" />
+                )}
+                <span className="title">更多应用</span>
+                {edit ? (
+                  <span className="extra" onClick={this.finish}>
+                    完成
+                  </span>
+                ) : (
+                  <span className="extra" onClick={this.edit}>
+                    编辑
+                  </span>
+                )}
+              </div>
+              <div className="card">
+                <div className="title">常用应用</div>
+                <div className="body">{consumer(office)}</div>
+              </div>
+              <div className="card">
+                <div className="title">规定动作</div>
+                <div className="body">{Provider(officeRecently)}</div>
+              </div>
+              <div className="card">
+                <div className="title">自选动作</div>
+                <div className="body">{Provider(officeAll)}</div>
+              </div>
+              <div className="divider">我是有底线的</div>
+            </React.Fragment>
+          );
+        }
+      }
+
+      ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
