@@ -419,11 +419,32 @@
             }
             return list.map((item, i) => (
               <div key={i} className="grid">
-                <div className="app" style={{ width: "25%" }}>
-                  <i className="iconfont icon-2" style={{ color: "#0f8eed" }} />
-                  <span>智慧决策</span>
-                  <span className="iconfont icon-jianshao1 icon icon-minus" />
-                </div>
+                {item.map((target, j) => (
+                  <div
+                    key={j}
+                    className={edit && target ? "app edit" : "app"}
+                    style={{ width: "25%" }}
+                  >
+                    {target && (
+                      <React.Fragment>
+                        {target.icon}
+                        <span>{target.text}</span>
+                        {edit &&
+                          (target.editable ? (
+                            <span
+                              className="iconfont icon-tianjia icon icon-add"
+                              onClick={() => this.onAdd(target)}
+                            />
+                          ) : (
+                            <span
+                              className="iconfont icon-jianshao1 icon icon-minus"
+                              onClick={() => this.onMinus(target)}
+                            />
+                          ))}
+                      </React.Fragment>
+                    )}
+                  </div>
+                ))}
               </div>
             ));
           };
@@ -452,12 +473,7 @@
                         {target.icon}
                         <span>{target.text}</span>
                         {edit &&
-                          (target.editable ? (
-                            <span
-                              className="iconfont icon-jianshao1 icon icon-minus"
-                              onClick={() => this.onMinus(target)}
-                            />
-                          ) : (
+                          (!target.editable && (
                             <span
                               className="iconfont icon-tianjia icon icon-add"
                               onClick={() => this.onAdd(target)}
