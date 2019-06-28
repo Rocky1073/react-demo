@@ -429,18 +429,12 @@
                       <React.Fragment>
                         {target.icon}
                         <span>{target.text}</span>
-                        {edit &&
-                          (target.editable ? (
-                            <span
-                              className="iconfont icon-tianjia icon icon-add"
-                              onClick={() => this.onAdd(target)}
-                            />
-                          ) : (
-                            <span
-                              className="iconfont icon-jianshao1 icon icon-minus"
-                              onClick={() => this.onMinus(target)}
-                            />
-                          ))}
+                        {edit && !target.editable && (
+                          <span
+                            className="iconfont icon-jianshao1 icon icon-minus"
+                            onClick={() => this.onMinus(target)}
+                          />
+                        )}
                       </React.Fragment>
                     )}
                   </div>
