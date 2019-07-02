@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>more application</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/react-demo/prison-party-building/iconfont/iconfont.css"
+    />
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      #root {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      body div,
+      body p,
+      body a,
+      body ul,
+      body li,
+      body span,
+      body button,
+      body input {
+        box-sizing: border-box;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 11vw;
+        line-height: 11vw;
+        text-align: center;
+        font-size: 36vw;
+        padding: 0 4vw;
+        color: #ffffff;
+        background: #ef4444;
+      }
+
+      .topic {
+        flex: 1 1;
+        font-size: 5vw;
+        color: #ffffff;
+      }
+
+      .extra {
+        flex: 1 1;
+        font-size: 4vw;
+        color: #ffffff;
+      }
+
+      .card {
+        background: #fff;
+        margin-top: 2vh;
+      }
+
+      .title {
+        font-size: 4vw;
+        margin-left: 2vw;
+      }
+
+      .grid {
+        display: flex;
+        min-height: 8vh;
+        flex-wrap: wrap;
+      }
+
+      .grid-item {
+        width: 25%;
+      }
+
+      .icon-add {
+        color: #0f8eed;
+      }
+
+      .icon-minus {
+        color: #ff423d;
+      }
+
+      .app {
+        margin: 1vw 1vw;
+        padding: 2vw 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+      }
+
+      .app-icon {
+        font-size: 6vw;
+      }
+
+      .app-title {
+        font-size: 4vw;
+      }
+
+      .operate {
+        font-size: 4vw;
+        position: absolute;
+        right: 1vw;
+        top: 1vw;
+      }
+
+      .edit {
+        background: #f2f2f2;
+      }
+
+      .divider {
+        font-size: 4vw;
+        color: #757575;
+        display: table;
+        margin: 4vw 0;
+        color: rgba(0, 0, 0, 0.85);
+        font-weight: 500;
+        white-space: nowrap;
+        text-align: center;
+        background: transparent;
+        clear: both;
+        width: 100%;
+        min-width: 100%;
+        vertical-align: middle;
+        box-sizing: border-box;
+        padding: 0;
+        font-variant: tabular-nums;
+        list-style: none;
+        font-feature-settings: "tnum";
+      }
+
+      .divider::before {
+        position: relative;
+        top: 50%;
+        display: table-cell;
+        width: 50%;
+        border-top: 1px solid #e8e8e8;
+        transform: translateY(50%);
+        content: "";
+      }
+
+      .divider::after {
+        position: relative;
+        top: 50%;
+        display: table-cell;
+        width: 50%;
+        border-top: 1px solid #e8e8e8;
+        transform: translateY(50%);
+        content: "";
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <span
+        id="cancel"
+        class="extra iconfont icon-jiantou3"
+        style="text-align: left"
+      ></span>
+      <span class="topic">更多应用</span>
+      <span id="edit" class="extra" style="text-align: right">编辑</span>
+    </div>
+    <div class="card">
+      <div class="title">常用应用</div>
+      <div class="body">
+        <div class="grid" id="added">
+          <div id="regular1" origin="dynamic1" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-dingdan"
+                style="color: #0f8eed;"
+              ></i>
+              <span class="app-title">党建要闻</span>
+              <span
+                name="regular"
+                class="iconfont icon-jianshao1 operate icon-minus"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="regular2" origin="dynamic2" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-xueshengdangzhibudahui"
+                style="color: #e7444a;"
+              ></i>
+              <span class="app-title">三会一课</span>
+              <span
+                name="regular"
+                class="iconfont icon-jianshao1 operate icon-minus"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="regular3" origin="dynamic3" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-zaixiankaoshi"
+                style="color: #ffaa15;"
+              ></i>
+              <span class="app-title">在线考试</span>
+              <span
+                name="regular"
+                class="iconfont icon-jianshao1 operate icon-minus"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="regular4" origin="dynamic4" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-dangwugongkai1"
+                style="color: #0f8eed;"
+              ></i>
+              <span class="app-title">党史纵览</span>
+              <span
+                name="regular"
+                class="iconfont icon-jianshao1 operate icon-minus"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="regular5" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-dangjianxinxi"
+                style="color: #0f8eed;"
+              ></i>
+              <span class="app-title">通知公告</span>
+              <span
+                name="regular"
+                class="iconfont icon-jianshao1 operate icon-minus"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="regular6" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-zhengzhi-tianchong"
+                style="color: #e7444a;"
+              ></i>
+              <span class="app-title">政治生日</span>
+              <span
+                name="regular"
+                class="iconfont icon-jianshao1 operate icon-minus"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="regular7" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-jifen"
+                style="color: #ffaa15;"
+              ></i>
+              <span class="app-title">我的积分</span>
+              <span
+                name="regular"
+                class="iconfont icon-jianshao1 operate icon-minus"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title">动态</div>
+      <div class="body">
+        <div class="grid">
+          <div id="dynamic1" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-dingdan"
+                style="color: #0f8eed;"
+              ></i>
+              <span class="app-title">党建要闻</span>
+              <span
+                name="dynamic"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="dynamic2" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-xueshengdangzhibudahui"
+                style="color: #e7444a;"
+              ></i>
+              <span class="app-title">三会一课</span>
+              <span
+                name="dynamic"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="dynamic3" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-zaixiankaoshi"
+                style="color: #ffaa15;"
+              ></i>
+              <span class="app-title">在线考试</span>
+              <span
+                name="dynamic"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="dynamic4" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-dangwugongkai1"
+                style="color: #0f8eed;"
+              ></i>
+              <span class="app-title">党史纵览</span>
+              <span
+                name="dynamic"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title">学习</div>
+      <div class="body">
+        <div class="grid">
+          <div id="studying1" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-xueshengdangzhibudahui"
+                style="color: #e7444a;"
+              ></i>
+              <span class="app-title">微党课</span>
+              <span
+                name="studying"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="studying2" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-tesezhuanti"
+                style="color: #ffaa15;"
+              ></i>
+              <span class="app-title">专题教育</span>
+              <span
+                name="studying"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="studying3" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-guojifanfulianshoufanfubai"
+                style="color: #0f8eed;"
+              ></i>
+              <span class="app-title">反腐倡廉</span>
+              <span
+                name="studying"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="studying4" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-tesezhuanti"
+                style="color: #e7444a;"
+              ></i>
+              <span class="app-title">政策法规</span>
+              <span
+                name="studying"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="studying5" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-dangwugongkai1"
+                style="color: #0f8eed;"
+              ></i>
+              <span class="app-title">党史纵览</span>
+              <span
+                name="studying"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="studying6" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-tianxie"
+                style="color: #e7444a;"
+              ></i>
+              <span class="app-title">在线考试</span>
+              <span
+                name="studying"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="title">组织</div>
+      <div class="body">
+        <div class="grid">
+          <div id="organization1" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-minzhengxinxi-kunnandangyuan"
+                style="color: #0f8eed;"
+              ></i>
+              <span class="app-title">主题党日</span>
+              <span
+                name="organization"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="organization2" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-xueshengdangzhibudahui"
+                style="color: #e7444a;"
+              ></i>
+              <span class="app-title">三会一课</span>
+              <span
+                name="organization"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="organization3" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-ciricaipintoupiao"
+                style="color: #ffaa15;"
+              ></i>
+              <span class="app-title">民主投票</span>
+              <span
+                name="organization"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="organization4" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-dingdan"
+                style="color: #0f8eed;"
+              ></i>
+              <span class="app-title">任务管理</span>
+              <span
+                name="organization"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+          <div id="organization5" class="grid-item">
+            <div class="app">
+              <i
+                class="app-icon iconfont icon-zhengzhi-tianchong"
+                style="color: #ffaa15;"
+              ></i>
+              <span class="app-title">政治生日</span>
+              <span
+                name="organization"
+                class="iconfont icon-tianjia operate icon-add"
+                style="display: none;"
+              ></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="divider">我是有底线的</div>
+    <script type="text/javascript">
+      var edit = false;
+      var id = 1;
+
+      var cancel = function() {
+        document.getElementById("edit").innerHTML = "编辑";
+        document.getElementById("cancel").innerHTML = "";
+        document.getElementById("cancel").className =
+          "extra iconfont icon-jiantou3";
+        const applications = document.getElementsByClassName("app");
+        for (let i = 0; i < applications.length; i++) {
+          applications[i].className = "app";
+        }
+        const regularOperate = document.getElementsByName("regular");
+        for (let i = 0; i < regularOperate.length; i++) {
+          regularOperate[i].style.display = "none";
+        }
+        const dynamic = document.getElementsByName("dynamic");
+        for (let i = 0; i < dynamic.length; i++) {
+          dynamic[i].style.display = "none";
+        }
+        const studying = document.getElementsByName("studying");
+        for (let i = 0; i < studying.length; i++) {
+          studying[i].style.display = "none";
+        }
+        const organization = document.getElementsByName("organization");
+        for (let i = 0; i < organization.length; i++) {
+          organization[i].style.display = "none";
+        }
+        edit = false;
+      };
+
+      document.getElementById("edit").addEventListener("click", function() {
+        if (edit) {
+          cancel();
+        } else {
+          document.getElementById("edit").innerHTML = "完成";
+          document.getElementById("cancel").innerHTML = "取消";
+          document.getElementById("cancel").className = "extra";
+          const applications = document.getElementsByClassName("app");
+          for (let i = 0; i < applications.length; i++) {
+            applications[i].className = "app edit";
+          }
+          const regularOperate = document.getElementsByName("regular");
+          for (let i = 0; i < regularOperate.length; i++) {
+            regularOperate[i].style.display = "block";
+          }
+          const dynamic = document.getElementsByName("dynamic");
+          for (let i = 0; i < dynamic.length; i++) {
+            dynamic[i].style.display = "block";
+          }
+          const studying = document.getElementsByName("studying");
+          for (let i = 0; i < studying.length; i++) {
+            studying[i].style.display = "block";
+          }
+          const organization = document.getElementsByName("organization");
+          for (let i = 0; i < organization.length; i++) {
+            organization[i].style.display = "block";
+          }
+          edit = true;
+        }
+      });
+
+      document.getElementById("cancel").addEventListener("click", cancel);
+
+      const operateFun = function() {
+        var girdItem = this.parentNode.parentNode;
+        var item = girdItem.cloneNode(true);
+        var node = item.children[0].getElementsByClassName("operate")[0];
+        if (node.className.indexOf("minus") > -1) {
+          document
+            .getElementById(item.getAttribute("origin"))
+            .children[0].getElementsByClassName("operate")[0].style.display =
+            "block";
+          girdItem.parentNode.removeChild(girdItem);
+        } else {
+          this.style.display = "none";
+          item.setAttribute("origin", item.id);
+          item.id = 1;
+          id += 1;
+          // node.setAttribute("name", "regular");
+          node.className = "iconfont icon-jianshao1 operate icon-minus";
+          node.style.display = "block";
+          node.addEventListener("click", operateFun);
+          document.getElementById("added").appendChild(item);
+        }
+      };
+
+      var operate = document.getElementsByClassName("operate");
+      for (let i = 0; i < operate.length; i++) {
+        operate[i].addEventListener("click", operateFun);
+      }
+    </script>
+  </body>
+</html>
