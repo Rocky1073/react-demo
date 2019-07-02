@@ -6,7 +6,7 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="/react-demo/prison-party-building/iconfont/iconfont.css"
+      href="/react-demo/prison-party-build/iconfont/iconfont.css"
     />
     <style>
       html,
@@ -74,7 +74,7 @@
 
       .grid {
         display: flex;
-        min-height: 8vh;
+        min-height: 9vh;
         flex-wrap: wrap;
       }
 
@@ -105,6 +105,7 @@
       }
 
       .app-title {
+        margin-top: 0.5vh;
         font-size: 4vw;
       }
 
@@ -174,112 +175,13 @@
     <div class="card">
       <div class="title">常用应用</div>
       <div class="body">
-        <div class="grid" id="added">
-          <div id="regular1" origin="dynamic1" class="grid-item">
-            <div class="app">
-              <i
-                class="app-icon iconfont icon-dingdan"
-                style="color: #0f8eed;"
-              ></i>
-              <span class="app-title">党建要闻</span>
-              <span
-                name="regular"
-                class="iconfont icon-jianshao1 operate icon-minus"
-                style="display: none;"
-              ></span>
-            </div>
-          </div>
-          <div id="regular2" origin="dynamic2" class="grid-item">
-            <div class="app">
-              <i
-                class="app-icon iconfont icon-xueshengdangzhibudahui"
-                style="color: #e7444a;"
-              ></i>
-              <span class="app-title">三会一课</span>
-              <span
-                name="regular"
-                class="iconfont icon-jianshao1 operate icon-minus"
-                style="display: none;"
-              ></span>
-            </div>
-          </div>
-          <div id="regular3" origin="dynamic3" class="grid-item">
-            <div class="app">
-              <i
-                class="app-icon iconfont icon-zaixiankaoshi"
-                style="color: #ffaa15;"
-              ></i>
-              <span class="app-title">在线考试</span>
-              <span
-                name="regular"
-                class="iconfont icon-jianshao1 operate icon-minus"
-                style="display: none;"
-              ></span>
-            </div>
-          </div>
-          <div id="regular4" origin="dynamic4" class="grid-item">
-            <div class="app">
-              <i
-                class="app-icon iconfont icon-dangwugongkai1"
-                style="color: #0f8eed;"
-              ></i>
-              <span class="app-title">党史纵览</span>
-              <span
-                name="regular"
-                class="iconfont icon-jianshao1 operate icon-minus"
-                style="display: none;"
-              ></span>
-            </div>
-          </div>
-          <div id="regular5" class="grid-item">
-            <div class="app">
-              <i
-                class="app-icon iconfont icon-dangjianxinxi"
-                style="color: #0f8eed;"
-              ></i>
-              <span class="app-title">通知公告</span>
-              <span
-                name="regular"
-                class="iconfont icon-jianshao1 operate icon-minus"
-                style="display: none;"
-              ></span>
-            </div>
-          </div>
-          <div id="regular6" class="grid-item">
-            <div class="app">
-              <i
-                class="app-icon iconfont icon-zhengzhi-tianchong"
-                style="color: #e7444a;"
-              ></i>
-              <span class="app-title">政治生日</span>
-              <span
-                name="regular"
-                class="iconfont icon-jianshao1 operate icon-minus"
-                style="display: none;"
-              ></span>
-            </div>
-          </div>
-          <div id="regular7" class="grid-item">
-            <div class="app">
-              <i
-                class="app-icon iconfont icon-jifen"
-                style="color: #ffaa15;"
-              ></i>
-              <span class="app-title">我的积分</span>
-              <span
-                name="regular"
-                class="iconfont icon-jianshao1 operate icon-minus"
-                style="display: none;"
-              ></span>
-            </div>
-          </div>
-        </div>
+        <div id="added" class="grid"></div>
       </div>
     </div>
     <div class="card">
       <div class="title">动态</div>
       <div class="body">
-        <div class="grid">
+        <div id="dynamic" class="grid">
           <div id="dynamic1" class="grid-item">
             <div class="app">
               <i
@@ -342,7 +244,7 @@
     <div class="card">
       <div class="title">学习</div>
       <div class="body">
-        <div class="grid">
+        <div id="studying" class="grid">
           <div id="studying1" class="grid-item">
             <div class="app">
               <i
@@ -433,7 +335,7 @@
     <div class="card">
       <div class="title">组织</div>
       <div class="body">
-        <div class="grid">
+        <div id="organization" class="grid">
           <div id="organization1" class="grid-item">
             <div class="app">
               <i
