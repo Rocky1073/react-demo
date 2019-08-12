@@ -1,0 +1,1 @@
+Object.keys(a1.style).filter(item=>isNaN(item))

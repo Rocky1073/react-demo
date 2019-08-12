@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+  </head>
+  <body onload="load()">
+    <div>
+      <p style="font-size: 20px;">test1</p>
+      <p>test2</p>
+    </div>
+
+    <div>
+      <div>
+        <p style="font-size: 20px;">test1</p>
+        <p>test2</p>
+      </div>
+    </div>
+    <!--    <p style="font-size: 20px; color: red;">test1</p>-->
+    <!--    <p style="color: red;">test2</p>-->
+  </body>
+  <script type="text/javascript">
+    function load() {
+      return;
+      const a1 = document.getElementById("a1");
+      const a2 = document.getElementById("a2");
+      const list1 = Object.keys(a1.style).filter(item => isNaN(item));
+      const list2 = Object.keys(a2.style).filter(item => isNaN(item));
+      for (let i = 0; i < list1.length; i++) {
+        if (a1.style[list1[i]] !== a2.style[list2[i]]) {
+          console.log(list1[i], list2[i]);
+          a2.style.color = "red";
+          return;
+        }
+      }
+    }
+  </script>
+</html>
