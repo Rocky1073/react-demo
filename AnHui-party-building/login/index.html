@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <img class="background-image" src="./login.jpg" alt="" />
+    <div class="login">
+      <img
+        id="half-QRcode"
+        class="half-QRcode"
+        src="./half-QRcode.png"
+        alt=""
+      />
+      <img class="logo" src="./logo.png" alt="" />
+      <div id="form">
+        <div class="form">
+          <div class="input">
+            <img src="./user.png" alt="" />
+            <input type="text" placeholder="用户名" />
+          </div>
+          <div class="input">
+            <img src="./password.png" alt="" />
+            <input type="password" placeholder="密码" />
+          </div>
+        </div>
+        <div class="action">
+          <label class="checkbox">
+            <span class="checked">
+              <input type="checkbox" />
+            </span>
+            <span>记住密码</span>
+          </label>
+        </div>
+        <div class="submit">登录</div>
+      </div>
+      <div id="program" style="display: none;">
+        <div class="code">
+          <div class="QRcode">
+            <img src="./QRcode.png" alt="" />
+            <p>安卓APP</p>
+          </div>
+          <div class="mini-program">
+            <img src="./mini-program.png" alt="" />
+            <p>微信小程序</p>
+          </div>
+        </div>
+        <p class="tips">请打开微信客户端"扫一扫"</p>
+      </div>
+    </div>
+  </body>
+  <script type="text/javascript">
+    let type = 0;
+    const half = document.getElementById("half-QRcode");
+    half.addEventListener("click", function() {
+      if (type) {
+        half.src = "./half-QRcode.png";
+        document.getElementById("form").style.display = "block";
+        document.getElementById("program").style.display = "none";
+        type = 0;
+        return;
+      }
+      half.src = "./computer.png";
+      document.getElementById("form").style.display = "none";
+      document.getElementById("program").style.display = "block";
+      type = 1;
+    });
+  </script>
+</html>
